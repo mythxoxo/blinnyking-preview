@@ -74,7 +74,75 @@
     "addToCartLink": "Add to Cart →",
     "back": "← Back to menu",
     "chooseSize": "Choose size",
-    "extras": "Extras"
+    "extras": "Extras",
+    "categories": {
+      "savory": "Savory Pancakes",
+      "sweet": "Sweet Pancakes",
+      "lunch": "Lunch",
+      "drinks": "Drinks",
+      "combos": "Combos"
+    },
+    "badges": {
+      "bestSeller": "Best seller",
+      "weekday": "Weekday 11–15",
+      "goodValue": "Good value"
+    },
+    "sizes": {
+      "set": "Set",
+      "combo": "Combo"
+    },
+    "items": {
+      "hamCheeseClassic": {
+        "name": "Ham & Cheese Classic",
+        "description": "Golden crepe with smoked ham, gooey cheese and herb butter."
+      },
+      "salmonDillCream": {
+        "name": "Salmon Dill Cream",
+        "description": "Lightly salted salmon, dill cream and pickled onion."
+      },
+      "nutellaBananaDream": {
+        "name": "Nutella Banana Dream",
+        "description": "Warm Nutella, sliced banana and roasted hazelnut crunch."
+      },
+      "berriesCream": {
+        "name": "Forest Berries & Cream",
+        "description": "Seasonal berry compote, whipped cream and powdered sugar."
+      },
+      "lunchSoupCombo": {
+        "name": "Lunch Soup Combo",
+        "description": "Soup of the day with mini savory pancake and salad."
+      },
+      "icedLatte": {
+        "name": "Iced Latte",
+        "description": "Double espresso, cold milk and caramelized syrup."
+      },
+      "familyComboFor2": {
+        "name": "Family Combo for 2",
+        "description": "Two pancakes, two drinks and one shared dessert."
+      },
+      "chickenMushroomMelt": {
+        "name": "Chicken Mushroom Melt",
+        "description": "Creamy chicken, roasted mushrooms and melted mozzarella."
+      }
+    },
+    "extrasList": {
+      "extraCheese": "Extra cheese",
+      "garlicSauce": "Garlic sauce",
+      "capers": "Capers",
+      "lemonAioli": "Lemon aioli",
+      "vanillaIceCream": "Vanilla ice cream",
+      "strawberries": "Strawberries",
+      "extraBerrySauce": "Extra berry sauce",
+      "mascarpone": "Mascarpone",
+      "kefirDrink": "Kefir drink",
+      "dessertBliny": "Dessert bliny",
+      "oatMilk": "Oat milk",
+      "vanillaSyrup": "Vanilla syrup",
+      "extraSavoryPancake": "Extra savory pancake",
+      "freshJuice": "Fresh juice",
+      "baconCrumble": "Bacon crumble",
+      "houseSalad": "House salad"
+    }
   },
   "cart": {
     "eyebrow": "Cart & checkout",

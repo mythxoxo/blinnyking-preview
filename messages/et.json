@@ -74,7 +74,75 @@
     "addToCartLink": "Lisa korvi →",
     "back": "← Tagasi menüüsse",
     "chooseSize": "Vali suurus",
-    "extras": "Lisad"
+    "extras": "Lisad",
+    "categories": {
+      "savory": "Soolased pannkoogid",
+      "sweet": "Magusad pannkoogid",
+      "lunch": "Lõuna",
+      "drinks": "Joogid",
+      "combos": "Kombod"
+    },
+    "badges": {
+      "bestSeller": "Menukaim",
+      "weekday": "Argipäeviti 11–15",
+      "goodValue": "Hea hind"
+    },
+    "sizes": {
+      "set": "Komplekt",
+      "combo": "Kombo"
+    },
+    "items": {
+      "hamCheeseClassic": {
+        "name": "Sink ja juust klassika",
+        "description": "Kuldne pannkook suitsusingi, sulava juustu ja ürdivõiga."
+      },
+      "salmonDillCream": {
+        "name": "Lõhe, till ja kreem",
+        "description": "Kergelt soolatud lõhe, tillikreem ja marineeritud sibul."
+      },
+      "nutellaBananaDream": {
+        "name": "Nutella Banana Dream",
+        "description": "Soe Nutella, banaaniviilud ja röstitud sarapuupähkli krõmps."
+      },
+      "berriesCream": {
+        "name": "Metsamarjad ja koor",
+        "description": "Hooajaline marjakompott, vahukoor ja tuhksuhkur."
+      },
+      "lunchSoupCombo": {
+        "name": "Lõunasupi kombo",
+        "description": "Päevasupp, väike soolane pannkook ja salat."
+      },
+      "icedLatte": {
+        "name": "Jäälatte",
+        "description": "Topeltespresso, külm piim ja karamellisiirup."
+      },
+      "familyComboFor2": {
+        "name": "Perekombo kahele",
+        "description": "Kaks pannkooki, kaks jooki ja üks jagatav magustoit."
+      },
+      "chickenMushroomMelt": {
+        "name": "Kana-seene pannkook",
+        "description": "Kreemine kana, röstitud seened ja sulanud mozzarella."
+      }
+    },
+    "extrasList": {
+      "extraCheese": "Lisajuust",
+      "garlicSauce": "Küüslaugukaste",
+      "capers": "Kapparid",
+      "lemonAioli": "Sidruni-aioli",
+      "vanillaIceCream": "Vanillijäätis",
+      "strawberries": "Maasikad",
+      "extraBerrySauce": "Lisamarjakaste",
+      "mascarpone": "Mascarpone",
+      "kefirDrink": "Keefirijook",
+      "dessertBliny": "Magustoidu pannkook",
+      "oatMilk": "Kaerapiim",
+      "vanillaSyrup": "Vanillisiirup",
+      "extraSavoryPancake": "Lisa soolane pannkook",
+      "freshJuice": "Värske mahl",
+      "baconCrumble": "Peekonipuru",
+      "houseSalad": "Majasalat"
+    }
   },
   "cart": {
     "eyebrow": "Ostukorv ja checkout",

@@ -74,7 +74,75 @@
     "addToCartLink": "В корзину →",
     "back": "← Назад в меню",
     "chooseSize": "Выбери размер",
-    "extras": "Дополнительно"
+    "extras": "Дополнительно",
+    "categories": {
+      "savory": "Сытные блины",
+      "sweet": "Сладкие блины",
+      "lunch": "Ланч",
+      "drinks": "Напитки",
+      "combos": "Комбо"
+    },
+    "badges": {
+      "bestSeller": "Хит продаж",
+      "weekday": "Будни 11–15",
+      "goodValue": "Выгодно"
+    },
+    "sizes": {
+      "set": "Сет",
+      "combo": "Комбо"
+    },
+    "items": {
+      "hamCheeseClassic": {
+        "name": "Классика с ветчиной и сыром",
+        "description": "Золотистый блин с копчёной ветчиной, тягучим сыром и травяным маслом."
+      },
+      "salmonDillCream": {
+        "name": "Лосось, укроп и крем",
+        "description": "Слабосолёный лосось, укропный крем и маринованный лук."
+      },
+      "nutellaBananaDream": {
+        "name": "Nutella Banana Dream",
+        "description": "Тёплая Nutella, банан и хруст обжаренного фундука."
+      },
+      "berriesCream": {
+        "name": "Лесные ягоды и сливки",
+        "description": "Сезонный ягодный компот, взбитые сливки и сахарная пудра."
+      },
+      "lunchSoupCombo": {
+        "name": "Ланч-комбо с супом",
+        "description": "Суп дня, мини-сытный блин и салат."
+      },
+      "icedLatte": {
+        "name": "Айс-латте",
+        "description": "Двойной эспрессо, холодное молоко и карамельный сироп."
+      },
+      "familyComboFor2": {
+        "name": "Семейное комбо на двоих",
+        "description": "Два блина, два напитка и один десерт на двоих."
+      },
+      "chickenMushroomMelt": {
+        "name": "Курица и грибы",
+        "description": "Нежная курица, запечённые грибы и расплавленная моцарелла."
+      }
+    },
+    "extrasList": {
+      "extraCheese": "Доп. сыр",
+      "garlicSauce": "Чесночный соус",
+      "capers": "Каперсы",
+      "lemonAioli": "Лимонный айоли",
+      "vanillaIceCream": "Ванильное мороженое",
+      "strawberries": "Клубника",
+      "extraBerrySauce": "Доп. ягодный соус",
+      "mascarpone": "Маскарпоне",
+      "kefirDrink": "Кефирный напиток",
+      "dessertBliny": "Десертный блин",
+      "oatMilk": "Овсяное молоко",
+      "vanillaSyrup": "Ванильный сироп",
+      "extraSavoryPancake": "Доп. сытный блин",
+      "freshJuice": "Свежий сок",
+      "baconCrumble": "Крошка бекона",
+      "houseSalad": "Фирменный салат"
+    }
   },
   "cart": {
     "eyebrow": "Корзина и checkout",

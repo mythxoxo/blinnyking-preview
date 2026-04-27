@@ -1,108 +1,93 @@
-export type Category = 'Savory Pancakes' | 'Sweet Pancakes' | 'Lunch' | 'Drinks' | 'Combos';
+export type Category = 'savory' | 'sweet' | 'lunch' | 'drinks' | 'combos';
 
 export type MenuItem = {
   slug: string;
-  name: string;
+  key: string;
   category: Category;
-  description: string;
   price: number;
   sizes: string[];
   image: string;
   badge?: string;
-  extras: {name: string; price: number}[];
+  extras: {key: string; price: number}[];
 };
 
-export const categories: Category[] = [
-  'Savory Pancakes',
-  'Sweet Pancakes',
-  'Lunch',
-  'Drinks',
-  'Combos'
-];
+export const categories: Category[] = ['savory', 'sweet', 'lunch', 'drinks', 'combos'];
 
 export const menuItems: MenuItem[] = [
   {
     slug: 'ham-cheese-classic',
-    name: 'Ham & Cheese Classic',
-    category: 'Savory Pancakes',
-    description: 'Golden crepe with smoked ham, gooey cheese and herb butter.',
+    key: 'hamCheeseClassic',
+    category: 'savory',
     price: 8.9,
     sizes: ['Ø30', 'Ø40'],
     image: 'Savory signature',
-    badge: 'Best seller',
-    extras: [{name: 'Extra cheese', price: 1.2}, {name: 'Garlic sauce', price: 0.9}]
+    badge: 'bestSeller',
+    extras: [{key: 'extraCheese', price: 1.2}, {key: 'garlicSauce', price: 0.9}]
   },
   {
     slug: 'salmon-dill-cream',
-    name: 'Salmon Dill Cream',
-    category: 'Savory Pancakes',
-    description: 'Lightly salted salmon, dill cream and pickled onion.',
+    key: 'salmonDillCream',
+    category: 'savory',
     price: 11.5,
     sizes: ['Ø30', 'Ø40'],
     image: 'Nordic salmon',
-    extras: [{name: 'Capers', price: 0.8}, {name: 'Lemon aioli', price: 0.9}]
+    extras: [{key: 'capers', price: 0.8}, {key: 'lemonAioli', price: 0.9}]
   },
   {
     slug: 'nutella-banana',
-    name: 'Nutella Banana Dream',
-    category: 'Sweet Pancakes',
-    description: 'Warm Nutella, sliced banana and roasted hazelnut crunch.',
+    key: 'nutellaBananaDream',
+    category: 'sweet',
     price: 7.8,
     sizes: ['Ø30', 'Ø40'],
     image: 'Sweet classic',
-    extras: [{name: 'Vanilla ice cream', price: 1.5}, {name: 'Strawberries', price: 1.8}]
+    extras: [{key: 'vanillaIceCream', price: 1.5}, {key: 'strawberries', price: 1.8}]
   },
   {
     slug: 'berries-cream',
-    name: 'Forest Berries & Cream',
-    category: 'Sweet Pancakes',
-    description: 'Seasonal berry compote, whipped cream and powdered sugar.',
+    key: 'berriesCream',
+    category: 'sweet',
     price: 8.4,
     sizes: ['Ø30', 'Ø40'],
     image: 'Berry dessert',
-    extras: [{name: 'Extra berry sauce', price: 1.1}, {name: 'Mascarpone', price: 1.6}]
+    extras: [{key: 'extraBerrySauce', price: 1.1}, {key: 'mascarpone', price: 1.6}]
   },
   {
     slug: 'lunch-soup-combo',
-    name: 'Lunch Soup Combo',
-    category: 'Lunch',
-    description: 'Soup of the day with mini savory pancake and salad.',
+    key: 'lunchSoupCombo',
+    category: 'lunch',
     price: 9.9,
-    sizes: ['Set'],
+    sizes: ['set'],
     image: 'Lunch set',
-    badge: 'Weekday 11–15',
-    extras: [{name: 'Kefir drink', price: 1.9}, {name: 'Dessert bliny', price: 3.4}]
+    badge: 'weekday',
+    extras: [{key: 'kefirDrink', price: 1.9}, {key: 'dessertBliny', price: 3.4}]
   },
   {
     slug: 'iced-latte',
-    name: 'Iced Latte',
-    category: 'Drinks',
-    description: 'Double espresso, cold milk and caramelized syrup.',
+    key: 'icedLatte',
+    category: 'drinks',
     price: 4.8,
     sizes: ['350ml'],
     image: 'Coffee',
-    extras: [{name: 'Oat milk', price: 0.6}, {name: 'Vanilla syrup', price: 0.4}]
+    extras: [{key: 'oatMilk', price: 0.6}, {key: 'vanillaSyrup', price: 0.4}]
   },
   {
     slug: 'family-combo',
-    name: 'Family Combo for 2',
-    category: 'Combos',
-    description: 'Two pancakes, two drinks and one shared dessert.',
+    key: 'familyComboFor2',
+    category: 'combos',
     price: 22.9,
-    sizes: ['Combo'],
+    sizes: ['combo'],
     image: 'Combo tray',
-    badge: 'Good value',
-    extras: [{name: 'Extra savory pancake', price: 5.5}, {name: 'Fresh juice', price: 2.2}]
+    badge: 'goodValue',
+    extras: [{key: 'extraSavoryPancake', price: 5.5}, {key: 'freshJuice', price: 2.2}]
   },
   {
     slug: 'chicken-mushroom-melt',
-    name: 'Chicken Mushroom Melt',
-    category: 'Savory Pancakes',
-    description: 'Creamy chicken, roasted mushrooms and melted mozzarella.',
+    key: 'chickenMushroomMelt',
+    category: 'savory',
     price: 10.7,
     sizes: ['Ø30', 'Ø40'],
     image: 'Hearty lunch',
-    extras: [{name: 'Bacon crumble', price: 1.4}, {name: 'House salad', price: 2.9}]
+    extras: [{key: 'baconCrumble', price: 1.4}, {key: 'houseSalad', price: 2.9}]
   }
 ];
 
