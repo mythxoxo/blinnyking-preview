@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "home": "Avaleht",
+    "menu": "Menüü",
+    "locations": "Asukohad",
+    "about": "Meist",
+    "partners": "Partnerid",
+    "jobs": "Tööpakkumised",
+    "contacts": "Kontakt",
+    "account": "Konto",
+    "cart": "Ostukorv"
+  },
+  "cta": {
+    "orderNow": "Telli kohe",
+    "viewMenu": "Vaata menüüd",
+    "visitUs": "Külasta meid",
+    "addToCart": "Lisa korvi",
+    "checkout": "Maksma"
+  },
+  "hero": {
+    "eyebrow": "Soojad pannkoogid, kiire mugavus",
+    "title": "BlinnyKing toob Jüri südamesse soolased ja magusad pannkoogid, mis päästavad nii lõuna kui õhtu.",
+    "subtitle": "Värskelt tehtud portsjonid, kiire kaasaost ja mõnus soe atmosfäär."
+  },
+  "footer": {
+    "tagline": "Soe toit, sõbralik teenindus ja pannkoogid, mille juurde tahad tagasi tulla.",
+    "rights": "Kõik õigused kaitstud.",
+    "hours": "Iga päev · 10:00–21:00"
+  },
+  "account": {
+    "eyebrow": "Konto",
+    "title": "Demo sisselogimine, profiil ja tellimuste ajalugu",
+    "description": "Viimistletud demo konto voog eelvaate jaoks ilma päris taustsüsteemita.",
+    "loginTitle": "Logi sisse / Registreeru",
+    "email": "E-post",
+    "password": "Parool",
+    "name": "Täisnimi",
+    "continue": "Jätka",
+    "logout": "Logi välja",
+    "loggedInAs": "Sisse logitud kasutajana",
+    "profileTitle": "Profiil",
+    "profileMode": "Eelistatud viis",
+    "profileFavorite": "Lemmiktellimus",
+    "pickup": "Kaasaost",
+    "historyTitle": "Tellimuste ajalugu",
+    "guestHint": "Kasuta suvalist e-posti ja parooli — see on demo sisselogimine, mis salvestub ainult brauserisse.",
+    "emptyHistory": "Järgmised tellimused ilmuvad siia.",
+    "statusDelivered": "Kohale toimetatud",
+    "statusPickup": "Järele võetud"
+  }
+}

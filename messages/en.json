@@ -1,0 +1,51 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "locations": "Locations",
+    "about": "About",
+    "partners": "Partners",
+    "jobs": "Jobs",
+    "contacts": "Contacts",
+    "account": "Account",
+    "cart": "Cart"
+  },
+  "cta": {
+    "orderNow": "Order Now",
+    "viewMenu": "View Menu",
+    "visitUs": "Visit Us",
+    "addToCart": "Add to Cart",
+    "checkout": "Checkout"
+  },
+  "hero": {
+    "eyebrow": "Warm pancakes, fast comfort",
+    "title": "BlinnyKing brings Tallinn-style pancake comfort to your everyday lunch and late-night cravings.",
+    "subtitle": "Fresh savory and sweet bliny, quick pickup, and cozy dine-in vibes from Jüri."
+  },
+  "footer": {
+    "tagline": "Warm food, kind service, and stacks worth coming back for.",
+    "rights": "All rights reserved.",
+    "hours": "Open daily · 10:00–21:00"
+  },
+  "account": {
+    "eyebrow": "Account",
+    "title": "Demo login, profile and order history",
+    "description": "A polished demo account flow for preview purposes without a real backend.",
+    "loginTitle": "Login / Register",
+    "email": "Email",
+    "password": "Password",
+    "name": "Full name",
+    "continue": "Continue",
+    "logout": "Log out",
+    "loggedInAs": "Logged in as",
+    "profileTitle": "Profile",
+    "profileMode": "Preferred mode",
+    "profileFavorite": "Favorite order",
+    "pickup": "Pickup",
+    "historyTitle": "Order history",
+    "guestHint": "Use any email and password — this is a demo login stored only in your browser.",
+    "emptyHistory": "Your next orders will appear here.",
+    "statusDelivered": "Delivered",
+    "statusPickup": "Picked up"
+  }
+}
