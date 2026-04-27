@@ -1,147 +1,95 @@
-import {Facebook, MapPin, Percent, Sandwich, Star, Store, Truck} from 'lucide-react';
+import {Clock3, MapPin, ShoppingBag, UtensilsCrossed} from 'lucide-react';
 import {getTranslations} from 'next-intl/server';
 import {featuredItems} from '@/data/menu';
-import {locations, reviews} from '@/data/site';
-import {ActionLink, Pill, PlaceholderImage, Section, SectionHeader, StatCard} from '@/components/shared/ui';
+import {BOLT_URL, WOLT_URL, locations} from '@/data/locations';
+import {ActionLink, MediaImage, Pill, Section, SectionHeader, StatCard} from '@/components/shared/ui';
 import {MenuCard} from '@/components/menu/menu-card';
 import {Locale} from '@/i18n/routing';
 
+function isLunchTime() {
+  const now = new Date(new Date().toLocaleString('en-US', {timeZone: 'Europe/Tallinn'}));
+  const day = now.getDay();
+  const hour = now.getHours();
+  return day >= 1 && day <= 5 && hour >= 11 && hour < 15;
+}
+
 export async function HomeSections({locale}: {locale: Locale}) {
   const t = await getTranslations({locale});
-  const home = await getTranslations({locale, namespace: 'home'});
-  const dataT = await getTranslations({locale, namespace: 'data'});
-
-  const localizedReviews = reviews.map((review, index) => ({
-    ...review,
-    text: dataT(`review${index + 1}`)
-  }));
+  const lunchNow = isLunchTime();
+  const location = locations[0];
 
   return (
     <>
-      <Section className="pt-8 lg:pt-12">
-        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div>
-            <Pill>{t('hero.eyebrow')}</Pill>
-            <h1 className="mt-5 max-w-3xl text-4xl font-semibold tracking-tight text-[#fff4d1] sm:text-5xl lg:text-6xl">
-              {t('hero.title')}
-            </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-[#d7c190]">{t('hero.subtitle')}</p>
+      <section className="relative min-h-screen overflow-hidden">
+        <div className="absolute inset-0">
+          <MediaImage src="https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=1600&q=80" alt="Blinny King hero" className="h-full rounded-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-transparent" />
+        </div>
+        <div className="relative mx-auto flex min-h-screen max-w-7xl items-end px-4 pb-16 pt-32 sm:px-6 lg:px-8">
+          <div className="max-w-3xl text-white">
+            <Pill className="bg-white/15 text-white">Blinny King · Jüri</Pill>
+            <h1 className="mt-6 text-5xl font-semibold tracking-tight sm:text-6xl">{t('hero.title')}</h1>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/85">{t('hero.subtitle')} · {location.hours.weekdays}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <ActionLink href={`/${locale}/menu`}>{t('cta.orderNow')}</ActionLink>
-              <ActionLink href={`/${locale}/menu`} muted>
-                {t('cta.viewMenu')}
-              </ActionLink>
-              <ActionLink href={`/${locale}/contacts`} muted>
-                {t('cta.visitUs')}
-              </ActionLink>
-            </div>
-            <a href="https://www.facebook.com/BlinnyKingPannkoogid/" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#6d4b13] bg-[#24140b] px-5 py-3 text-sm font-semibold text-[#f7e5b4] hover:text-[#ffd25b]">
-              <Facebook className="h-4 w-4" />
-              {t('hero.facebook')}
-            </a>
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              <StatCard label={home('stats.prep')} value="15 min" />
-              <StatCard label={home('stats.rating')} value="4.9/5" />
-              <StatCard label={home('stats.menu')} value="8+" />
+              <ActionLink href={`/${locale}/menu`} className="bg-primary text-white hover:bg-primary-hover">{t('hero.cta.menu')}</ActionLink>
+              <a href={BOLT_URL} target="_blank" rel="noopener" className="inline-flex items-center justify-center rounded-full bg-[#1C1C1C] px-5 py-3 text-sm font-semibold text-white">{t('hero.cta.bolt')}</a>
+              <a href={WOLT_URL} target="_blank" rel="noopener" className="inline-flex items-center justify-center rounded-full bg-[#009DE0] px-5 py-3 text-sm font-semibold text-white">{t('hero.cta.wolt')}</a>
             </div>
           </div>
-          <div className="space-y-5">
-            <PlaceholderImage label="Hero food shot" className="min-h-[420px]" />
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[28px] border border-[#6d4b13] bg-[#24140b] p-5 shadow-sm shadow-black/30">
-                <div className="flex items-center gap-3 text-[#ffd25b]"><Percent className="h-5 w-5" /> {home('cards.loyaltyTitle')}</div>
-                <p className="mt-3 text-sm leading-6 text-[#d7c190]">{home('cards.loyaltyText')}</p>
-              </div>
-              <div className="rounded-[28px] border border-[#6d4b13] bg-[#24140b] p-5 text-[#fff4d1] shadow-sm shadow-black/30">
-                <div className="flex items-center gap-3 text-[#ffd25b]"><Truck className="h-5 w-5" /> {home('cards.deliveryTitle')}</div>
-                <p className="mt-3 text-sm leading-6 text-[#d7c190]">{home('cards.deliveryText')}</p>
-              </div>
-            </div>
+        </div>
+      </section>
+
+      {lunchNow ? (
+        <Section className="pt-8 pb-0">
+          <div className="rounded-[32px] border border-border bg-primary px-6 py-5 text-white shadow-soft">
+            <p className="text-lg font-semibold">{t('home.lunchBanner')}</p>
           </div>
+        </Section>
+      ) : null}
+
+      <Section>
+        <SectionHeader eyebrow={t('home.hitsEyebrow')} title={t('home.hitsTitle')} description={t('home.hitsDescription')} />
+        <div className="flex gap-5 overflow-x-auto pb-2">
+          {featuredItems.map((item) => (
+            <div key={item.id} className="min-w-[300px] flex-1">
+              <MenuCard item={item} locale={locale} />
+            </div>
+          ))}
+        </div>
+        <div className="mt-6">
+          <ActionLink href={`/${locale}/menu`} muted>{t('home.viewAll')}</ActionLink>
         </div>
       </Section>
 
       <Section>
-        <SectionHeader
-          eyebrow={home('popularEyebrow')}
-          title={home('popularTitle')}
-          description={home('popularDescription')}
-        />
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {featuredItems.map((item) => (
-            <MenuCard key={item.slug} item={item} locale={locale} />
-          ))}
-        </div>
-      </Section>
-
-      <Section id="pakkumised">
-        <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-[32px] border border-[#6d4b13] bg-[#24140b] p-8">
-            <Pill>{home('lunchEyebrow')}</Pill>
-            <h3 className="mt-4 text-3xl font-semibold text-[#fff4d1]">{home('lunchTitle')}</h3>
-            <p className="mt-4 text-base leading-7 text-[#d7c190]">{home('lunchDescription')}</p>
-            <div className="mt-6 inline-flex rounded-full bg-[#ffd25b] px-4 py-2 text-sm font-semibold text-[#170c06]">{home('lunchTime')}</div>
-          </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {[
-              {icon: Sandwich, title: home('steps.oneTitle'), text: home('steps.oneText')},
-              {icon: Store, title: home('steps.twoTitle'), text: home('steps.twoText')},
-              {icon: Star, title: home('steps.threeTitle'), text: home('steps.threeText')}
-            ].map((step, index) => (
-              <div key={step.title} className="rounded-[28px] border border-[#6d4b13] bg-[#24140b] p-6 shadow-sm shadow-black/30">
-                <div className="flex items-center justify-between">
-                  <step.icon className="h-6 w-6 text-[#ffd25b]" />
-                  <span className="text-sm font-semibold text-[#b89d69]">0{index + 1}</span>
-                </div>
-                <h3 className="mt-6 text-xl font-semibold text-[#fff4d1]">{step.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-[#d7c190]">{step.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      <Section id="klient">
-        <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-[32px] bg-[#24140b] p-8 text-[#fff4d1] border border-[#6d4b13]">
-            <div className="flex items-center gap-3 text-[#ffd25b]">
-              <Percent className="h-5 w-5" /> {home('cards.loyaltyTitle')}
-            </div>
-            <h3 className="mt-4 text-3xl font-semibold">{home('loyaltyTitle')}</h3>
-            <p className="mt-4 max-w-lg text-sm leading-7 text-[#d7c190]">{home('loyaltyText')}</p>
-            <ul className="mt-6 space-y-3 text-sm text-[#e7d1a2]">
-              <li>• {home('loyaltyPoint1')}</li>
-              <li>• {home('loyaltyPoint2')}</li>
-              <li>• {home('loyaltyPoint3')}</li>
-            </ul>
-          </div>
-          <div className="rounded-[32px] border border-[#6d4b13] bg-[#24140b] p-8 shadow-sm shadow-black/30">
-            <SectionHeader
-              eyebrow={home('findEyebrow')}
-              title={locations[0].address}
-              description={home('findDescription')}
-            />
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[24px] bg-[#170c06] p-5">
-                <div className="flex items-center gap-2 text-sm font-semibold text-[#fff4d1]"><MapPin className="h-4 w-4 text-[#ffd25b]" /> {home('locationLabel')}</div>
-                <p className="mt-3 text-sm leading-6 text-[#d7c190]">{locations[0].hours}<br />{locations[0].phone}</p>
-              </div>
-              <PlaceholderImage label="Storefront / map preview" className="min-h-[180px]" />
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      <Section id="galerii">
-        <SectionHeader eyebrow={home('reviewsEyebrow')} title={home('reviewsTitle')} description={home('reviewsDescription')} />
+        <SectionHeader eyebrow={t('home.howEyebrow')} title={t('home.howTitle')} description={t('home.howDescription')} />
         <div className="grid gap-5 md:grid-cols-3">
-          {localizedReviews.map((review) => (
-            <div key={review.name} className="rounded-[28px] border border-[#6d4b13] bg-[#24140b] p-6 shadow-sm shadow-black/30">
-              <div className="flex gap-1 text-[#ffd25b]">{'★'.repeat(review.rating)}</div>
-              <p className="mt-4 text-sm leading-7 text-[#d7c190]">“{review.text}”</p>
-              <p className="mt-5 text-sm font-semibold text-[#fff4d1]">{review.name}</p>
+          {[
+            {icon: UtensilsCrossed, title: t('home.steps.choose.title'), text: t('home.steps.choose.text')},
+            {icon: ShoppingBag, title: t('home.steps.order.title'), text: t('home.steps.order.text')},
+            {icon: Clock3, title: t('home.steps.pickup.title'), text: t('home.steps.pickup.text')}
+          ].map((step, index) => (
+            <div key={step.title} className="rounded-[28px] border border-border bg-surface p-6 shadow-soft">
+              <div className="flex items-center justify-between">
+                <step.icon className="h-6 w-6 text-primary" />
+                <span className="text-sm font-semibold text-text-muted">0{index + 1}</span>
+              </div>
+              <h3 className="mt-6 text-xl font-semibold text-text">{step.title}</h3>
+              <p className="mt-3 text-sm leading-6 text-text-muted">{step.text}</p>
             </div>
           ))}
+        </div>
+      </Section>
+
+      <Section className="pt-0">
+        <div className="grid gap-4 sm:grid-cols-3">
+          <StatCard label={t('home.stats.address')} value={location.address} />
+          <StatCard label={t('home.stats.phone')} value={location.phone} />
+          <StatCard label={t('home.stats.hours')} value={location.hours.weekdays} />
+        </div>
+        <div className="mt-8 flex items-center gap-3 text-text-muted">
+          <MapPin className="h-5 w-5 text-primary" />
+          <span>{location.address}</span>
         </div>
       </Section>
     </>

@@ -16,7 +16,8 @@
     "work": "Jobs",
     "login": "Log in",
     "register": "Register",
-    "guestOrder": "Order without registration"
+    "guestOrder": "Order without registration",
+    "promotions": "Promotions"
   },
   "cta": {
     "orderNow": "Order Now",
@@ -27,9 +28,14 @@
   },
   "hero": {
     "eyebrow": "Large pancakes",
-    "title": "Pancakes in Jüri – Blinny King",
-    "subtitle": "Large pancakes, cozy atmosphere and convenient ordering in Jüri.",
-    "facebook": "Join the Facebook group"
+    "title": "Pancakes you crave",
+    "subtitle": "Jüri, Veetorni tn 9",
+    "facebook": "Join the Facebook group",
+    "cta": {
+      "menu": "View menu",
+      "bolt": "Order on Bolt",
+      "wolt": "Order on Wolt"
+    }
   },
   "footer": {
     "title": "Blinny King Pancake Restaurant Jüri",
@@ -44,221 +50,151 @@
     "registry": "Registry code: 12476156"
   },
   "home": {
-    "popularEyebrow": "Favorites",
-    "popularTitle": "Popular dishes people actually come back for",
-    "popularDescription": "Four hero products to anchor the preview and show the tone of the menu.",
-    "lunchEyebrow": "Lunch offer",
-    "lunchTitle": "Lunch menu Mon-Fri 11:00–15:00",
-    "lunchDescription": "Every weekday from 11.00 to 15.00 we offer different pancakes with a -20% discount.",
-    "lunchTime": "Mon–Fri · 11:00–15:00",
+    "lunchBanner": "Lunch −20% today from 11:00 to 15:00",
+    "hitsEyebrow": "Menu hits",
+    "hitsTitle": "Most craveable picks",
+    "hitsDescription": "Real Blinny King favorites ready to order.",
+    "viewAll": "Full menu →",
+    "howEyebrow": "How to order",
+    "howTitle": "Three easy steps",
+    "howDescription": "Fast, clear and tasty.",
     "steps": {
-      "oneTitle": "Choose your pancake",
-      "oneText": "Savory, sweet or lunch sets with clear sizes and portions.",
-      "twoTitle": "Choose pickup or delivery",
-      "twoText": "The preview includes both flows: location, basket and checkout.",
-      "threeTitle": "Enjoy the loyalty loop",
-      "threeText": "Discounts, stamps and reorder UX help grow repeat customers."
+      "choose": {
+        "title": "Choose",
+        "text": "Open the menu and pick your favorite pancake or drink."
+      },
+      "order": {
+        "title": "Checkout",
+        "text": "Add to cart, enter details and choose payment."
+      },
+      "pickup": {
+        "title": "Pick up / get delivery",
+        "text": "Pick up yourself or order via Bolt/Wolt."
+      }
     },
-    "loyaltyTitle": "Join and get a постоянный discount 👑",
-    "loyaltyText": "✔ −5% permanent discount on every visit · 🎂 −15% on your birthday · registration takes less than 1 minute.",
-    "loyaltyPoint1": "−5% permanent discount on every visit",
-    "loyaltyPoint2": "−15% on your birthday",
-    "loyaltyPoint3": "Registration takes less than 1 minute",
-    "findEyebrow": "Find us",
-    "findDescription": "Veetorni 9, Jüri, +372 568 59075",
-    "locationLabel": "Jüri location",
-    "reviewsEyebrow": "Reviews",
-    "reviewsTitle": "Guests return for flavor, speed and warm service",
-    "reviewsDescription": "Simple demo social proof for the preview.",
     "stats": {
-      "prep": "Average prep time",
-      "rating": "Pickup rating",
-      "menu": "Fresh menu items"
-    },
-    "cards": {
-      "loyaltyTitle": "Join the Facebook group",
-      "loyaltyText": "Follow us and stay close to fresh news, promotions and daily offers.",
-      "deliveryTitle": "Delivery ready",
-      "deliveryText": "Built for takeaway, pickup and quick lunch delivery around Jüri."
+      "address": "Address",
+      "phone": "Phone",
+      "hours": "Hours"
     }
   },
-  "menuPage": {
+  "menu": {
     "eyebrow": "Menu",
     "title": "Blinny King menu",
-    "description": "Savory pancakes, sweet pancakes, lunch menu and combo deals.",
-    "viewDetails": "View Details",
-    "addToCartLink": "Add to Cart →",
-    "back": "← Back to menu",
-    "chooseSize": "Choose size",
-    "extras": "Extras",
-    "sectionSavory": "Savory pancakes",
-    "sectionSweet": "Sweet pancakes",
-    "sectionLunch": "Lunch menu",
-    "sectionDrinks": "Drinks",
-    "sectionCombos": "Combo deals",
-    "sectionLunchNote": "Mon–Fri 11:00–15:00 · −20%",
-    "categories": {
-      "savory": "Savory pancakes",
-      "sweet": "Sweet pancakes",
-      "lunch": "Lunch menu",
-      "drinks": "Drinks",
-      "combos": "Combo deals"
+    "description": "Savory and sweet pancakes, lunch offers, combos and drinks.",
+    "size": "Size",
+    "quantity": "Quantity",
+    "lunchNote": "Weekdays 11:00–15:00 · −20% discount",
+    "fullMenu": "Full menu",
+    "fullMenuDescription": "Interactive flipbook of the full menu.",
+    "hamCheese": {
+      "name": "Ham & Cheese Classic",
+      "description": "Classic ham, cheese and creamy texture."
     },
-    "badges": {
-      "bestSeller": "Best seller",
-      "weekday": "Weekdays 11–15",
-      "goodValue": "Good value"
+    "salmonCream": {
+      "name": "Salmon & Cream",
+      "description": "Lightly salted salmon with cream cheese and dill."
     },
-    "sizes": {
-      "set": "Set",
-      "combo": "Combo"
+    "chickenMushroom": {
+      "name": "Chicken & Mushroom",
+      "description": "Hearty filling with chicken and mushrooms."
     },
-    "items": {
-      "hamCheeseClassic": {"name": "Ham & Cheese Classic", "description": "Golden crepe with smoked ham, gooey cheese and herb butter."},
-      "salmonDillCream": {"name": "Salmon Dill Cream", "description": "Lightly salted salmon, dill cream and pickled onion."},
-      "chickenMushroomMelt": {"name": "Chicken Mushroom Melt", "description": "Creamy chicken, roasted mushrooms and melted mozzarella."},
-      "spinachFeta": {"name": "Spinach & Feta", "description": "Warm spinach filling with creamy feta and herbs."},
-      "nutellaBananaDream": {"name": "Nutella Banana Dream", "description": "Warm Nutella, sliced banana and roasted hazelnut crunch."},
-      "berriesCream": {"name": "Forest Berries & Cream", "description": "Seasonal berry compote, whipped cream and powdered sugar."},
-      "caramelApple": {"name": "Caramel Apple", "description": "Soft apple filling with caramel sauce and cinnamon."},
-      "curdBerries": {"name": "Curd & Berries", "description": "Sweet curd filling with berries and powdered sugar."},
-      "lunchSoupCombo": {"name": "Lunch Soup Combo", "description": "Soup of the day with mini savory pancake and salad."},
-      "lunchChickenSet": {"name": "Chicken Lunch Set", "description": "Savory chicken pancake, fresh salad and a weekday soup."},
-      "icedLatte": {"name": "Iced Latte", "description": "Double espresso, cold milk and caramelized syrup."},
-      "berryMorss": {"name": "Berry Morss", "description": "Refreshing berry drink served cold."},
-      "familyComboFor2": {"name": "Family Combo for 2", "description": "Two pancakes, two drinks and one shared dessert."},
-      "lunchComboDrink": {"name": "Lunch Combo + Drink", "description": "One pancake, one drink and a value lunch upgrade."}
+    "spinachFeta": {
+      "name": "Spinach & Feta",
+      "description": "Fresh spinach and mild feta."
     },
-    "extrasList": {
-      "extraCheese": "Extra cheese",
-      "garlicSauce": "Garlic sauce",
-      "capers": "Capers",
-      "lemonAioli": "Lemon aioli",
-      "vanillaIceCream": "Vanilla ice cream",
-      "strawberries": "Strawberries",
-      "extraBerrySauce": "Extra berry sauce",
-      "mascarpone": "Mascarpone",
-      "kefirDrink": "Kefir drink",
-      "dessertBliny": "Dessert bliny",
-      "oatMilk": "Oat milk",
-      "vanillaSyrup": "Vanilla syrup",
-      "extraSavoryPancake": "Extra savory pancake",
-      "freshJuice": "Fresh juice",
-      "baconCrumble": "Bacon crumble",
-      "houseSalad": "House salad"
+    "nutellaBanana": {
+      "name": "Nutella & Banana",
+      "description": "Sweet crêpe with Nutella and banana."
+    },
+    "berryCream": {
+      "name": "Berries & Cream",
+      "description": "Berry filling with whipped cream."
+    },
+    "caramelApple": {
+      "name": "Caramel Apple",
+      "description": "Warm apple filling with caramel."
+    },
+    "curdBerries": {
+      "name": "Curd & Berries",
+      "description": "Curd filling and berries."
+    },
+    "lunchHamCheese": {
+      "name": "Lunch Ham & Cheese",
+      "description": "Weekday lunch version with discount."
+    },
+    "lunchChicken": {
+      "name": "Lunch Chicken",
+      "description": "Chicken lunch pancake for weekdays."
+    },
+    "familyCombo": {
+      "name": "Family Combo",
+      "description": "Savory + sweet + drinks for two."
+    },
+    "sweetCombo": {
+      "name": "Sweet Combo",
+      "description": "Sweet pancakes and drinks set."
+    },
+    "icedLatte": {
+      "name": "Iced Latte",
+      "description": "Cold coffee drink with milk."
+    },
+    "berryMors": {
+      "name": "Berry Mors",
+      "description": "Refreshing homemade berry drink."
     }
   },
+  "categories": {
+    "savory": "Savory pancakes",
+    "sweet": "Sweet pancakes",
+    "lunch": "Lunch menu",
+    "combos": "Combo sets",
+    "drinks": "Drinks"
+  },
+  "tags": {
+    "bestseller": "Bestseller",
+    "popular": "Popular",
+    "weekday": "Weekdays 11–15",
+    "value": "Great value"
+  },
   "cart": {
-    "eyebrow": "Cart & checkout",
-    "title": "Simple checkout preview with pickup or delivery",
-    "description": "Mock Stripe block only — no real keys, no live payment flow.",
-    "qty": "Qty",
-    "summary": "Order summary",
+    "empty": "Cart is empty",
+    "goToMenu": "Go to menu",
+    "addToCart": "Add to cart",
+    "added": "Added to cart",
+    "checkout": "Checkout order"
+  },
+  "order": {
+    "title": "Checkout",
+    "description": "Review your order and leave your pickup details.",
+    "formTitle": "Order details",
+    "summaryTitle": "Summary",
     "subtotal": "Subtotal",
-    "delivery": "Delivery",
     "total": "Total",
-    "pickup": "Pickup",
-    "deliveryMode": "Delivery",
-    "location": "Select pickup point / delivery area",
-    "phone": "Phone number",
-    "stripeTitle": "Stripe payment placeholder",
-    "stripeText": "Card fields and payment intent are intentionally mocked for preview only.",
-    "proceed": "Proceed to account"
-  },
-  "about": {
-    "eyebrow": "About",
-    "title": "A cozy pancake place in Jüri",
-    "description": "Blinny King is a cozy and family-friendly pancake café in Jüri.",
-    "text1": "We offer both savory and sweet pancakes (Ø30 cm and Ø40 cm), plus lunch offers. You can eat on site or conveniently take your order away.",
-    "text2": "All pancakes are made fresh on site and you can expect warm and friendly service."
-  },
-  "locationsPage": {
-    "eyebrow": "Locations",
-    "title": "Built around Jüri, ready for the next spot",
-    "description": "The first location is real in structure, the second is a clean expansion placeholder."
-  },
-  "partnersPage": {
-    "eyebrow": "Partners",
-    "title": "Become a Blinny King partner",
-    "description": "Personal terms and offers for companies. Leave your details and we will contact you.",
-    "leadTitle": "Let’s feed your team properly",
-    "lead1": "Office lunch deals",
-    "lead2": "Event trays and dessert platters",
-    "lead3": "Local cross-promotions and wholesale supply",
-    "company": "Company",
-    "contact": "Contact person",
-    "email": "Email",
+    "pay": "Pay with Stripe",
+    "deliveryVia": "You can also order through delivery:",
+    "name": "Name",
     "phone": "Phone",
-    "idea": "Tell us about your volume, event or partnership idea",
-    "send": "Send inquiry"
-  },
-  "jobsPage": {
-    "eyebrow": "Jobs",
-    "title": "Work at Blinny King",
-    "description": "Two mock positions and a lightweight application form.",
-    "apply": "Apply now",
-    "fullName": "Full name",
     "email": "Email",
-    "position": "Position of interest",
-    "experience": "Tell us about your experience",
-    "submit": "Submit application",
-    "fullTime": "Full-time",
-    "partTime": "Part-time"
+    "pickupOnly": "Pickup only",
+    "comment": "Comment",
+    "saveData": "Save details and create account",
+    "phoneHint": "Use Estonian phone format +372...",
+    "successTitle": "Order paid!",
+    "successDescription": "We will call you in 5–10 minutes."
   },
-  "contactsPage": {
-    "eyebrow": "Contacts",
-    "title": "Contacts",
-    "description": "Find us in Jüri or contact us by phone and email.",
-    "map": "Map",
-    "socials": "Facebook"
+  "size": {
+    "S": "Ø30 (small)",
+    "L": "Ø40 (large)"
   },
-  "account": {
-    "eyebrow": "Account",
-    "title": "Account",
-    "description": "Log in, register or continue ordering without an account.",
-    "loginTitle": "Log in / Register",
-    "email": "Email",
-    "password": "Password",
-    "name": "Full name",
-    "continue": "Continue",
-    "logout": "Log out",
-    "loggedInAs": "Logged in as",
-    "profileTitle": "Profile",
-    "profileMode": "Preferred mode",
-    "profileFavorite": "Favorite order",
-    "pickup": "Pickup",
-    "historyTitle": "Order history",
-    "guestHint": "Use any email and password — this is a demo login stored only in your browser.",
-    "emptyHistory": "Your next orders will appear here.",
-    "statusDelivered": "Delivered",
-    "statusPickup": "Picked up",
-    "tabLogin": "Log in",
-    "tabRegister": "Register",
-    "tabGuest": "Order without registration",
-    "forgot": "Forgot your password?",
-    "repeatPassword": "Repeat password",
-    "createAccount": "Create account",
-    "terms": "I agree with the terms",
-    "guestName": "Name",
-    "guestPhone": "Phone",
-    "guestEmailOptional": "Email (optional)",
-    "guestContinue": "Continue to ordering"
+  "loyalty": {
+    "discount": "Loyal customer discount",
+    "birthday": "Birthday discount"
   },
-  "data": {
-    "review1": "The savory pancakes taste homemade in the best possible way. Fast pickup too.",
-    "review2": "Lunch combo is crazy good value and the place feels warm, not generic.",
-    "review3": "Sweet bliny with berries was actually beautiful, not just sugar overload.",
-    "job1Title": "Kitchen Team Member",
-    "job1Description": "Prepare pancakes, maintain prep station quality and keep service smooth during rush hours.",
-    "job2Title": "Front Counter & Delivery Coordinator",
-    "job2Description": "Welcome guests, manage takeaway flow and coordinate delivery pickup timing.",
-    "location1Title": "BlinnyKing Jüri",
-    "location1Hours": "Mon–Sun · 10:00–21:00",
-    "location1Note": "Main preview location with dine-in, takeaway and delivery zone.",
-    "location2Title": "Second location placeholder",
-    "location2Address": "Coming soon",
-    "location2Hours": "TBA",
-    "location2Phone": "TBA",
-    "location2Note": "Structure reserved for the next opening."
+  "common": {
+    "remove": "Remove"
+  },
+  "location": {
+    "juri": "Jüri"
   }
 }

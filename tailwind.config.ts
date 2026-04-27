@@ -11,31 +11,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))'
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))'
-        },
-        muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))'
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))'
-        },
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))'
-        }
+        background: 'var(--color-bg)',
+        surface: 'var(--color-surface)',
+        primary: 'var(--color-primary)',
+        'primary-hover': 'var(--color-primary-hover)',
+        text: 'var(--color-text)',
+        'text-muted': 'var(--color-text-muted)',
+        border: 'var(--color-border)',
+        tag: 'var(--color-tag)'
       },
       borderRadius: {
         xl: 'calc(var(--radius) - 4px)',
@@ -43,7 +26,7 @@ const config: Config = {
         '3xl': 'var(--radius)'
       },
       boxShadow: {
-        soft: '0 20px 50px -24px rgba(120, 53, 15, 0.25)'
+        soft: '0 20px 50px -24px rgba(120, 53, 15, 0.2)'
       }
     }
   },

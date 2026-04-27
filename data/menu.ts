@@ -1,154 +1,156 @@
-export type Category = 'savory' | 'sweet' | 'lunch' | 'drinks' | 'combos';
+export type Category = 'savory' | 'sweet' | 'lunch' | 'combos' | 'drinks';
+export type ItemSize = 'S' | 'L';
 
 export type MenuItem = {
-  slug: string;
-  key: string;
+  id: string;
   category: Category;
-  price: number;
-  sizes: string[];
-  image: string;
-  badge?: string;
-  extras: {key: string; price: number}[];
+  nameKey: string;
+  descKey: string;
+  prices: Partial<Record<ItemSize, number>>;
+  imageUrl: string;
+  tags?: string[];
+  available: boolean;
 };
 
-export const categories: Category[] = ['savory', 'sweet', 'lunch', 'drinks', 'combos'];
+export const categories: Category[] = ['savory', 'sweet', 'lunch', 'combos', 'drinks'];
 
 export const menuItems: MenuItem[] = [
   {
-    slug: 'ham-cheese-classic',
-    key: 'hamCheeseClassic',
+    id: 'ham-cheese',
     category: 'savory',
-    price: 8.9,
-    sizes: ['Ø30', 'Ø40'],
-    image: 'Savory signature',
-    badge: 'bestSeller',
-    extras: [{key: 'extraCheese', price: 1.2}, {key: 'garlicSauce', price: 0.9}]
+    nameKey: 'menu.hamCheese.name',
+    descKey: 'menu.hamCheese.description',
+    prices: {S: 8.9, L: 11.5},
+    imageUrl: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=1200&q=80',
+    tags: ['bestseller'],
+    available: true
   },
   {
-    slug: 'salmon-dill-cream',
-    key: 'salmonDillCream',
+    id: 'salmon-cream',
     category: 'savory',
-    price: 11.5,
-    sizes: ['Ø30', 'Ø40'],
-    image: 'Nordic salmon',
-    extras: [{key: 'capers', price: 0.8}, {key: 'lemonAioli', price: 0.9}]
+    nameKey: 'menu.salmonCream.name',
+    descKey: 'menu.salmonCream.description',
+    prices: {S: 10.9, L: 13.9},
+    imageUrl: 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1200&q=80',
+    tags: ['popular'],
+    available: true
   },
   {
-    slug: 'chicken-mushroom-melt',
-    key: 'chickenMushroomMelt',
+    id: 'chicken-mushroom',
     category: 'savory',
-    price: 10.7,
-    sizes: ['Ø30', 'Ø40'],
-    image: 'Hearty lunch',
-    extras: [{key: 'baconCrumble', price: 1.4}, {key: 'houseSalad', price: 2.9}]
+    nameKey: 'menu.chickenMushroom.name',
+    descKey: 'menu.chickenMushroom.description',
+    prices: {S: 9.8, L: 12.8},
+    imageUrl: 'https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=1200&q=80',
+    available: true
   },
   {
-    slug: 'spinach-feta',
-    key: 'spinachFeta',
+    id: 'spinach-feta',
     category: 'savory',
-    price: 9.6,
-    sizes: ['Ø30', 'Ø40'],
-    image: 'Green filling',
-    extras: [{key: 'extraCheese', price: 1.2}, {key: 'garlicSauce', price: 0.9}]
+    nameKey: 'menu.spinachFeta.name',
+    descKey: 'menu.spinachFeta.description',
+    prices: {S: 9.2, L: 11.9},
+    imageUrl: 'https://images.unsplash.com/photo-1515443961218-a51367888e4b?auto=format&fit=crop&w=1200&q=80',
+    available: true
   },
   {
-    slug: 'nutella-banana',
-    key: 'nutellaBananaDream',
+    id: 'nutella-banana',
     category: 'sweet',
-    price: 7.8,
-    sizes: ['Ø30', 'Ø40'],
-    image: 'Sweet classic',
-    extras: [{key: 'vanillaIceCream', price: 1.5}, {key: 'strawberries', price: 1.8}]
+    nameKey: 'menu.nutellaBanana.name',
+    descKey: 'menu.nutellaBanana.description',
+    prices: {S: 7.9, L: 10.4},
+    imageUrl: 'https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=1200&q=80',
+    tags: ['bestseller'],
+    available: true
   },
   {
-    slug: 'berries-cream',
-    key: 'berriesCream',
+    id: 'berry-cream',
     category: 'sweet',
-    price: 8.4,
-    sizes: ['Ø30', 'Ø40'],
-    image: 'Berry dessert',
-    extras: [{key: 'extraBerrySauce', price: 1.1}, {key: 'mascarpone', price: 1.6}]
+    nameKey: 'menu.berryCream.name',
+    descKey: 'menu.berryCream.description',
+    prices: {S: 8.2, L: 10.8},
+    imageUrl: 'https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1200&q=80',
+    available: true
   },
   {
-    slug: 'caramel-apple',
-    key: 'caramelApple',
+    id: 'caramel-apple',
     category: 'sweet',
-    price: 8.2,
-    sizes: ['Ø30', 'Ø40'],
-    image: 'Caramel apple',
-    extras: [{key: 'vanillaIceCream', price: 1.5}, {key: 'mascarpone', price: 1.6}]
+    nameKey: 'menu.caramelApple.name',
+    descKey: 'menu.caramelApple.description',
+    prices: {S: 8.1, L: 10.6},
+    imageUrl: 'https://images.unsplash.com/photo-1495214783159-3503fd1b572d?auto=format&fit=crop&w=1200&q=80',
+    available: true
   },
   {
-    slug: 'curd-berries',
-    key: 'curdBerries',
+    id: 'curd-berries',
     category: 'sweet',
-    price: 8.6,
-    sizes: ['Ø30', 'Ø40'],
-    image: 'Curd filling',
-    extras: [{key: 'extraBerrySauce', price: 1.1}, {key: 'strawberries', price: 1.8}]
+    nameKey: 'menu.curdBerries.name',
+    descKey: 'menu.curdBerries.description',
+    prices: {S: 8.4, L: 11.1},
+    imageUrl: 'https://images.unsplash.com/photo-1515467837915-15c4777ba46a?auto=format&fit=crop&w=1200&q=80',
+    available: true
   },
   {
-    slug: 'lunch-soup-combo',
-    key: 'lunchSoupCombo',
+    id: 'lunch-ham-cheese',
     category: 'lunch',
-    price: 9.9,
-    sizes: ['set'],
-    image: 'Lunch set',
-    badge: 'weekday',
-    extras: [{key: 'kefirDrink', price: 1.9}, {key: 'dessertBliny', price: 3.4}]
+    nameKey: 'menu.lunchHamCheese.name',
+    descKey: 'menu.lunchHamCheese.description',
+    prices: {S: 7.1, L: 9.2},
+    imageUrl: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80',
+    tags: ['weekday'],
+    available: true
   },
   {
-    slug: 'lunch-chicken-set',
-    key: 'lunchChickenSet',
+    id: 'lunch-chicken',
     category: 'lunch',
-    price: 10.4,
-    sizes: ['set'],
-    image: 'Lunch chicken',
-    badge: 'weekday',
-    extras: [{key: 'kefirDrink', price: 1.9}, {key: 'freshJuice', price: 2.2}]
+    nameKey: 'menu.lunchChicken.name',
+    descKey: 'menu.lunchChicken.description',
+    prices: {S: 7.6, L: 9.8},
+    imageUrl: 'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80',
+    tags: ['weekday'],
+    available: true
   },
   {
-    slug: 'iced-latte',
-    key: 'icedLatte',
-    category: 'drinks',
-    price: 4.8,
-    sizes: ['350ml'],
-    image: 'Coffee',
-    extras: [{key: 'oatMilk', price: 0.6}, {key: 'vanillaSyrup', price: 0.4}]
-  },
-  {
-    slug: 'berry-morss',
-    key: 'berryMorss',
-    category: 'drinks',
-    price: 3.4,
-    sizes: ['400ml'],
-    image: 'Berry drink',
-    extras: [{key: 'freshJuice', price: 2.2}]
-  },
-  {
-    slug: 'family-combo',
-    key: 'familyComboFor2',
+    id: 'family-combo',
     category: 'combos',
-    price: 22.9,
-    sizes: ['combo'],
-    image: 'Combo tray',
-    badge: 'goodValue',
-    extras: [{key: 'extraSavoryPancake', price: 5.5}, {key: 'freshJuice', price: 2.2}]
+    nameKey: 'menu.familyCombo.name',
+    descKey: 'menu.familyCombo.description',
+    prices: {S: 22.9},
+    imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80',
+    tags: ['value'],
+    available: true
   },
   {
-    slug: 'lunch-combo-drink',
-    key: 'lunchComboDrink',
+    id: 'sweet-combo',
     category: 'combos',
-    price: 12.5,
-    sizes: ['combo'],
-    image: 'Lunch combo',
-    badge: 'goodValue',
-    extras: [{key: 'dessertBliny', price: 3.4}, {key: 'kefirDrink', price: 1.9}]
+    nameKey: 'menu.sweetCombo.name',
+    descKey: 'menu.sweetCombo.description',
+    prices: {S: 18.5},
+    imageUrl: 'https://images.unsplash.com/photo-1464306076886-debede6a4c33?auto=format&fit=crop&w=1200&q=80',
+    available: true
+  },
+  {
+    id: 'iced-latte',
+    category: 'drinks',
+    nameKey: 'menu.icedLatte.name',
+    descKey: 'menu.icedLatte.description',
+    prices: {S: 4.8},
+    imageUrl: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=1200&q=80',
+    available: true
+  },
+  {
+    id: 'berry-mors',
+    category: 'drinks',
+    nameKey: 'menu.berryMors.name',
+    descKey: 'menu.berryMors.description',
+    prices: {S: 3.9},
+    imageUrl: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1200&q=80',
+    available: true
   }
 ];
 
-export const featuredItems = menuItems.slice(0, 4);
+export const featuredItems = menuItems.filter((item) => item.tags?.includes('bestseller') || item.tags?.includes('popular')).slice(0, 6);
 
 export function getItemBySlug(slug: string) {
-  return menuItems.find((item) => item.slug === slug);
+  return menuItems.find((item) => item.id === slug);
 }

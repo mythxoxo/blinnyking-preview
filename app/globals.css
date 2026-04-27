@@ -5,25 +5,14 @@
 
 @layer base {
   :root {
-    --background: 18 45% 7%;
-    --foreground: 42 82% 86%;
-    --card: 18 45% 11%;
-    --card-foreground: 42 82% 86%;
-    --popover: 18 45% 11%;
-    --popover-foreground: 42 82% 86%;
-    --primary: 45 100% 67%;
-    --primary-foreground: 18 45% 7%;
-    --secondary: 22 38% 17%;
-    --secondary-foreground: 42 82% 86%;
-    --muted: 22 38% 17%;
-    --muted-foreground: 36 35% 65%;
-    --accent: 45 100% 67%;
-    --accent-foreground: 18 45% 7%;
-    --destructive: 0 72% 51%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 34 52% 25%;
-    --input: 34 52% 25%;
-    --ring: 45 100% 67%;
+    --color-bg: #FDF6ED;
+    --color-surface: #FFFFFF;
+    --color-primary: #C97B2A;
+    --color-primary-hover: #A8631F;
+    --color-text: #1E0F00;
+    --color-text-muted: #6B4E35;
+    --color-border: #EDE0D0;
+    --color-tag: #FFF3E0;
     --radius: 1.5rem;
   }
 
@@ -36,8 +25,9 @@
   }
 
   body {
-    @apply bg-[#170c06] text-[#f7e5b4] antialiased;
+    @apply bg-background text-text antialiased;
     font-family: var(--font-inter), sans-serif;
+    background-color: var(--color-bg);
   }
 
   h1,
@@ -46,6 +36,6 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-heading), sans-serif;
+    font-family: var(--font-heading), serif;
   }
 }

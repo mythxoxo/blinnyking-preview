@@ -16,7 +16,8 @@
     "work": "Работа",
     "login": "Войти",
     "register": "Регистрация",
-    "guestOrder": "Заказать без регистрации"
+    "guestOrder": "Заказать без регистрации",
+    "promotions": "Акции"
   },
   "cta": {
     "orderNow": "Заказать",
@@ -27,9 +28,14 @@
   },
   "hero": {
     "eyebrow": "Большие блины",
-    "title": "Блины в Jüri – Blinny King",
-    "subtitle": "Большие блины, уютная атмосфера и удобный заказ в Jüri.",
-    "facebook": "Присоединиться к группе Facebook"
+    "title": "Блины, которые хочется",
+    "subtitle": "Юри, Veetorni tn 9",
+    "facebook": "Присоединиться к группе Facebook",
+    "cta": {
+      "menu": "Смотреть меню",
+      "bolt": "Заказать в Bolt",
+      "wolt": "Заказать в Wolt"
+    }
   },
   "footer": {
     "title": "Blinny King Pannkoogirestoran Jüri",
@@ -44,221 +50,151 @@
     "registry": "Регистрационный код: 12476156"
   },
   "home": {
-    "popularEyebrow": "Хиты",
-    "popularTitle": "Популярные блюда, за которыми реально возвращаются",
-    "popularDescription": "Четыре главные позиции, которые задают тон всему preview-меню.",
-    "lunchEyebrow": "Ланч",
-    "lunchTitle": "Ланч-меню Пн–Пт 11:00–15:00",
-    "lunchDescription": "Каждый будний день с 11:00 до 15:00 разные блины со скидкой -20%.",
-    "lunchTime": "Пн–Пт · 11:00–15:00",
+    "lunchBanner": "Ланч −20% сегодня с 11:00 до 15:00",
+    "hitsEyebrow": "Хиты меню",
+    "hitsTitle": "Самые аппетитные позиции",
+    "hitsDescription": "Реальные хиты Blinny King, которые хочется заказать сразу.",
+    "viewAll": "Всё меню →",
+    "howEyebrow": "Как заказать",
+    "howTitle": "Три простых шага",
+    "howDescription": "Быстро, понятно и без лишней возни.",
     "steps": {
-      "oneTitle": "Выбери свой блин",
-      "oneText": "Сытные, сладкие или ланч-сеты — с понятными размерами и порциями.",
-      "twoTitle": "Выбери самовывоз или доставку",
-      "twoText": "В preview есть оба сценария: выбор локации, корзина и оформление.",
-      "threeTitle": "Возвращайся за бонусами",
-      "threeText": "Скидки, штампы и сценарии повторного заказа помогают наращивать лояльность."
+      "choose": {
+        "title": "Выбери",
+        "text": "Открой меню и найди любимый блин или напиток."
+      },
+      "order": {
+        "title": "Оформи",
+        "text": "Добавь в корзину, укажи данные и выбери оплату."
+      },
+      "pickup": {
+        "title": "Забери/получи",
+        "text": "Забери самовывозом или закажи через Bolt/Wolt."
+      }
     },
-    "loyaltyTitle": "Присоединяйся и получай постоянную скидку 👑",
-    "loyaltyText": "✔ −5% постоянная скидка при каждом визите · 🎂 −15% в день рождения · регистрация занимает меньше 1 минуты.",
-    "loyaltyPoint1": "−5% постоянная скидка при каждом визите",
-    "loyaltyPoint2": "−15% в день рождения",
-    "loyaltyPoint3": "Регистрация занимает меньше 1 минуты",
-    "findEyebrow": "Где мы",
-    "findDescription": "Veetorni 9, Jüri, +372 568 59075",
-    "locationLabel": "Локация в Jüri",
-    "reviewsEyebrow": "Отзывы",
-    "reviewsTitle": "К нам возвращаются за вкусом, скоростью и тёплым сервисом",
-    "reviewsDescription": "Простое demo-соцдоказательство для preview.",
     "stats": {
-      "prep": "Среднее время приготовления",
-      "rating": "Рейтинг самовывоза",
-      "menu": "Свежих позиций в меню"
-    },
-    "cards": {
-      "loyaltyTitle": "Присоединиться к группе Facebook",
-      "loyaltyText": "Следи за новостями, акциями и свежими предложениями.",
-      "deliveryTitle": "Готово к доставке",
-      "deliveryText": "Сайт спроектирован под takeaway, pickup и быстрые lunch-доставки по Jüri."
+      "address": "Адрес",
+      "phone": "Телефон",
+      "hours": "Часы"
     }
   },
-  "menuPage": {
+  "menu": {
     "eyebrow": "Меню",
     "title": "Меню Blinny King",
-    "description": "Сытные блины, сладкие блины, ланч-меню и комбо-сделки.",
-    "viewDetails": "Подробнее",
-    "addToCartLink": "В корзину →",
-    "back": "← Назад в меню",
-    "chooseSize": "Выбери размер",
-    "extras": "Дополнительно",
-    "sectionSavory": "Сытные блины",
-    "sectionSweet": "Сладкие блины",
-    "sectionLunch": "Ланч-меню",
-    "sectionDrinks": "Напитки",
-    "sectionCombos": "Комбо-сделки",
-    "sectionLunchNote": "Пн–Пт 11:00–15:00 · −20%",
-    "categories": {
-      "savory": "Сытные блины",
-      "sweet": "Сладкие блины",
-      "lunch": "Ланч-меню",
-      "drinks": "Напитки",
-      "combos": "Комбо-сделки"
+    "description": "Сытные, сладкие блины, ланч-предложения, комбо и напитки.",
+    "size": "Размер",
+    "quantity": "Количество",
+    "lunchNote": "Будни 11:00–15:00 · скидка −20%",
+    "fullMenu": "Полное меню",
+    "fullMenuDescription": "Интерактивная листалка полного меню.",
+    "hamCheese": {
+      "name": "Классика с ветчиной и сыром",
+      "description": "Классика с ветчиной, сыром и сливочной текстурой."
     },
-    "badges": {
-      "bestSeller": "Хит продаж",
-      "weekday": "Будни 11–15",
-      "goodValue": "Выгодно"
+    "salmonCream": {
+      "name": "Лосось, сливочный сыр и укроп",
+      "description": "Слабосолёный лосось со сливочным сыром и укропом."
     },
-    "sizes": {
-      "set": "Сет",
-      "combo": "Комбо"
+    "chickenMushroom": {
+      "name": "Курица и грибы",
+      "description": "Сытная начинка с курицей и грибами."
     },
-    "items": {
-      "hamCheeseClassic": {"name": "Классика с ветчиной и сыром", "description": "Золотистый блин с копчёной ветчиной, тягучим сыром и травяным маслом."},
-      "salmonDillCream": {"name": "Лосось, укроп и крем", "description": "Слабосолёный лосось, укропный крем и маринованный лук."},
-      "chickenMushroomMelt": {"name": "Курица и грибы", "description": "Нежная курица, запечённые грибы и расплавленная моцарелла."},
-      "spinachFeta": {"name": "Шпинат и фета", "description": "Тёплая шпинатная начинка с мягкой фетой и зеленью."},
-      "nutellaBananaDream": {"name": "Nutella Banana Dream", "description": "Тёплая Nutella, банан и хруст обжаренного фундука."},
-      "berriesCream": {"name": "Лесные ягоды и сливки", "description": "Сезонный ягодный компот, взбитые сливки и сахарная пудра."},
-      "caramelApple": {"name": "Карамель и яблоко", "description": "Мягкая яблочная начинка с карамельным соусом и корицей."},
-      "curdBerries": {"name": "Творог и ягоды", "description": "Сладкая творожная начинка с ягодами и сахарной пудрой."},
-      "lunchSoupCombo": {"name": "Ланч-комбо с супом", "description": "Суп дня, мини-сытный блин и салат."},
-      "lunchChickenSet": {"name": "Куриный ланч-сет", "description": "Сытный блин с курицей, свежий салат и суп буднего дня."},
-      "icedLatte": {"name": "Айс-латте", "description": "Двойной эспрессо, холодное молоко и карамельный сироп."},
-      "berryMorss": {"name": "Ягодный морс", "description": "Освежающий ягодный напиток, подаётся холодным."},
-      "familyComboFor2": {"name": "Семейное комбо на двоих", "description": "Два блина, два напитка и один десерт на двоих."},
-      "lunchComboDrink": {"name": "Ланч-комбо + напиток", "description": "Один блин, один напиток и выгодное дополнение к ланчу."}
+    "spinachFeta": {
+      "name": "Шпинат и фета",
+      "description": "Свежий шпинат и нежная фета."
     },
-    "extrasList": {
-      "extraCheese": "Доп. сыр",
-      "garlicSauce": "Чесночный соус",
-      "capers": "Каперсы",
-      "lemonAioli": "Лимонный айоли",
-      "vanillaIceCream": "Ванильное мороженое",
-      "strawberries": "Клубника",
-      "extraBerrySauce": "Доп. ягодный соус",
-      "mascarpone": "Маскарпоне",
-      "kefirDrink": "Кефирный напиток",
-      "dessertBliny": "Десертный блин",
-      "oatMilk": "Овсяное молоко",
-      "vanillaSyrup": "Ванильный сироп",
-      "extraSavoryPancake": "Доп. сытный блин",
-      "freshJuice": "Свежий сок",
-      "baconCrumble": "Крошка бекона",
-      "houseSalad": "Фирменный салат"
+    "nutellaBanana": {
+      "name": "Nutella и банан",
+      "description": "Сладкий блин с Nutella и бананом."
+    },
+    "berryCream": {
+      "name": "Лесные ягоды и сливки",
+      "description": "Ягодная начинка со сливками."
+    },
+    "caramelApple": {
+      "name": "Карамельное яблоко",
+      "description": "Тёплые яблоки с карамелью."
+    },
+    "curdBerries": {
+      "name": "Творог и ягоды",
+      "description": "Творожная начинка и ягоды."
+    },
+    "lunchHamCheese": {
+      "name": "Ланч-блин с ветчиной и сыром",
+      "description": "Будничная ланч-версия со скидкой."
+    },
+    "lunchChicken": {
+      "name": "Ланч-блин с курицей",
+      "description": "Куриный ланч-блин по будням."
+    },
+    "familyCombo": {
+      "name": "Комбо на двоих",
+      "description": "Сытное + сладкое + напитки на двоих."
+    },
+    "sweetCombo": {
+      "name": "Сладкий комбо-набор",
+      "description": "Набор сладких блинов и напитков."
+    },
+    "icedLatte": {
+      "name": "Айс-латте",
+      "description": "Холодный кофейный напиток с молоком."
+    },
+    "berryMors": {
+      "name": "Ягодный морс",
+      "description": "Освежающий домашний ягодный морс."
     }
   },
+  "categories": {
+    "savory": "Сытные блины",
+    "sweet": "Сладкие блины",
+    "lunch": "Ланч-меню",
+    "combos": "Комбо-наборы",
+    "drinks": "Напитки"
+  },
+  "tags": {
+    "bestseller": "Хит",
+    "popular": "Популярно",
+    "weekday": "Будни 11–15",
+    "value": "Выгодно"
+  },
   "cart": {
-    "eyebrow": "Корзина и checkout",
-    "title": "Простой preview оформления с самовывозом и доставкой",
-    "description": "Только mock Stripe-блок — без реальных ключей и live-оплаты.",
-    "qty": "Кол-во",
-    "summary": "Сводка заказа",
-    "subtotal": "Подытог",
-    "delivery": "Доставка",
+    "empty": "Корзина пуста",
+    "goToMenu": "Перейти в меню",
+    "addToCart": "В корзину",
+    "added": "Добавлено в корзину",
+    "checkout": "Оформить заказ"
+  },
+  "order": {
+    "title": "Оформление заказа",
+    "description": "Проверь состав заказа и оставь контакты для самовывоза.",
+    "formTitle": "Данные для заказа",
+    "summaryTitle": "Итог",
+    "subtotal": "Сумма",
     "total": "Итого",
-    "pickup": "Самовывоз",
-    "deliveryMode": "Доставка",
-    "location": "Выбери точку самовывоза / зону доставки",
+    "pay": "Оплатить через Stripe",
+    "deliveryVia": "Также можно заказать через доставку:",
+    "name": "Имя",
     "phone": "Телефон",
-    "stripeTitle": "Заглушка Stripe-оплаты",
-    "stripeText": "Поля карты и payment intent здесь намеренно замоканы только для preview.",
-    "proceed": "Перейти в аккаунт"
-  },
-  "about": {
-    "eyebrow": "О нас",
-    "title": "Уютное блинное место в Jüri",
-    "description": "Blinny King — уютное и семейное блинное кафе в Jüri.",
-    "text1": "Мы предлагаем и сытные, и сладкие блины (Ø30 см и Ø40 см), а также ланч-предложения. Можно поесть на месте или удобно взять с собой.",
-    "text2": "Все блины готовятся свежими на месте, а тебя ждёт тёплый и дружелюбный сервис."
-  },
-  "locationsPage": {
-    "eyebrow": "Локации",
-    "title": "Сделано вокруг Jüri, готово под следующую точку",
-    "description": "Первая локация собрана как реальная структура, вторая — как аккуратный placeholder под расширение."
-  },
-  "partnersPage": {
-    "eyebrow": "Партнёрам",
-    "title": "Станьте партнёром Blinny King",
-    "description": "Персональные условия и предложения для компаний. Оставьте контакты, и мы свяжемся с вами.",
-    "leadTitle": "Накормим твою команду нормально",
-    "lead1": "Офисные ланч-сделки",
-    "lead2": "Сеты для мероприятий и десертные платтеры",
-    "lead3": "Локальные коллаборации и оптовые поставки",
-    "company": "Компания",
-    "contact": "Контактное лицо",
     "email": "Email",
-    "phone": "Телефон",
-    "idea": "Расскажи про объём, ивент или идею партнёрства",
-    "send": "Отправить заявку"
+    "pickupOnly": "Самовывоз",
+    "comment": "Комментарий",
+    "saveData": "Сохранить данные и создать аккаунт",
+    "phoneHint": "Укажи эстонский номер в формате +372...",
+    "successTitle": "Заказ оплачен!",
+    "successDescription": "Мы позвоним вам через 5–10 минут."
   },
-  "jobsPage": {
-    "eyebrow": "Работа",
-    "title": "Работа в Blinny King",
-    "description": "Две mock-вакансии и лёгкая форма отклика.",
-    "apply": "Откликнуться",
-    "fullName": "Имя и фамилия",
-    "email": "Email",
-    "position": "Интересующая позиция",
-    "experience": "Расскажи о своём опыте",
-    "submit": "Отправить отклик",
-    "fullTime": "Полная занятость",
-    "partTime": "Частичная занятость"
+  "size": {
+    "S": "Ø30 (малый)",
+    "L": "Ø40 (большой)"
   },
-  "contactsPage": {
-    "eyebrow": "Контакты",
-    "title": "Контакты",
-    "description": "Найди нас в Jüri или свяжись по телефону и email.",
-    "map": "Карта",
-    "socials": "Facebook"
+  "loyalty": {
+    "discount": "Скидка постоянного клиента",
+    "birthday": "Скидка в день рождения"
   },
-  "account": {
-    "eyebrow": "Аккаунт",
-    "title": "Аккаунт",
-    "description": "Войди, зарегистрируйся или продолжи заказ без аккаунта.",
-    "loginTitle": "Вход / Регистрация",
-    "email": "E-post",
-    "password": "Parool",
-    "name": "Täisnimi",
-    "continue": "Продолжить",
-    "logout": "Выйти",
-    "loggedInAs": "Вы вошли как",
-    "profileTitle": "Профиль",
-    "profileMode": "Предпочтительный формат",
-    "profileFavorite": "Любимый заказ",
-    "pickup": "Самовывоз",
-    "historyTitle": "История заказов",
-    "guestHint": "Введи любой email и пароль — это demo login, который хранится только в браузере.",
-    "emptyHistory": "Следующие заказы появятся здесь.",
-    "statusDelivered": "Доставлен",
-    "statusPickup": "Самовывоз",
-    "tabLogin": "Logi sisse",
-    "tabRegister": "Registreeru",
-    "tabGuest": "Telli ilma registreerimata",
-    "forgot": "Unustasite parooli?",
-    "repeatPassword": "Korda parooli",
-    "createAccount": "Loo konto",
-    "terms": "Согласен с условиями",
-    "guestName": "Nimi",
-    "guestPhone": "Telefon",
-    "guestEmailOptional": "E-post (необязательно)",
-    "guestContinue": "Jätka tellimisega"
+  "common": {
+    "remove": "Удалить"
   },
-  "data": {
-    "review1": "Сытные блины реально на вкус как домашние, и самовывоз очень быстрый.",
-    "review2": "Ланч-комбо — отличная цена/качество, и само место ощущается тёплым, а не безликим.",
-    "review3": "Сладкий блин с ягодами выглядел и елся красиво, а не как просто сахарная бомба.",
-    "job1Title": "Сотрудник кухни",
-    "job1Description": "Готовить блины, держать качество на станции и поддерживать быстрый ритм во время загрузки.",
-    "job2Title": "Координатор стойки и выдачи",
-    "job2Description": "Встречать гостей, управлять потоком takeaway-заказов и координировать выдачу доставок.",
-    "location1Title": "BlinnyKing Jüri",
-    "location1Hours": "Пн–Вс · 10:00–21:00",
-    "location1Note": "Главная preview-локация с dine-in, takeaway и зоной доставки.",
-    "location2Title": "Вторая локация — placeholder",
-    "location2Address": "Скоро",
-    "location2Hours": "Уточняется",
-    "location2Phone": "Уточняется",
-    "location2Note": "Структура заранее подготовлена под следующую точку."
+  "location": {
+    "juri": "Юри"
   }
 }
