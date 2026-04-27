@@ -1,7 +1,7 @@
 import {getTranslations} from 'next-intl/server';
 import {categories, menuItems} from '@/data/menu';
 import {MenuCard} from '@/components/menu/menu-card';
-import {Pill, Section, SectionHeader} from '@/components/shared/ui';
+import {Section, SectionHeader} from '@/components/shared/ui';
 import {Locale} from '@/i18n/routing';
 
 export default async function MenuPage({params}: {params: {locale: Locale}}) {
@@ -17,7 +17,9 @@ export default async function MenuPage({params}: {params: {locale: Locale}}) {
         />
         <div className="flex flex-wrap gap-3">
           {categories.map((category) => (
-            <Pill key={category}>{category}</Pill>
+            <span key={category} className="inline-flex rounded-full bg-orange-100 px-3 py-1 text-xs font-semibold text-orange-700">
+              {t(`categories.${category}`)}
+            </span>
           ))}
         </div>
       </Section>
