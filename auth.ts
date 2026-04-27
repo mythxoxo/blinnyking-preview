@@ -61,7 +61,7 @@ providers.push(
 export const {handlers, signIn, signOut, auth} = NextAuth({
   session: {strategy: 'jwt'},
   pages: {
-    signIn: '/en/account'
+    signIn: '/et/account'
   },
   providers,
   callbacks: {

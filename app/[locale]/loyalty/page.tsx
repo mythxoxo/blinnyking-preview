@@ -16,8 +16,9 @@ export default async function LoyaltyPage({params}: {params: {locale: string}}) 
           </ul>
         </div>
         <div className="rounded-[32px] border border-border bg-surface p-6 shadow-soft">
-          <p className="text-sm font-semibold text-text">QR / Form</p>
-          <a href="https://forms.gle/example" target="_blank" rel="noopener" className="mt-4 inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white">
+          <p className="text-sm font-semibold text-text">Google Form</p>
+          <p className="mt-3 text-sm text-text-muted">{t('loyaltyPage.description')}</p>
+          <a href={process.env.NEXT_PUBLIC_LOYALTY_FORM_URL || '#'} target="_blank" rel="noopener" className="mt-4 inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white">
             {t('loyaltyPage.openForm')}
           </a>
         </div>
