@@ -6,9 +6,17 @@
     "about": "Meist",
     "partners": "Partnerid",
     "jobs": "Tööpakkumised",
-    "contacts": "Kontakt",
+    "contacts": "Kontaktid",
     "account": "Konto",
-    "cart": "Ostukorv"
+    "cart": "Ostukorv",
+    "order": "Tellimus",
+    "offers": "Päevapakkumised",
+    "gallery": "Galerii",
+    "discount": "Saa soodustust",
+    "work": "Tööle",
+    "login": "Logi sisse",
+    "register": "Registreeru",
+    "guestOrder": "Telli ilma registreerimata"
   },
   "cta": {
     "orderNow": "Telli kohe",
@@ -18,22 +26,30 @@
     "checkout": "Maksma"
   },
   "hero": {
-    "eyebrow": "Soojad pannkoogid, kiire mugavus",
-    "title": "BlinnyKing toob Jüri südamesse soolased ja magusad pannkoogid, mis päästavad nii lõuna kui õhtu.",
-    "subtitle": "Värskelt tehtud portsjonid, kiire kaasaost ja mõnus soe atmosfäär."
+    "eyebrow": "Suured pannkoogid",
+    "title": "Pannkoogid Jüris – Blinny King",
+    "subtitle": "Suured pannkoogid, hubane atmosfäär ja mugav tellimine Jüris.",
+    "facebook": "Liitu Facebooki grupiga"
   },
   "footer": {
-    "tagline": "Soe toit, sõbralik teenindus ja pannkoogid, mille juurde tahad tagasi tulla.",
-    "rights": "Kõik õigused kaitstud.",
-    "hours": "Iga päev · 10:00–21:00"
+    "title": "Blinny King Pannkoogirestoran Jüri",
+    "hoursTitle": "Lahtiolekuajad:",
+    "hoursWeek": "E-R 10:00–20:00",
+    "hoursSat": "L 11:00–20:00",
+    "hoursSun": "P 11:00–19:00",
+    "address": "Veetorni tn 9, Jüri, Estonia, 75301",
+    "phone": "+372 5685 9075",
+    "email": "info@blinnyking.ee",
+    "rights": "© 2025 Avgusta OÜ — Kõik õigused kaitstud",
+    "registry": "Registrikood: 12476156"
   },
   "home": {
     "popularEyebrow": "Lemmikud",
     "popularTitle": "Populaarsed road, mille järele päriselt tagasi tullakse",
     "popularDescription": "Neli põhitoonet andvat toodet, mis hoiavad kogu eelvaate menüü fookuses.",
     "lunchEyebrow": "Lõunapakkumine",
-    "lunchTitle": "Argipäeva lõuna alates €9.90",
-    "lunchDescription": "Supp, väike soolane pannkook ja salat. Mõeldud neile, kes vajavad tööpäeval midagi kiiret, aga siiski korralikult sooja.",
+    "lunchTitle": "Lõunamenüü E–R 11:00–15:00",
+    "lunchDescription": "Iga päev E–R kell 11.00–15.00 pakume erinevaid pannkooke -20% soodustusega.",
     "lunchTime": "E–R · 11:00–15:00",
     "steps": {
       "oneTitle": "Vali oma pannkook",
@@ -43,44 +59,50 @@
       "threeTitle": "Naudi lojaalsusvoogu",
       "threeText": "Allahindlused, templid ja kordustellimise UX aitavad kasvatada püsikliente."
     },
-    "loyaltyTitle": "Põhjus uuesti tagasi tulla",
-    "loyaltyText": "Eelvaates on lihtne lojaalsuskonks: lõunaklubi, püsikliendi eelised ja peen allahindluste paigutus ilma spämmitundeta.",
-    "loyaltyPoint1": "10% allahindlus esimeselt tellimuselt",
-    "loyaltyPoint2": "Tasuta magus pannkook pärast 6 templit",
-    "loyaltyPoint3": "Kombo lisamüük checkouti ajal",
+    "loyaltyTitle": "Liitu ja saa püsisoodustust 👑",
+    "loyaltyText": "✔ −5% püsisoodustus igal külastusel · 🎂 −15% sünnipäeval · registreerumine võtab vähem kui 1 minuti.",
+    "loyaltyPoint1": "−5% püsisoodustus igal külastusel",
+    "loyaltyPoint2": "−15% sünnipäeval",
+    "loyaltyPoint3": "Registreerumine võtab vähem kui 1 minuti",
     "findEyebrow": "Leia meid",
-    "findDescription": "Praegu on ülesehitus tehtud ühe reaalse asukoha ümber, kuid skaleerub ka järgmistele punktidele.",
+    "findDescription": "Veetorni 9, Jüri, +372 568 59075",
     "locationLabel": "Jüri asukoht",
     "reviewsEyebrow": "Arvustused",
-    "reviewsTitle": "Usutav demo-sotsiaalne tõestus",
-    "reviewsDescription": "Piisav, et eelvaade tunduks veenev ilma päris live-feedita.",
+    "reviewsTitle": "Meie kliendid tulevad tagasi maitse, kiiruse ja sooja teeninduse pärast",
+    "reviewsDescription": "Lihtne demo-sotsiaalne tõestus eelvaate jaoks.",
     "stats": {
       "prep": "Keskmine valmistusaeg",
       "rating": "Kaasaostu hinnang",
       "menu": "Värskeid menüütooteid"
     },
     "cards": {
-      "loyaltyTitle": "Lojaalsusampsud",
-      "loyaltyText": "Kogu templeid iga tellimusega ja saa pärast 6 külastust tasuta magus pannkook.",
+      "loyaltyTitle": "Liitu Facebooki grupiga",
+      "loyaltyText": "Jälgi meid ja saa osa uudistest, kampaaniatest ja värsketest pakkumistest.",
       "deliveryTitle": "Valmis kohaletoimetamiseks",
       "deliveryText": "Lahendus on üles ehitatud takeaway, pickupi ja kiire lõunatellimise jaoks Jüris."
     }
   },
   "menuPage": {
-    "eyebrow": "Kataloog",
-    "title": "Menüü, mida on telefonis lihtne sirvida",
-    "description": "Viis kategooriat, selged kaardid ja piisavalt infot usutava tellimisteekonna jaoks.",
+    "eyebrow": "Menüü",
+    "title": "Blinny King menüü",
+    "description": "Soolased pannkoogid, magusad pannkoogid, lõunamenüü ja kombo-diilid.",
     "viewDetails": "Vaata lähemalt",
     "addToCartLink": "Lisa korvi →",
     "back": "← Tagasi menüüsse",
     "chooseSize": "Vali suurus",
     "extras": "Lisad",
+    "sectionSavory": "Soolased pannkoogid",
+    "sectionSweet": "Magusad pannkoogid",
+    "sectionLunch": "Lõunamenüü",
+    "sectionDrinks": "Joogid",
+    "sectionCombos": "Kombo-diilid",
+    "sectionLunchNote": "E–R 11:00–15:00 · −20%",
     "categories": {
       "savory": "Soolased pannkoogid",
       "sweet": "Magusad pannkoogid",
-      "lunch": "Lõuna",
+      "lunch": "Lõunamenüü",
       "drinks": "Joogid",
-      "combos": "Kombod"
+      "combos": "Kombo-diilid"
     },
     "badges": {
       "bestSeller": "Menukaim",
@@ -163,10 +185,10 @@
   },
   "about": {
     "eyebrow": "Meist",
-    "title": "Soe kaasaegne bränd, mitte võltsnostalgia",
-    "description": "See eelvaade toetub comfort food’ile, puhtale visuaalile ja teadlikule brändihoiakule.",
-    "text1": "BlinnyKing on kujutatud kaasaegse naabruskonna pannkoogikohana: piisavalt kiire argipäeva lõunaks, piisavalt soe perede peatuseks ja piisavalt puhas visuaalselt, et mitte meenutada odavat delivery-rakenduse malli. Brändi lugu keskendub heldetele täidistele, pehmele teenindusele ja menüüle, mille juurde tahetakse tagasi tulla, mitte trikitoodetele.",
-    "text2": "Selles eelvaates kasutatakse toimetuslikku rütmi, sooja värvipaletti ja toidukeskseid blokke, et bränd tunduks kvaliteetne, kuid endiselt ligipääsetav."
+    "title": "Hubane pannkoogikoht Jüris",
+    "description": "Blinny King on hubane ja peresõbralik pannkoogikohvik Jüris.",
+    "text1": "Pakume nii soolaseid kui ka magusaid pannkooke (Ø30 cm ja Ø40 cm), lisaks lõunapakkumisi. Süüa saab kohapeal või võtta mugavalt kaasa.",
+    "text2": "Kõik pannkoogid valmivad värskelt kohapeal ning sind ootab soe ja sõbralik teenindus."
   },
   "locationsPage": {
     "eyebrow": "Asukohad",
@@ -175,8 +197,8 @@
   },
   "partnersPage": {
     "eyebrow": "Partnerid",
-    "title": "B2B päringuleht kontoritele, üritustele ja hulgile",
-    "description": "Sobib catering-päringuteks, kontorilõunateks ja co-branded koostöödeks.",
+    "title": "Hakka Blinny Kingi partneriks",
+    "description": "Personaalsed tingimused ja pakkumised ettevõtetele. Jäta oma kontaktid ja võtame sinuga ühendust.",
     "leadTitle": "Toidame su tiimi korralikult",
     "lead1": "Kontori lõunalahendused",
     "lead2": "Ürituste vaagnad ja magusalauad",
@@ -189,8 +211,8 @@
     "send": "Saada päring"
   },
   "jobsPage": {
-    "eyebrow": "Tööpakkumised",
-    "title": "Värbamisplokid kasvavale toidubrändile",
+    "eyebrow": "Tööle",
+    "title": "Töö Blinny Kingis",
     "description": "Kaks mock-positsiooni ja kerge kandideerimisvorm.",
     "apply": "Kandideeri nüüd",
     "fullName": "Täisnimi",
@@ -202,16 +224,16 @@
     "partTime": "Osalise koormusega"
   },
   "contactsPage": {
-    "eyebrow": "Kontakt",
-    "title": "Kontaktileht kaardi placeholderi ja päris struktuuriga",
-    "description": "Piisavalt infot eelvaate hindamiseks ilma live-embedide ja sotsiaalmeedia API-deta.",
-    "map": "Kaardi placeholder",
-    "socials": "Instagram · Facebook · TikTok (placeholderid)"
+    "eyebrow": "Kontaktid",
+    "title": "Kontaktid",
+    "description": "Leia meid Jürist või võta ühendust telefoni ja e-posti teel.",
+    "map": "Kaart",
+    "socials": "Facebook"
   },
   "account": {
     "eyebrow": "Konto",
-    "title": "Demo sisselogimine, profiil ja tellimuste ajalugu",
-    "description": "Viimistletud demo konto voog eelvaate jaoks ilma päris taustsüsteemita.",
+    "title": "Konto",
+    "description": "Logi sisse, registreeru või jätka tellimist ilma kontota.",
     "loginTitle": "Logi sisse / Registreeru",
     "email": "E-post",
     "password": "Parool",
@@ -227,7 +249,18 @@
     "guestHint": "Kasuta suvalist e-posti ja parooli — see on demo sisselogimine, mis salvestub ainult brauserisse.",
     "emptyHistory": "Järgmised tellimused ilmuvad siia.",
     "statusDelivered": "Kohale toimetatud",
-    "statusPickup": "Järele võetud"
+    "statusPickup": "Järele võetud",
+    "tabLogin": "Logi sisse",
+    "tabRegister": "Registreeru",
+    "tabGuest": "Telli ilma registreerimata",
+    "forgot": "Unustasite parooli?",
+    "repeatPassword": "Korda parooli",
+    "createAccount": "Loo konto",
+    "terms": "Nõustun tingimustega",
+    "guestName": "Nimi",
+    "guestPhone": "Telefon",
+    "guestEmailOptional": "E-post (valikuline)",
+    "guestContinue": "Jätka tellimisega"
   },
   "data": {
     "review1": "Soolased pannkoogid maitsevad päriselt koduselt ja takeaway on kiire.",

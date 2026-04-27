@@ -1,111 +1,131 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import {Session} from 'next-auth';
-import {ShoppingBag} from 'lucide-react';
+import {Facebook} from 'lucide-react';
 import {getTranslations} from 'next-intl/server';
 import {Locale, locales} from '@/i18n/routing';
 import {cn} from '@/lib/utils';
 
-const navItems = [
-  {key: 'home', href: ''},
-  {key: 'menu', href: '/menu'},
-  {key: 'locations', href: '/locations'},
-  {key: 'about', href: '/about'},
-  {key: 'partners', href: '/partners'},
-  {key: 'jobs', href: '/jobs'},
-  {key: 'contacts', href: '/contacts'}
-] as const;
+const logoUrl = 'https://thb.tildacdn.net/tild3939-3438-4333-b530-623131363863/-/empty/log.png';
+
+const navByLocale: Record<Locale, {labelKey: string; href: string}[]> = {
+  et: [
+    {labelKey: 'order', href: '/et/order'},
+    {labelKey: 'offers', href: '/et/menu#pakkumised'},
+    {labelKey: 'menu', href: '/et/menu'},
+    {labelKey: 'gallery', href: '/et/#galerii'},
+    {labelKey: 'discount', href: '/et/#klient'},
+    {labelKey: 'work', href: '/et/jobs'},
+    {labelKey: 'partners', href: '/et/partners'},
+    {labelKey: 'contacts', href: '/et/contacts'}
+  ],
+  en: [
+    {labelKey: 'order', href: '/en/order'},
+    {labelKey: 'offers', href: '/en/menu#pakkumised'},
+    {labelKey: 'menu', href: '/en/menu'},
+    {labelKey: 'gallery', href: '/en/#galerii'},
+    {labelKey: 'discount', href: '/en/#klient'},
+    {labelKey: 'work', href: '/en/jobs'},
+    {labelKey: 'partners', href: '/en/partners'},
+    {labelKey: 'contacts', href: '/en/contacts'}
+  ],
+  ru: [
+    {labelKey: 'order', href: '/ru/order'},
+    {labelKey: 'offers', href: '/ru/menu#pakkumised'},
+    {labelKey: 'menu', href: '/ru/menu'},
+    {labelKey: 'gallery', href: '/ru/#galerii'},
+    {labelKey: 'discount', href: '/ru/#klient'},
+    {labelKey: 'work', href: '/ru/jobs'},
+    {labelKey: 'partners', href: '/ru/partners'},
+    {labelKey: 'contacts', href: '/ru/contacts'}
+  ]
+};
 
 export async function SiteShell({
   locale,
-  children,
-  session
+  children
 }: {
   locale: Locale;
   children: React.ReactNode;
-  session: Session | null;
+  session: unknown;
 }) {
   const t = await getTranslations({locale});
+  const nav = navByLocale[locale];
 
   return (
-    <div className="min-h-screen bg-[#fffaf4] text-stone-900">
-      <header className="sticky top-0 z-40 border-b border-orange-100/80 bg-[#fffaf4]/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-          <Link href={`/${locale}`} className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-stone-950 text-sm font-bold text-white">BK</div>
-            <div>
-              <div className="text-sm font-semibold uppercase tracking-[0.3em] text-orange-600">BlinnyKing</div>
-              <div className="text-xs text-stone-500">Warm food brand preview</div>
-            </div>
-          </Link>
+    <div className="min-h-screen bg-[#170c06] text-[#f7e5b4]">
+      <header className="sticky top-0 z-40 border-b border-[#6d4b13] bg-[#120904]/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+            <Link href="/et" className="relative h-16 w-[180px] shrink-0">
+              <Image src={logoUrl} alt="Blinny King" fill className="object-contain object-left" sizes="180px" unoptimized />
+            </Link>
 
-          <nav className="hidden items-center gap-5 lg:flex">
-            {navItems.map((item) => (
-              <Link key={item.key} href={`/${locale}${item.href}`} className="text-sm font-medium text-stone-700 transition hover:text-stone-950">
-                {t(`nav.${item.key}`)}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-2 sm:gap-3">
-            <div className="flex rounded-full border border-stone-200 bg-white p-1 shadow-sm">
-              {locales.map((code) => (
-                <Link
-                  key={code}
-                  href={`/${code}`}
-                  className={cn(
-                    'rounded-full px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition',
-                    code === locale ? 'bg-stone-950 text-white' : 'text-stone-500 hover:text-stone-900'
-                  )}
-                >
-                  {code}
+            <nav className="flex flex-wrap items-center gap-4 text-sm font-medium text-[#f7e5b4] lg:justify-center">
+              {nav.map((item) => (
+                <Link key={item.labelKey} href={item.href} className="transition hover:text-[#ffd25b]">
+                  {t(`nav.${item.labelKey}`)}
                 </Link>
               ))}
+            </nav>
+
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="flex rounded-full border border-[#6d4b13] bg-[#24140b] p-1">
+                {locales.map((code) => (
+                  <Link
+                    key={code}
+                    href={`/${code}`}
+                    className={cn(
+                      'rounded-full px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition',
+                      code === locale ? 'bg-[#ffd25b] text-[#170c06]' : 'text-[#f7e5b4] hover:text-white'
+                    )}
+                  >
+                    {code}
+                  </Link>
+                ))}
+              </div>
+              <Link href={`/${locale}/account`} className="rounded-full border border-[#6d4b13] bg-[#24140b] px-4 py-2 text-sm font-semibold text-[#f7e5b4] transition hover:bg-[#3a2416]">
+                {t('nav.login')}
+              </Link>
+              <Link href={`/${locale}/account?tab=register`} className="rounded-full border border-[#6d4b13] bg-[#24140b] px-4 py-2 text-sm font-semibold text-[#f7e5b4] transition hover:bg-[#3a2416]">
+                {t('nav.register')}
+              </Link>
+              <Link href={`/${locale}/account?tab=guest`} className="rounded-full bg-[#ffd25b] px-4 py-2 text-sm font-semibold text-[#170c06] transition hover:bg-[#ffdd7f]">
+                {t('nav.guestOrder')}
+              </Link>
             </div>
-            <Link
-              href={`/${locale}/account`}
-              className="hidden rounded-full border border-stone-200 bg-white px-4 py-2 text-sm font-semibold text-stone-700 transition hover:border-stone-300 hover:text-stone-950 sm:inline-flex"
-            >
-              {session?.user?.name || t('nav.account')}
-            </Link>
-            <Link
-              href={`/${locale}/cart`}
-              className="inline-flex items-center gap-2 rounded-full bg-stone-950 px-4 py-2 text-sm font-semibold text-white transition hover:bg-stone-800"
-            >
-              <ShoppingBag className="h-4 w-4" />
-              {t('nav.cart')}
-            </Link>
           </div>
         </div>
       </header>
 
       <main>{children}</main>
 
-      <footer className="border-t border-orange-100 bg-[#fff5ea]">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[1.2fr_0.8fr_0.8fr] lg:px-8">
-          <div>
-            <div className="text-sm font-semibold uppercase tracking-[0.3em] text-orange-600">BlinnyKing</div>
-            <p className="mt-3 max-w-md text-sm leading-7 text-stone-600">{t('footer.tagline')}</p>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-stone-900">Menu</h3>
-            <div className="mt-4 space-y-2 text-sm text-stone-600">
-              <p>Savory Pancakes</p>
-              <p>Sweet Pancakes</p>
-              <p>Lunch Sets</p>
-              <p>Combos & Drinks</p>
+      <footer className="border-t border-[#6d4b13] bg-[#120904]">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <h3 className="text-xl font-semibold text-[#ffd25b]">{t('footer.title')}</h3>
+          <div className="mt-6 grid gap-8 md:grid-cols-3">
+            <div>
+              <p className="text-sm font-semibold text-[#f7e5b4]">{t('footer.hoursTitle')}</p>
+              <div className="mt-3 space-y-1 text-sm text-[#e7d1a2]">
+                <p>{t('footer.hoursWeek')}</p>
+                <p>{t('footer.hoursSat')}</p>
+                <p>{t('footer.hoursSun')}</p>
+              </div>
+            </div>
+            <div className="space-y-2 text-sm text-[#e7d1a2]">
+              <p>{t('footer.address')}</p>
+              <p><a href="tel:+37256859075" className="hover:text-[#ffd25b]">{t('footer.phone')}</a></p>
+              <p><a href="mailto:info@blinnyking.ee" className="hover:text-[#ffd25b]">{t('footer.email')}</a></p>
+            </div>
+            <div>
+              <a href="https://www.facebook.com/BlinnyKingPannkoogid/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-[#f7e5b4] hover:text-[#ffd25b]">
+                <Facebook className="h-4 w-4" /> Facebook
+              </a>
             </div>
           </div>
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-stone-900">Jüri</h3>
-            <div className="mt-4 space-y-2 text-sm text-stone-600">
-              <p>Veetorni 9, Jüri</p>
-              <p>{t('footer.hours')}</p>
-              <p>hello@blinnyking.ee</p>
-            </div>
+          <div className="mt-8 border-t border-[#3a2416] pt-4 text-xs text-[#b89d69]">
+            <p>{t('footer.rights')}</p>
+            <p className="mt-1">{t('footer.registry')}</p>
           </div>
-        </div>
-        <div className="border-t border-orange-100 px-4 py-4 text-center text-xs text-stone-500 sm:px-6 lg:px-8">
-          © 2026 BlinnyKing · {t('footer.rights')}
         </div>
       </footer>
     </div>

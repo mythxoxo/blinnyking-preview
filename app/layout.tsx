@@ -6,13 +6,13 @@ const inter = Inter({subsets: ['latin', 'cyrillic'], variable: '--font-inter'});
 const manrope = Manrope({subsets: ['latin', 'cyrillic'], variable: '--font-heading'});
 
 export const metadata: Metadata = {
-  title: 'BlinnyKing Preview',
-  description: 'Warm food brand preview built with Next.js 14, Tailwind and shadcn/ui patterns.'
+  title: 'Pannkoogid Jüris – Blinny King',
+  description: 'Blinny King pannkoogirestoran Jüris.'
 };
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
-    <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
+    <html lang="et" className={`${inter.variable} ${manrope.variable}`}>
       <body>{children}</body>
     </html>
   );

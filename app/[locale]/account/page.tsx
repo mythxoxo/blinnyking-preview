@@ -5,9 +5,17 @@ import {Section} from '@/components/shared/ui';
 import {orderHistory} from '@/data/site';
 import {Locale} from '@/i18n/routing';
 
-export default async function AccountPage({params}: {params: {locale: Locale}}) {
+export default async function AccountPage({
+  params,
+  searchParams
+}: {
+  params: {locale: Locale};
+  searchParams?: {tab?: string};
+}) {
   const t = await getTranslations({locale: params.locale, namespace: 'account'});
   const session = await auth();
+  const tab = searchParams?.tab;
+  const initialTab = tab === 'register' || tab === 'guest' ? tab : 'login';
 
   const localizedOrders = orderHistory.map((order) => ({
     ...order,
@@ -18,12 +26,12 @@ export default async function AccountPage({params}: {params: {locale: Locale}}) 
     <Section>
       <DemoAccount
         locale={params.locale}
+        initialTab={initialTab}
         user={session?.user ?? null}
         copy={{
           eyebrow: t('eyebrow'),
           title: t('title'),
           description: t('description'),
-          loginTitle: t('loginTitle'),
           email: t('email'),
           password: t('password'),
           name: t('name'),
@@ -35,8 +43,18 @@ export default async function AccountPage({params}: {params: {locale: Locale}}) 
           profileFavorite: t('profileFavorite'),
           pickup: t('pickup'),
           historyTitle: t('historyTitle'),
-          guestHint: t('guestHint'),
-          emptyHistory: t('emptyHistory')
+          emptyHistory: t('emptyHistory'),
+          tabLogin: t('tabLogin'),
+          tabRegister: t('tabRegister'),
+          tabGuest: t('tabGuest'),
+          forgot: t('forgot'),
+          repeatPassword: t('repeatPassword'),
+          createAccount: t('createAccount'),
+          terms: t('terms'),
+          guestName: t('guestName'),
+          guestPhone: t('guestPhone'),
+          guestEmailOptional: t('guestEmailOptional'),
+          guestContinue: t('guestContinue')
         }}
         orders={localizedOrders}
       />
