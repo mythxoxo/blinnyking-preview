@@ -12,9 +12,9 @@ export default async function AboutPage({params}: {params: {locale: string}}) {
         description={t('description')}
       />
       <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="rounded-[32px] border border-orange-100 bg-white p-6 shadow-sm shadow-orange-950/5">
-          <p className="text-base leading-8 text-stone-600">{t('text1')}</p>
-          <p className="mt-4 text-base leading-8 text-stone-600">{t('text2')}</p>
+        <div className="rounded-[32px] border border-[#6d4b13] bg-[#24140b] p-6 shadow-sm shadow-black/30">
+          <p className="text-base leading-8 text-[#d7c190]">{t('text1')}</p>
+          <p className="mt-4 text-base leading-8 text-[#d7c190]">{t('text2')}</p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">
           <PlaceholderImage label="Kitchen moment" className="min-h-[220px]" />

@@ -18,22 +18,22 @@ export default async function ProductPage({params}: {params: {locale: Locale; sl
     <Section>
       <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
         <PlaceholderImage label={item.image} className="min-h-[520px]" />
-        <div className="rounded-[32px] border border-orange-100 bg-white p-6 shadow-sm shadow-orange-950/5 sm:p-8">
+        <div className="rounded-[32px] border border-[#6d4b13] bg-[#24140b] p-6 shadow-sm shadow-black/30 sm:p-8">
           <div className="flex flex-wrap gap-2">
             <Pill>{t(`categories.${item.category}`)}</Pill>
             {item.badge ? <Pill>{t(`badges.${item.badge}`)}</Pill> : null}
           </div>
-          <h1 className="mt-5 text-4xl font-semibold tracking-tight text-stone-950">{t(`items.${item.key}.name`)}</h1>
-          <p className="mt-4 text-base leading-7 text-stone-600">{t(`items.${item.key}.description`)}</p>
-          <div className="mt-6 text-3xl font-semibold text-stone-950">€{item.price.toFixed(2)}</div>
+          <h1 className="mt-5 text-4xl font-semibold tracking-tight text-[#fff4d1]">{t(`items.${item.key}.name`)}</h1>
+          <p className="mt-4 text-base leading-7 text-[#d7c190]">{t(`items.${item.key}.description`)}</p>
+          <div className="mt-6 text-3xl font-semibold text-[#ffd25b]">€{item.price.toFixed(2)}</div>
 
           <div className="mt-8">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-stone-500">{t('chooseSize')}</h2>
+            <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#b89d69]">{t('chooseSize')}</h2>
             <div className="mt-3 flex flex-wrap gap-3">
               {item.sizes.map((size, index) => (
                 <button
                   key={size}
-                  className={`rounded-full px-4 py-2 text-sm font-semibold ${index === 0 ? 'bg-stone-950 text-white' : 'border border-stone-200 bg-white text-stone-700'}`}
+                  className={`rounded-full px-4 py-2 text-sm font-semibold ${index === 0 ? 'bg-[#ffd25b] text-[#170c06]' : 'border border-[#6d4b13] bg-[#170c06] text-[#d7c190]'}`}
                 >
                   {size === 'set' || size === 'combo' ? t(`sizes.${size}`) : size}
                 </button>
@@ -42,10 +42,10 @@ export default async function ProductPage({params}: {params: {locale: Locale; sl
           </div>
 
           <div className="mt-8">
-            <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-stone-500">{t('extras')}</h2>
+            <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#b89d69]">{t('extras')}</h2>
             <div className="mt-4 space-y-3">
               {item.extras.map((extra) => (
-                <label key={extra.key} className="flex items-center justify-between rounded-2xl border border-stone-200 px-4 py-3 text-sm text-stone-700">
+                <label key={extra.key} className="flex items-center justify-between rounded-2xl border border-[#6d4b13] px-4 py-3 text-sm text-[#d7c190] bg-[#170c06]">
                   <span>{t(`extrasList.${extra.key}`)}</span>
                   <span>+€{extra.price.toFixed(2)}</span>
                 </label>
@@ -54,13 +54,13 @@ export default async function ProductPage({params}: {params: {locale: Locale; sl
           </div>
 
           <div className="mt-8 flex items-center gap-4">
-            <div className="inline-flex items-center rounded-full border border-stone-200 bg-white px-3 py-2 text-sm font-semibold text-stone-900">
+            <div className="inline-flex items-center rounded-full border border-[#6d4b13] bg-[#170c06] px-3 py-2 text-sm font-semibold text-[#fff4d1]">
               − <span className="px-4">1</span> +
             </div>
             <ActionLink href={`/${params.locale}/cart`}>{cta('addToCart')}</ActionLink>
           </div>
 
-          <Link href={`/${params.locale}/menu`} className="mt-6 inline-flex text-sm font-semibold text-orange-700 hover:text-orange-800">
+          <Link href={`/${params.locale}/menu`} className="mt-6 inline-flex text-sm font-semibold text-[#ffd25b] hover:text-[#ffdd7f]">
             {t('back')}
           </Link>
         </div>
