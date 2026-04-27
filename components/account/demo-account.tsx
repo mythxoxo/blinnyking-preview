@@ -1,6 +1,6 @@
 'use client';
 
-import {FormEvent, useEffect, useMemo, useState} from 'react';
+import {useState} from 'react';
 
 type Order = {
   id: string;
@@ -29,50 +29,27 @@ type Copy = {
   emptyHistory: string;
 };
 
-type DemoUser = {
-  name: string;
-  email: string;
+type SessionUser = {
+  name?: string | null;
+  email?: string | null;
 };
 
-const STORAGE_KEY = 'blinnyking-demo-user';
-
-export function DemoAccount({copy, orders}: {copy: Copy; orders: Order[]}) {
-  const [email, setEmail] = useState('');
+export function DemoAccount({
+  copy,
+  orders,
+  user,
+  locale
+}: {
+  copy: Copy;
+  orders: Order[];
+  user: SessionUser | null;
+  locale: string;
+}) {
+  const [email, setEmail] = useState(user?.email || '');
   const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-  const [user, setUser] = useState<DemoUser | null>(null);
-  const [ready, setReady] = useState(false);
+  const [name, setName] = useState(user?.name || '');
 
-  useEffect(() => {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (raw) {
-      try {
-        setUser(JSON.parse(raw));
-      } catch {}
-    }
-    setReady(true);
-  }, []);
-
-  const profileName = useMemo(() => user?.name || 'Yana Kask', [user]);
-
-  function onSubmit(event: FormEvent) {
-    event.preventDefault();
-    const nextUser = {
-      name: name.trim() || 'Guest User',
-      email: email.trim() || 'guest@blinnyking.ee'
-    };
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(nextUser));
-    setUser(nextUser);
-    setPassword('');
-  }
-
-  function onLogout() {
-    window.localStorage.removeItem(STORAGE_KEY);
-    setUser(null);
-    setEmail('');
-    setPassword('');
-    setName('');
-  }
+  const profileName = user?.name || 'Yana Kask';
 
   return (
     <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
@@ -81,28 +58,32 @@ export function DemoAccount({copy, orders}: {copy: Copy; orders: Order[]}) {
         <h1 className="mt-4 text-3xl font-semibold text-stone-950">{copy.title}</h1>
         <p className="mt-3 text-sm leading-7 text-stone-600">{copy.description}</p>
 
-        {!ready ? null : user ? (
+        {user ? (
           <div className="mt-6 rounded-[24px] bg-[#fff5ea] p-5 text-sm text-stone-700">
             <p className="font-semibold text-stone-950">{copy.loggedInAs}</p>
             <p className="mt-2">{user.name}</p>
             <p>{user.email}</p>
-            <button onClick={onLogout} className="mt-5 rounded-full bg-stone-950 px-4 py-2 text-sm font-semibold text-white">
-              {copy.logout}
-            </button>
+            <form action="/api/auth/signout" method="post">
+              <input type="hidden" name="callbackUrl" value={`/${locale}/account`} />
+              <button className="mt-5 rounded-full bg-stone-950 px-4 py-2 text-sm font-semibold text-white">
+                {copy.logout}
+              </button>
+            </form>
           </div>
         ) : (
-          <form className="mt-6 space-y-4" onSubmit={onSubmit}>
+          <form className="mt-6 space-y-4" action="/api/auth/callback/credentials" method="post">
+            <input type="hidden" name="callbackUrl" value={`/${locale}/account`} />
             <div>
               <label className="mb-2 block text-sm font-medium text-stone-700">{copy.name}</label>
-              <input value={name} onChange={(e) => setName(e.target.value)} placeholder={copy.name} className="h-11 w-full rounded-2xl border border-stone-200 bg-white px-4 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-300 focus:ring-2 focus:ring-orange-200" />
+              <input name="name" value={name} onChange={(e) => setName(e.target.value)} placeholder={copy.name} className="h-11 w-full rounded-2xl border border-stone-200 bg-white px-4 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-300 focus:ring-2 focus:ring-orange-200" />
             </div>
             <div>
               <label className="mb-2 block text-sm font-medium text-stone-700">{copy.email}</label>
-              <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder={copy.email} className="h-11 w-full rounded-2xl border border-stone-200 bg-white px-4 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-300 focus:ring-2 focus:ring-orange-200" />
+              <input name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={copy.email} className="h-11 w-full rounded-2xl border border-stone-200 bg-white px-4 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-300 focus:ring-2 focus:ring-orange-200" />
             </div>
             <div>
               <label className="mb-2 block text-sm font-medium text-stone-700">{copy.password}</label>
-              <input value={password} onChange={(e) => setPassword(e.target.value)} placeholder={copy.password} type="password" className="h-11 w-full rounded-2xl border border-stone-200 bg-white px-4 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-300 focus:ring-2 focus:ring-orange-200" />
+              <input name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder={copy.password} type="password" className="h-11 w-full rounded-2xl border border-stone-200 bg-white px-4 text-sm text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-orange-300 focus:ring-2 focus:ring-orange-200" />
             </div>
             <button className="w-full rounded-full bg-stone-950 px-4 py-3 text-sm font-semibold text-white">{copy.continue}</button>
             <p className="text-sm leading-6 text-stone-500">{copy.guestHint}</p>

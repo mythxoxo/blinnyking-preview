@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import {Session} from 'next-auth';
 import {ShoppingBag} from 'lucide-react';
 import {getTranslations} from 'next-intl/server';
 import {Locale, locales} from '@/i18n/routing';
@@ -16,10 +17,12 @@ const navItems = [
 
 export async function SiteShell({
   locale,
-  children
+  children,
+  session
 }: {
   locale: Locale;
   children: React.ReactNode;
+  session: Session | null;
 }) {
   const t = await getTranslations({locale});
 
@@ -62,7 +65,7 @@ export async function SiteShell({
               href={`/${locale}/account`}
               className="hidden rounded-full border border-stone-200 bg-white px-4 py-2 text-sm font-semibold text-stone-700 transition hover:border-stone-300 hover:text-stone-950 sm:inline-flex"
             >
-              {t('nav.account')}
+              {session?.user?.name || t('nav.account')}
             </Link>
             <Link
               href={`/${locale}/cart`}

@@ -1,4 +1,5 @@
 import {getTranslations} from 'next-intl/server';
+import {auth} from '@/auth';
 import {DemoAccount} from '@/components/account/demo-account';
 import {Section} from '@/components/shared/ui';
 import {orderHistory} from '@/data/site';
@@ -6,6 +7,7 @@ import {Locale} from '@/i18n/routing';
 
 export default async function AccountPage({params}: {params: {locale: Locale}}) {
   const t = await getTranslations({locale: params.locale, namespace: 'account'});
+  const session = await auth();
 
   const localizedOrders = orderHistory.map((order) => ({
     ...order,
@@ -15,6 +17,8 @@ export default async function AccountPage({params}: {params: {locale: Locale}}) 
   return (
     <Section>
       <DemoAccount
+        locale={params.locale}
+        user={session?.user ?? null}
         copy={{
           eyebrow: t('eyebrow'),
           title: t('title'),
