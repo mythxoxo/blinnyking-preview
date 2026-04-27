@@ -27,6 +27,119 @@
     "rights": "Kõik õigused kaitstud.",
     "hours": "Iga päev · 10:00–21:00"
   },
+  "home": {
+    "popularEyebrow": "Lemmikud",
+    "popularTitle": "Populaarsed road, mille järele päriselt tagasi tullakse",
+    "popularDescription": "Neli põhitoonet andvat toodet, mis hoiavad kogu eelvaate menüü fookuses.",
+    "lunchEyebrow": "Lõunapakkumine",
+    "lunchTitle": "Argipäeva lõuna alates €9.90",
+    "lunchDescription": "Supp, väike soolane pannkook ja salat. Mõeldud neile, kes vajavad tööpäeval midagi kiiret, aga siiski korralikult sooja.",
+    "lunchTime": "E–R · 11:00–15:00",
+    "steps": {
+      "oneTitle": "Vali oma pannkook",
+      "oneText": "Soolane, magus või lõunasett — selgete suuruste ja portsjonitega.",
+      "twoTitle": "Vali kaasaost või kohaletoimetamine",
+      "twoText": "Eelvaates on mõlemad vood: asukoht, ostukorv ja checkout.",
+      "threeTitle": "Naudi lojaalsusvoogu",
+      "threeText": "Allahindlused, templid ja kordustellimise UX aitavad kasvatada püsikliente."
+    },
+    "loyaltyTitle": "Põhjus uuesti tagasi tulla",
+    "loyaltyText": "Eelvaates on lihtne lojaalsuskonks: lõunaklubi, püsikliendi eelised ja peen allahindluste paigutus ilma spämmitundeta.",
+    "loyaltyPoint1": "10% allahindlus esimeselt tellimuselt",
+    "loyaltyPoint2": "Tasuta magus pannkook pärast 6 templit",
+    "loyaltyPoint3": "Kombo lisamüük checkouti ajal",
+    "findEyebrow": "Leia meid",
+    "findDescription": "Praegu on ülesehitus tehtud ühe reaalse asukoha ümber, kuid skaleerub ka järgmistele punktidele.",
+    "locationLabel": "Jüri asukoht",
+    "reviewsEyebrow": "Arvustused",
+    "reviewsTitle": "Usutav demo-sotsiaalne tõestus",
+    "reviewsDescription": "Piisav, et eelvaade tunduks veenev ilma päris live-feedita.",
+    "stats": {
+      "prep": "Keskmine valmistusaeg",
+      "rating": "Kaasaostu hinnang",
+      "menu": "Värskeid menüütooteid"
+    },
+    "cards": {
+      "loyaltyTitle": "Lojaalsusampsud",
+      "loyaltyText": "Kogu templeid iga tellimusega ja saa pärast 6 külastust tasuta magus pannkook.",
+      "deliveryTitle": "Valmis kohaletoimetamiseks",
+      "deliveryText": "Lahendus on üles ehitatud takeaway, pickupi ja kiire lõunatellimise jaoks Jüris."
+    }
+  },
+  "menuPage": {
+    "eyebrow": "Kataloog",
+    "title": "Menüü, mida on telefonis lihtne sirvida",
+    "description": "Viis kategooriat, selged kaardid ja piisavalt infot usutava tellimisteekonna jaoks.",
+    "viewDetails": "Vaata lähemalt",
+    "addToCartLink": "Lisa korvi →",
+    "back": "← Tagasi menüüsse",
+    "chooseSize": "Vali suurus",
+    "extras": "Lisad"
+  },
+  "cart": {
+    "eyebrow": "Ostukorv ja checkout",
+    "title": "Lihtne eelvaate checkout kaasaostu ja kohaletoimetamisega",
+    "description": "Ainult mock Stripe-plokk — ei mingeid päris võtmeid ega live-makseid.",
+    "qty": "Kogus",
+    "summary": "Tellimuse kokkuvõte",
+    "subtotal": "Vahesumma",
+    "delivery": "Kohaletoimetamine",
+    "total": "Kokku",
+    "pickup": "Kaasaost",
+    "deliveryMode": "Kohaletoimetamine",
+    "location": "Vali kaasaostu punkt / kohaletoimetamise ala",
+    "phone": "Telefoninumber",
+    "stripeTitle": "Stripe makse koha-hoidja",
+    "stripeText": "Kaardi väljad ja payment intent on siin tahtlikult ainult eelvaate jaoks mockitud.",
+    "proceed": "Jätka kontole"
+  },
+  "about": {
+    "eyebrow": "Meist",
+    "title": "Soe kaasaegne bränd, mitte võltsnostalgia",
+    "description": "See eelvaade toetub comfort food’ile, puhtale visuaalile ja teadlikule brändihoiakule.",
+    "text1": "BlinnyKing on kujutatud kaasaegse naabruskonna pannkoogikohana: piisavalt kiire argipäeva lõunaks, piisavalt soe perede peatuseks ja piisavalt puhas visuaalselt, et mitte meenutada odavat delivery-rakenduse malli. Brändi lugu keskendub heldetele täidistele, pehmele teenindusele ja menüüle, mille juurde tahetakse tagasi tulla, mitte trikitoodetele.",
+    "text2": "Selles eelvaates kasutatakse toimetuslikku rütmi, sooja värvipaletti ja toidukeskseid blokke, et bränd tunduks kvaliteetne, kuid endiselt ligipääsetav."
+  },
+  "locationsPage": {
+    "eyebrow": "Asukohad",
+    "title": "Ehitatud Jüri ümber, valmis järgmiseks punktiks",
+    "description": "Esimene asukoht on üles ehitatud reaalse struktuurina, teine on puhas placeholder laienemiseks."
+  },
+  "partnersPage": {
+    "eyebrow": "Partnerid",
+    "title": "B2B päringuleht kontoritele, üritustele ja hulgile",
+    "description": "Sobib catering-päringuteks, kontorilõunateks ja co-branded koostöödeks.",
+    "leadTitle": "Toidame su tiimi korralikult",
+    "lead1": "Kontori lõunalahendused",
+    "lead2": "Ürituste vaagnad ja magusalauad",
+    "lead3": "Kohalikud ristkampaaniad ja hulgitarne",
+    "company": "Ettevõte",
+    "contact": "Kontaktisik",
+    "email": "E-post",
+    "phone": "Telefon",
+    "idea": "Kirjelda oma mahtu, üritust või koostööideed",
+    "send": "Saada päring"
+  },
+  "jobsPage": {
+    "eyebrow": "Tööpakkumised",
+    "title": "Värbamisplokid kasvavale toidubrändile",
+    "description": "Kaks mock-positsiooni ja kerge kandideerimisvorm.",
+    "apply": "Kandideeri nüüd",
+    "fullName": "Täisnimi",
+    "email": "E-post",
+    "position": "Soovitud ametikoht",
+    "experience": "Räägi oma kogemusest",
+    "submit": "Saada kandideerimine",
+    "fullTime": "Täiskohaga",
+    "partTime": "Osalise koormusega"
+  },
+  "contactsPage": {
+    "eyebrow": "Kontakt",
+    "title": "Kontaktileht kaardi placeholderi ja päris struktuuriga",
+    "description": "Piisavalt infot eelvaate hindamiseks ilma live-embedide ja sotsiaalmeedia API-deta.",
+    "map": "Kaardi placeholder",
+    "socials": "Instagram · Facebook · TikTok (placeholderid)"
+  },
   "account": {
     "eyebrow": "Konto",
     "title": "Demo sisselogimine, profiil ja tellimuste ajalugu",
@@ -47,5 +160,22 @@
     "emptyHistory": "Järgmised tellimused ilmuvad siia.",
     "statusDelivered": "Kohale toimetatud",
     "statusPickup": "Järele võetud"
+  },
+  "data": {
+    "review1": "Soolased pannkoogid maitsevad päriselt koduselt ja takeaway on kiire.",
+    "review2": "Lõunakomplekt on väga hea hinnaga ja koht ise tundub soe, mitte steriilne.",
+    "review3": "Marjadega magus pannkook nägi ilus välja ega olnud lihtsalt suhkrupomm.",
+    "job1Title": "Köögitiimi liige",
+    "job1Description": "Valmista pannkooke, hoia kvaliteeti ettevalmistusalal ja säilita sujuv teenindus tipptundidel.",
+    "job2Title": "Leti- ja kohaletoimetamise koordinaator",
+    "job2Description": "Tervita külalisi, halda takeaway-voogu ja koordineeri kullerite pickup-aegu.",
+    "location1Title": "BlinnyKing Jüri",
+    "location1Hours": "E–P · 10:00–21:00",
+    "location1Note": "Peamine eelvaate asukoht kohapealse söömise, takeaway ja kohaletoimetamise tsooniga.",
+    "location2Title": "Teise asukoha placeholder",
+    "location2Address": "Tulekul",
+    "location2Hours": "TBA",
+    "location2Phone": "TBA",
+    "location2Note": "Struktuur on ette valmis järgmise avamise jaoks."
   }
 }

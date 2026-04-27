@@ -1,16 +1,19 @@
+import {getTranslations} from 'next-intl/server';
 import {categories, menuItems} from '@/data/menu';
 import {MenuCard} from '@/components/menu/menu-card';
 import {Pill, Section, SectionHeader} from '@/components/shared/ui';
 import {Locale} from '@/i18n/routing';
 
-export default function MenuPage({params}: {params: {locale: Locale}}) {
+export default async function MenuPage({params}: {params: {locale: Locale}}) {
+  const t = await getTranslations({locale: params.locale, namespace: 'menuPage'});
+
   return (
     <div>
       <Section className="pb-4">
         <SectionHeader
-          eyebrow="Catalog"
-          title="Menu built for browsing fast on mobile"
-          description="Five categories, clear cards and enough information to support a believable preview ordering flow."
+          eyebrow={t('eyebrow')}
+          title={t('title')}
+          description={t('description')}
         />
         <div className="flex flex-wrap gap-3">
           {categories.map((category) => (

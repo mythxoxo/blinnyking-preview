@@ -1,8 +1,11 @@
 import Link from 'next/link';
+import {getTranslations} from 'next-intl/server';
 import {MenuItem} from '@/data/menu';
 import {ActionLink, Pill, PlaceholderImage} from '@/components/shared/ui';
 
-export function MenuCard({item, locale}: {item: MenuItem; locale: string}) {
+export async function MenuCard({item, locale}: {item: MenuItem; locale: string}) {
+  const t = await getTranslations({locale, namespace: 'menuPage'});
+
   return (
     <div className="flex h-full flex-col rounded-[30px] border border-orange-100 bg-white p-4 shadow-sm shadow-orange-950/5">
       <PlaceholderImage label={item.image} className="min-h-[220px]" />
@@ -24,9 +27,9 @@ export function MenuCard({item, locale}: {item: MenuItem; locale: string}) {
           ))}
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-3">
-          <ActionLink href={`/${locale}/menu/${item.slug}`}>View Details</ActionLink>
+          <ActionLink href={`/${locale}/menu/${item.slug}`}>{t('viewDetails')}</ActionLink>
           <Link href={`/${locale}/cart`} className="text-sm font-semibold text-orange-700 transition hover:text-orange-800">
-            Add to Cart →
+            {t('addToCartLink')}
           </Link>
         </div>
       </div>

@@ -8,6 +8,13 @@ import {Locale} from '@/i18n/routing';
 
 export async function HomeSections({locale}: {locale: Locale}) {
   const t = await getTranslations({locale});
+  const home = await getTranslations({locale, namespace: 'home'});
+  const dataT = await getTranslations({locale, namespace: 'data'});
+
+  const localizedReviews = reviews.map((review, index) => ({
+    ...review,
+    text: dataT(`review${index + 1}`)
+  }));
 
   return (
     <>
@@ -29,21 +36,21 @@ export async function HomeSections({locale}: {locale: Locale}) {
               </ActionLink>
             </div>
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              <StatCard label="Average prep time" value="15 min" />
-              <StatCard label="Pickup rating" value="4.9/5" />
-              <StatCard label="Fresh menu items" value="8+" />
+              <StatCard label={home('stats.prep')} value="15 min" />
+              <StatCard label={home('stats.rating')} value="4.9/5" />
+              <StatCard label={home('stats.menu')} value="8+" />
             </div>
           </div>
           <div className="space-y-5">
             <PlaceholderImage label="Hero food shot" className="min-h-[420px]" />
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-[28px] border border-orange-100 bg-white p-5 shadow-sm shadow-orange-950/5">
-                <div className="flex items-center gap-3 text-orange-600"><Percent className="h-5 w-5" /> Loyalty bites</div>
-                <p className="mt-3 text-sm leading-6 text-stone-600">Collect stamps on every order and unlock a free sweet bliny after 6 visits.</p>
+                <div className="flex items-center gap-3 text-orange-600"><Percent className="h-5 w-5" /> {home('cards.loyaltyTitle')}</div>
+                <p className="mt-3 text-sm leading-6 text-stone-600">{home('cards.loyaltyText')}</p>
               </div>
               <div className="rounded-[28px] border border-orange-100 bg-[#2b190e] p-5 text-white shadow-sm shadow-orange-950/10">
-                <div className="flex items-center gap-3 text-orange-200"><Truck className="h-5 w-5" /> Delivery ready</div>
-                <p className="mt-3 text-sm leading-6 text-orange-50/80">Built for takeaway, pickup and quick lunch delivery around Jüri.</p>
+                <div className="flex items-center gap-3 text-orange-200"><Truck className="h-5 w-5" /> {home('cards.deliveryTitle')}</div>
+                <p className="mt-3 text-sm leading-6 text-orange-50/80">{home('cards.deliveryText')}</p>
               </div>
             </div>
           </div>
@@ -52,9 +59,9 @@ export async function HomeSections({locale}: {locale: Locale}) {
 
       <Section>
         <SectionHeader
-          eyebrow="Top picks"
-          title="Popular dishes people actually come back for"
-          description="Four hero products to anchor the preview and show the tone of the menu."
+          eyebrow={home('popularEyebrow')}
+          title={home('popularTitle')}
+          description={home('popularDescription')}
         />
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
           {featuredItems.map((item) => (
@@ -66,16 +73,16 @@ export async function HomeSections({locale}: {locale: Locale}) {
       <Section>
         <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-[32px] border border-orange-100 bg-[#fff5ea] p-8">
-            <Pill>Lunch offer</Pill>
-            <h3 className="mt-4 text-3xl font-semibold text-stone-950">Weekday lunch from €9.90</h3>
-            <p className="mt-4 text-base leading-7 text-stone-600">Soup, mini savory pancake and side salad. Made for nearby workers who need something fast but still warm and proper.</p>
-            <div className="mt-6 inline-flex rounded-full bg-white px-4 py-2 text-sm font-semibold text-stone-900">Mon–Fri · 11:00–15:00</div>
+            <Pill>{home('lunchEyebrow')}</Pill>
+            <h3 className="mt-4 text-3xl font-semibold text-stone-950">{home('lunchTitle')}</h3>
+            <p className="mt-4 text-base leading-7 text-stone-600">{home('lunchDescription')}</p>
+            <div className="mt-6 inline-flex rounded-full bg-white px-4 py-2 text-sm font-semibold text-stone-900">{home('lunchTime')}</div>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {[
-              {icon: Sandwich, title: 'Choose your bliny', text: 'Pick savory, sweet or lunch sets with clear portions and sizes.'},
-              {icon: Store, title: 'Select pickup or delivery', text: 'Preview flow supports both modes with location and checkout steps.'},
-              {icon: Star, title: 'Enjoy the reward loop', text: 'Discounts, stamps and repeat-order UX encourage regular lunch traffic.'}
+              {icon: Sandwich, title: home('steps.oneTitle'), text: home('steps.oneText')},
+              {icon: Store, title: home('steps.twoTitle'), text: home('steps.twoText')},
+              {icon: Star, title: home('steps.threeTitle'), text: home('steps.threeText')}
             ].map((step, index) => (
               <div key={step.title} className="rounded-[28px] border border-orange-100 bg-white p-6 shadow-sm shadow-orange-950/5">
                 <div className="flex items-center justify-between">
@@ -94,25 +101,25 @@ export async function HomeSections({locale}: {locale: Locale}) {
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-[32px] bg-stone-950 p-8 text-white">
             <div className="flex items-center gap-3 text-orange-200">
-              <Percent className="h-5 w-5" /> Loyalty & discount
+              <Percent className="h-5 w-5" /> {home('cards.loyaltyTitle')}
             </div>
-            <h3 className="mt-4 text-3xl font-semibold">Built-in repeat reason</h3>
-            <p className="mt-4 max-w-lg text-sm leading-7 text-orange-50/80">Preview includes a simple hook: lunch club, returning customer perks and discount placement that feels premium instead of spammy.</p>
+            <h3 className="mt-4 text-3xl font-semibold">{home('loyaltyTitle')}</h3>
+            <p className="mt-4 max-w-lg text-sm leading-7 text-orange-50/80">{home('loyaltyText')}</p>
             <ul className="mt-6 space-y-3 text-sm text-orange-50/90">
-              <li>• 10% off first app order</li>
-              <li>• Free sweet bliny after 6 stamps</li>
-              <li>• Combo upsell during checkout</li>
+              <li>• {home('loyaltyPoint1')}</li>
+              <li>• {home('loyaltyPoint2')}</li>
+              <li>• {home('loyaltyPoint3')}</li>
             </ul>
           </div>
           <div className="rounded-[32px] border border-orange-100 bg-white p-8 shadow-sm shadow-orange-950/5">
             <SectionHeader
-              eyebrow="Find us"
+              eyebrow={home('findEyebrow')}
               title={locations[0].address}
-              description="Designed around one real location now, with room to scale into more later."
+              description={home('findDescription')}
             />
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-[24px] bg-[#fff5ea] p-5">
-                <div className="flex items-center gap-2 text-sm font-semibold text-stone-900"><MapPin className="h-4 w-4 text-orange-600" /> Jüri location</div>
+                <div className="flex items-center gap-2 text-sm font-semibold text-stone-900"><MapPin className="h-4 w-4 text-orange-600" /> {home('locationLabel')}</div>
                 <p className="mt-3 text-sm leading-6 text-stone-600">{locations[0].hours}<br />{locations[0].phone}</p>
               </div>
               <PlaceholderImage label="Storefront / map preview" className="min-h-[180px]" />
@@ -122,9 +129,9 @@ export async function HomeSections({locale}: {locale: Locale}) {
       </Section>
 
       <Section>
-        <SectionHeader eyebrow="Reviews" title="Mock social proof that feels plausible" description="Enough for a convincing preview without faking a production feed." />
+        <SectionHeader eyebrow={home('reviewsEyebrow')} title={home('reviewsTitle')} description={home('reviewsDescription')} />
         <div className="grid gap-5 md:grid-cols-3">
-          {reviews.map((review) => (
+          {localizedReviews.map((review) => (
             <div key={review.name} className="rounded-[28px] border border-orange-100 bg-white p-6 shadow-sm shadow-orange-950/5">
               <div className="flex gap-1 text-orange-500">{'★'.repeat(review.rating)}</div>
               <p className="mt-4 text-sm leading-7 text-stone-600">“{review.text}”</p>

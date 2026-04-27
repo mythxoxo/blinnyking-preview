@@ -1,16 +1,37 @@
+import {getTranslations} from 'next-intl/server';
 import {locations} from '@/data/site';
 import {PlaceholderImage, Section, SectionHeader} from '@/components/shared/ui';
 
-export default function LocationsPage() {
+export default async function LocationsPage({params}: {params: {locale: string}}) {
+  const t = await getTranslations({locale: params.locale, namespace: 'locationsPage'});
+  const dataT = await getTranslations({locale: params.locale, namespace: 'data'});
+
+  const localizedLocations = [
+    {
+      ...locations[0],
+      title: dataT('location1Title'),
+      hours: dataT('location1Hours'),
+      note: dataT('location1Note')
+    },
+    {
+      ...locations[1],
+      title: dataT('location2Title'),
+      address: dataT('location2Address'),
+      hours: dataT('location2Hours'),
+      phone: dataT('location2Phone'),
+      note: dataT('location2Note')
+    }
+  ];
+
   return (
     <Section>
       <SectionHeader
-        eyebrow="Locations"
-        title="Built around Jüri, ready for the next spot"
-        description="The first location is real in structure, the second is a clean expansion placeholder."
+        eyebrow={t('eyebrow')}
+        title={t('title')}
+        description={t('description')}
       />
       <div className="grid gap-5 lg:grid-cols-2">
-        {locations.map((location) => (
+        {localizedLocations.map((location) => (
           <div key={location.title} className="rounded-[32px] border border-orange-100 bg-white p-6 shadow-sm shadow-orange-950/5">
             <h2 className="text-2xl font-semibold text-stone-950">{location.title}</h2>
             <p className="mt-4 text-sm leading-7 text-stone-600">{location.address}<br />{location.hours}<br />{location.phone}</p>

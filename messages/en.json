@@ -27,6 +27,119 @@
     "rights": "All rights reserved.",
     "hours": "Open daily · 10:00–21:00"
   },
+  "home": {
+    "popularEyebrow": "Top picks",
+    "popularTitle": "Popular dishes people actually come back for",
+    "popularDescription": "Four hero products to anchor the preview and show the tone of the menu.",
+    "lunchEyebrow": "Lunch offer",
+    "lunchTitle": "Weekday lunch from €9.90",
+    "lunchDescription": "Soup, mini savory pancake and side salad. Made for nearby workers who need something fast but still warm and proper.",
+    "lunchTime": "Mon–Fri · 11:00–15:00",
+    "steps": {
+      "oneTitle": "Choose your bliny",
+      "oneText": "Pick savory, sweet or lunch sets with clear portions and sizes.",
+      "twoTitle": "Select pickup or delivery",
+      "twoText": "Preview flow supports both modes with location and checkout steps.",
+      "threeTitle": "Enjoy the reward loop",
+      "threeText": "Discounts, stamps and repeat-order UX encourage regular lunch traffic."
+    },
+    "loyaltyTitle": "Built-in repeat reason",
+    "loyaltyText": "Preview includes a simple hook: lunch club, returning customer perks and discount placement that feels premium instead of spammy.",
+    "loyaltyPoint1": "10% off first app order",
+    "loyaltyPoint2": "Free sweet bliny after 6 stamps",
+    "loyaltyPoint3": "Combo upsell during checkout",
+    "findEyebrow": "Find us",
+    "findDescription": "Designed around one real location now, with room to scale into more later.",
+    "locationLabel": "Jüri location",
+    "reviewsEyebrow": "Reviews",
+    "reviewsTitle": "Mock social proof that feels plausible",
+    "reviewsDescription": "Enough for a convincing preview without faking a production feed.",
+    "stats": {
+      "prep": "Average prep time",
+      "rating": "Pickup rating",
+      "menu": "Fresh menu items"
+    },
+    "cards": {
+      "loyaltyTitle": "Loyalty bites",
+      "loyaltyText": "Collect stamps on every order and unlock a free sweet bliny after 6 visits.",
+      "deliveryTitle": "Delivery ready",
+      "deliveryText": "Built for takeaway, pickup and quick lunch delivery around Jüri."
+    }
+  },
+  "menuPage": {
+    "eyebrow": "Catalog",
+    "title": "Menu built for browsing fast on mobile",
+    "description": "Five categories, clear cards and enough information to support a believable preview ordering flow.",
+    "viewDetails": "View Details",
+    "addToCartLink": "Add to Cart →",
+    "back": "← Back to menu",
+    "chooseSize": "Choose size",
+    "extras": "Extras"
+  },
+  "cart": {
+    "eyebrow": "Cart & checkout",
+    "title": "Simple checkout preview with pickup or delivery",
+    "description": "Mock Stripe block only — no real keys, no live payment flow.",
+    "qty": "Qty",
+    "summary": "Order summary",
+    "subtotal": "Subtotal",
+    "delivery": "Delivery",
+    "total": "Total",
+    "pickup": "Pickup",
+    "deliveryMode": "Delivery",
+    "location": "Select pickup point / delivery area",
+    "phone": "Phone number",
+    "stripeTitle": "Stripe payment placeholder",
+    "stripeText": "Card fields and payment intent are intentionally mocked for preview only.",
+    "proceed": "Proceed to account"
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "A warm modern brand, not fake nostalgia",
+    "description": "The preview leans into comfort food, clean surfaces and enough soul to feel intentional.",
+    "text1": "BlinnyKing is imagined as a modern neighborhood pancake house: fast enough for weekday lunch, warm enough for a family stop, and visually clean enough to avoid the cheap delivery-app look. The brand story centers on generous fillings, soft hospitality and a menu built around repeat cravings instead of novelty gimmicks.",
+    "text2": "This preview uses editorial spacing, earthy colors and food-led blocks so the identity feels premium but still approachable."
+  },
+  "locationsPage": {
+    "eyebrow": "Locations",
+    "title": "Built around Jüri, ready for the next spot",
+    "description": "The first location is real in structure, the second is a clean expansion placeholder."
+  },
+  "partnersPage": {
+    "eyebrow": "Partners",
+    "title": "B2B inquiry page for offices, events and wholesale",
+    "description": "Structured for catering leads, office lunch agreements or co-branded popups.",
+    "leadTitle": "Let’s feed your team properly",
+    "lead1": "Office lunch deals",
+    "lead2": "Event trays and dessert platters",
+    "lead3": "Local cross-promotions and wholesale supply",
+    "company": "Company",
+    "contact": "Contact person",
+    "email": "Email",
+    "phone": "Phone",
+    "idea": "Tell us about your volume, event or partnership idea",
+    "send": "Send inquiry"
+  },
+  "jobsPage": {
+    "eyebrow": "Jobs",
+    "title": "Hiring blocks for a growing neighborhood food brand",
+    "description": "Two mock positions plus a lightweight application form.",
+    "apply": "Apply now",
+    "fullName": "Full name",
+    "email": "Email",
+    "position": "Position of interest",
+    "experience": "Tell us about your experience",
+    "submit": "Submit application",
+    "fullTime": "Full-time",
+    "partTime": "Part-time"
+  },
+  "contactsPage": {
+    "eyebrow": "Contacts",
+    "title": "Contact page with map placeholder and real-world structure",
+    "description": "Enough detail for preview review without wiring live embeds or social APIs.",
+    "map": "Map placeholder",
+    "socials": "Instagram · Facebook · TikTok (placeholders)"
+  },
   "account": {
     "eyebrow": "Account",
     "title": "Demo login, profile and order history",
@@ -47,5 +160,22 @@
     "emptyHistory": "Your next orders will appear here.",
     "statusDelivered": "Delivered",
     "statusPickup": "Picked up"
+  },
+  "data": {
+    "review1": "The savory pancakes taste homemade in the best possible way. Fast pickup too.",
+    "review2": "Lunch combo is crazy good value and the place feels warm, not generic.",
+    "review3": "Sweet bliny with berries was actually beautiful, not just sugar overload.",
+    "job1Title": "Kitchen Team Member",
+    "job1Description": "Prepare pancakes, maintain prep station quality and keep service smooth during rush hours.",
+    "job2Title": "Front Counter & Delivery Coordinator",
+    "job2Description": "Welcome guests, manage takeaway flow and coordinate delivery pickup timing.",
+    "location1Title": "BlinnyKing Jüri",
+    "location1Hours": "Mon–Sun · 10:00–21:00",
+    "location1Note": "Main preview location with dine-in, takeaway and delivery zone.",
+    "location2Title": "Second location placeholder",
+    "location2Address": "Coming soon",
+    "location2Hours": "TBA",
+    "location2Phone": "TBA",
+    "location2Note": "Structure reserved for the next opening."
   }
 }
