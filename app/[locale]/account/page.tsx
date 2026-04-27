@@ -54,7 +54,12 @@ export default async function AccountPage({
           guestName: t('guestName'),
           guestPhone: t('guestPhone'),
           guestEmailOptional: t('guestEmailOptional'),
-          guestContinue: t('guestContinue')
+          guestContinue: t('guestContinue'),
+          discountPitch: t('discountPitch'),
+          google: t('google'),
+          loyaltyStatus: t('loyaltyStatus'),
+          loyaltyActive: t('loyaltyActive'),
+          birthdayDiscount: t('birthdayDiscount')
         }}
         orders={localizedOrders}
       />

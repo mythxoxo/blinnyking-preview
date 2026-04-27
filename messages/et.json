@@ -196,5 +196,35 @@
   },
   "location": {
     "juri": "Jüri"
+  },
+  "promotions": {
+    "eyebrow": "Pakkumised",
+    "title": "Aktiivsed pakkumised",
+    "description": "Lõunapakkumised ja püsikliendi boonused.",
+    "lunchTitle": "Lõuna −20%",
+    "lunchText": "Argipäeviti 11:00–15:00 on osa menüüst −20% soodustusega.",
+    "loyaltyTitle": "Püsikliendikaardi soodustus",
+    "loyaltyText": "Püsikülalised saavad −5% ning sünnipäeval kuni −15%."
+  },
+  "loyaltyPage": {
+    "eyebrow": "Lojaalsus",
+    "title": "Lojaalsusprogramm",
+    "description": "Soodustused ja boonused püsikülalistele.",
+    "point1": "−5% igalt tellimuselt püsikülalistele",
+    "point2": "−15% sünnipäeval",
+    "point3": "Kiire registreerimine vormi või konto kaudu",
+    "openForm": "Ava vorm"
+  },
+  "jobsPage": {
+    "phone": "Telefon",
+    "vacancyTitle": "Tööpakkumised Blinny Kingis",
+    "vacancyText": "Otsime sooje, kiireid ja korrektseid inimesi nii kööki kui leti poolele."
+  },
+  "account": {
+    "discountPitch": "Logi sisse ja saa −5% igalt tellimuselt + ostuajalugu",
+    "google": "Jätka Google’iga",
+    "loyaltyStatus": "Lojaalsuskaart",
+    "loyaltyActive": "Aktiivne",
+    "birthdayDiscount": "−15% sünnipäeval"
   }
 }

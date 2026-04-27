@@ -196,5 +196,35 @@
   },
   "location": {
     "juri": "Jüri"
+  },
+  "promotions": {
+    "eyebrow": "Promotions",
+    "title": "Current offers",
+    "description": "Lunch deals and loyalty perks.",
+    "lunchTitle": "Lunch −20%",
+    "lunchText": "On weekdays from 11:00 to 15:00 selected menu items are discounted by −20%.",
+    "loyaltyTitle": "Loyalty card discount",
+    "loyaltyText": "Regular guests get −5%, and birthday guests get up to −15%."
+  },
+  "loyaltyPage": {
+    "eyebrow": "Loyalty",
+    "title": "Loyalty program",
+    "description": "Discounts and perks for regular guests.",
+    "point1": "−5% on every order for regular guests",
+    "point2": "−15% on birthdays",
+    "point3": "Quick registration via form or account",
+    "openForm": "Open form"
+  },
+  "jobsPage": {
+    "phone": "Phone",
+    "vacancyTitle": "Open roles at Blinny King",
+    "vacancyText": "We are looking for warm, fast and tidy people for both kitchen and front counter roles."
+  },
+  "account": {
+    "discountPitch": "Sign in and get −5% on every order + purchase history",
+    "google": "Continue with Google",
+    "loyaltyStatus": "Loyalty card",
+    "loyaltyActive": "Active",
+    "birthdayDiscount": "−15% on birthday"
   }
 }
