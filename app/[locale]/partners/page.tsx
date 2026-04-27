@@ -12,15 +12,15 @@ export default async function PartnersPage({params}: {params: {locale: string}})
         description={t('description')}
       />
       <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-        <div className="rounded-[32px] bg-stone-950 p-8 text-white">
+        <div className="rounded-[32px] border border-[#6d4b13] bg-[#24140b] p-8 text-[#fff4d1] shadow-sm shadow-black/30">
           <h2 className="text-3xl font-semibold">{t('leadTitle')}</h2>
-          <ul className="mt-6 space-y-3 text-sm leading-7 text-orange-50/85">
+          <ul className="mt-6 space-y-3 text-sm leading-7 text-[#d7c190]">
             <li>• {t('lead1')}</li>
             <li>• {t('lead2')}</li>
             <li>• {t('lead3')}</li>
           </ul>
         </div>
-        <form className="rounded-[32px] border border-orange-100 bg-white p-6 shadow-sm shadow-orange-950/5">
+        <form className="rounded-[32px] border border-[#6d4b13] bg-[#24140b] p-6 shadow-sm shadow-black/30">
           <div className="grid gap-4 sm:grid-cols-2">
             <Input placeholder={t('company')} />
             <Input placeholder={t('contact')} />
@@ -32,7 +32,7 @@ export default async function PartnersPage({params}: {params: {locale: string}})
           <div className="mt-4">
             <Textarea placeholder={t('idea')} />
           </div>
-          <button className="mt-5 rounded-full bg-stone-950 px-5 py-3 text-sm font-semibold text-white">{t('send')}</button>
+          <button className="mt-5 rounded-full bg-[#ffd25b] px-5 py-3 text-sm font-semibold text-[#170c06]">{t('send')}</button>
         </form>
       </div>
     </Section>

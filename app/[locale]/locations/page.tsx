@@ -32,10 +32,10 @@ export default async function LocationsPage({params}: {params: {locale: string}}
       />
       <div className="grid gap-5 lg:grid-cols-2">
         {localizedLocations.map((location) => (
-          <div key={location.title} className="rounded-[32px] border border-orange-100 bg-white p-6 shadow-sm shadow-orange-950/5">
-            <h2 className="text-2xl font-semibold text-stone-950">{location.title}</h2>
-            <p className="mt-4 text-sm leading-7 text-stone-600">{location.address}<br />{location.hours}<br />{location.phone}</p>
-            <p className="mt-4 text-sm leading-7 text-stone-500">{location.note}</p>
+          <div key={location.title} className="rounded-[32px] border border-[#6d4b13] bg-[#24140b] p-6 shadow-sm shadow-black/30">
+            <h2 className="text-2xl font-semibold text-[#fff4d1]">{location.title}</h2>
+            <p className="mt-4 text-sm leading-7 text-[#d7c190]">{location.address}<br />{location.hours}<br />{location.phone}</p>
+            <p className="mt-4 text-sm leading-7 text-[#b89d69]">{location.note}</p>
             <PlaceholderImage label={`${location.title} photo`} className="mt-6 min-h-[220px]" />
           </div>
         ))}

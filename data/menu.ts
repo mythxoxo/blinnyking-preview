@@ -34,6 +34,24 @@ export const menuItems: MenuItem[] = [
     extras: [{key: 'capers', price: 0.8}, {key: 'lemonAioli', price: 0.9}]
   },
   {
+    slug: 'chicken-mushroom-melt',
+    key: 'chickenMushroomMelt',
+    category: 'savory',
+    price: 10.7,
+    sizes: ['Ø30', 'Ø40'],
+    image: 'Hearty lunch',
+    extras: [{key: 'baconCrumble', price: 1.4}, {key: 'houseSalad', price: 2.9}]
+  },
+  {
+    slug: 'spinach-feta',
+    key: 'spinachFeta',
+    category: 'savory',
+    price: 9.6,
+    sizes: ['Ø30', 'Ø40'],
+    image: 'Green filling',
+    extras: [{key: 'extraCheese', price: 1.2}, {key: 'garlicSauce', price: 0.9}]
+  },
+  {
     slug: 'nutella-banana',
     key: 'nutellaBananaDream',
     category: 'sweet',
@@ -52,6 +70,24 @@ export const menuItems: MenuItem[] = [
     extras: [{key: 'extraBerrySauce', price: 1.1}, {key: 'mascarpone', price: 1.6}]
   },
   {
+    slug: 'caramel-apple',
+    key: 'caramelApple',
+    category: 'sweet',
+    price: 8.2,
+    sizes: ['Ø30', 'Ø40'],
+    image: 'Caramel apple',
+    extras: [{key: 'vanillaIceCream', price: 1.5}, {key: 'mascarpone', price: 1.6}]
+  },
+  {
+    slug: 'curd-berries',
+    key: 'curdBerries',
+    category: 'sweet',
+    price: 8.6,
+    sizes: ['Ø30', 'Ø40'],
+    image: 'Curd filling',
+    extras: [{key: 'extraBerrySauce', price: 1.1}, {key: 'strawberries', price: 1.8}]
+  },
+  {
     slug: 'lunch-soup-combo',
     key: 'lunchSoupCombo',
     category: 'lunch',
@@ -62,6 +98,16 @@ export const menuItems: MenuItem[] = [
     extras: [{key: 'kefirDrink', price: 1.9}, {key: 'dessertBliny', price: 3.4}]
   },
   {
+    slug: 'lunch-chicken-set',
+    key: 'lunchChickenSet',
+    category: 'lunch',
+    price: 10.4,
+    sizes: ['set'],
+    image: 'Lunch chicken',
+    badge: 'weekday',
+    extras: [{key: 'kefirDrink', price: 1.9}, {key: 'freshJuice', price: 2.2}]
+  },
+  {
     slug: 'iced-latte',
     key: 'icedLatte',
     category: 'drinks',
@@ -69,6 +115,15 @@ export const menuItems: MenuItem[] = [
     sizes: ['350ml'],
     image: 'Coffee',
     extras: [{key: 'oatMilk', price: 0.6}, {key: 'vanillaSyrup', price: 0.4}]
+  },
+  {
+    slug: 'berry-morss',
+    key: 'berryMorss',
+    category: 'drinks',
+    price: 3.4,
+    sizes: ['400ml'],
+    image: 'Berry drink',
+    extras: [{key: 'freshJuice', price: 2.2}]
   },
   {
     slug: 'family-combo',
@@ -81,13 +136,14 @@ export const menuItems: MenuItem[] = [
     extras: [{key: 'extraSavoryPancake', price: 5.5}, {key: 'freshJuice', price: 2.2}]
   },
   {
-    slug: 'chicken-mushroom-melt',
-    key: 'chickenMushroomMelt',
-    category: 'savory',
-    price: 10.7,
-    sizes: ['Ø30', 'Ø40'],
-    image: 'Hearty lunch',
-    extras: [{key: 'baconCrumble', price: 1.4}, {key: 'houseSalad', price: 2.9}]
+    slug: 'lunch-combo-drink',
+    key: 'lunchComboDrink',
+    category: 'combos',
+    price: 12.5,
+    sizes: ['combo'],
+    image: 'Lunch combo',
+    badge: 'goodValue',
+    extras: [{key: 'dessertBliny', price: 3.4}, {key: 'kefirDrink', price: 1.9}]
   }
 ];
 
