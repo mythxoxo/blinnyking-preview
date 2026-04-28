@@ -1,4 +1,4 @@
-import {ArrowRight, Clock3, MapPin, ShoppingBag, UtensilsCrossed} from 'lucide-react';
+import {ArrowRight, CheckCircle2, Clock3, MapPin, Phone, ShoppingBag, UtensilsCrossed} from 'lucide-react';
 import {getTranslations} from 'next-intl/server';
 import {featuredItems} from '@/data/menu';
 import {BOLT_URL, WOLT_URL, locations} from '@/data/locations';
@@ -20,18 +20,30 @@ export async function HomeSections({locale}: {locale: Locale}) {
 
   return (
     <>
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden border-b border-border/60 bg-[#E9D7BF]">
         <div className="absolute inset-0">
-          <MediaImage src="https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=1600&q=80" alt="Blinny King hero" className="h-full rounded-none" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,219,169,0.28),transparent_34%),linear-gradient(180deg,rgba(18,10,4,0.18),rgba(18,10,4,0.72))]" />
+          <MediaImage src="https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=1800&q=80" alt="Blinny King hero" className="h-full rounded-none" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(24,13,5,0.78)_0%,rgba(24,13,5,0.60)_38%,rgba(24,13,5,0.22)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,219,169,0.20),transparent_30%)]" />
         </div>
-        <div className="relative mx-auto grid min-h-[calc(100vh-88px)] max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
+
+        <div className="relative mx-auto grid min-h-[calc(100vh-88px)] max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:py-20">
           <div className="max-w-3xl text-white">
-            <Pill className="bg-white/15 text-white">{t('hero.eyebrow')}</Pill>
+            <Pill className="bg-white/14 text-white">{t('hero.eyebrow')}</Pill>
             <h1 className="mt-6 text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">{t('hero.title')}</h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/85">
-              {t('hero.subtitle')} · {location.hours.weekdays}
-            </p>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/88">{t('hero.subtitle')}</p>
+
+            <div className="mt-7 flex flex-wrap items-center gap-3 text-sm text-white/88">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-sm">
+                <Clock3 className="h-4 w-4" />
+                {location.hours.weekdays}
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-sm">
+                <MapPin className="h-4 w-4" />
+                {location.address}
+              </span>
+            </div>
+
             <div className="mt-8 flex flex-wrap gap-3">
               <ActionLink href={`/${locale}/order`} className="bg-primary text-white hover:bg-primary-hover">
                 {t('cta.orderNow')}
@@ -40,29 +52,47 @@ export async function HomeSections({locale}: {locale: Locale}) {
                 {t('hero.cta.menu')}
               </ActionLink>
             </div>
-            <div className="mt-8 flex flex-wrap gap-3 text-sm font-medium text-white/90">
-              <a href={BOLT_URL} target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm transition hover:bg-white/16">
+
+            <div className="mt-8 flex flex-wrap gap-3 text-sm font-medium text-white/92">
+              <a href={BOLT_URL} target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/30 px-4 py-2.5 backdrop-blur-sm transition hover:bg-black/40">
                 ⚡ {t('hero.cta.bolt')}
               </a>
-              <a href={WOLT_URL} target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm transition hover:bg-white/16">
+              <a href={WOLT_URL} target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-[#0D92D7] px-4 py-2.5 text-white transition hover:bg-[#087fbc]">
                 🔵 {t('hero.cta.wolt')}
               </a>
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-            <div className="rounded-[32px] border border-white/15 bg-white/10 p-6 text-white shadow-[0_24px_60px_rgba(0,0,0,0.18)] backdrop-blur-md">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/70">{t('home.stats.address')}</p>
-              <p className="mt-3 text-2xl font-semibold">{location.address}</p>
-              <p className="mt-2 text-sm text-white/75">{t('footer.hoursWeek')}: {location.hours.weekdays}</p>
-            </div>
-            <div className="rounded-[32px] border border-[#FFD8A8] bg-[#FFF3E0] p-6 text-text shadow-soft">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{t('cta.orderNow')}</p>
-              <p className="mt-3 text-2xl font-semibold">Bolt · Wolt · Pickup</p>
-              <p className="mt-2 text-sm text-text-muted">Fast order flow, clean menu, clear CTA and real 3-language navigation.</p>
-              <ActionLink href={`/${locale}/order`} className="mt-5 bg-primary text-white hover:bg-primary-hover">
+          <div className="grid gap-4">
+            <div className="rounded-[32px] border border-white/15 bg-white/12 p-6 text-white shadow-[0_24px_60px_rgba(0,0,0,0.22)] backdrop-blur-md">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/70">{t('cta.orderNow')}</p>
+              <h2 className="mt-3 text-3xl font-semibold">Bolt · Wolt · Pickup</h2>
+              <p className="mt-3 max-w-md text-sm leading-7 text-white/80">
+                Fast order flow, clean menu structure and 3 working languages for Estonian, Russian and English visitors.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2 text-sm text-white/85">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2"><CheckCircle2 className="h-4 w-4" /> ET</span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2"><CheckCircle2 className="h-4 w-4" /> RU</span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2"><CheckCircle2 className="h-4 w-4" /> EN</span>
+              </div>
+              <ActionLink href={`/${locale}/order`} className="mt-6 bg-primary text-white hover:bg-primary-hover">
                 {t('cta.orderNow')} <ArrowRight className="ml-2 h-4 w-4" />
               </ActionLink>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="rounded-[28px] border border-border bg-surface p-5 shadow-soft">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{t('home.stats.phone')}</p>
+                <p className="mt-3 text-xl font-semibold text-text">{location.phone}</p>
+                <a href={`tel:${location.phone.replace(/\s+/g, '')}`} className="mt-3 inline-flex items-center gap-2 text-sm text-text-muted hover:text-primary">
+                  <Phone className="h-4 w-4" /> Call now
+                </a>
+              </div>
+              <div className="rounded-[28px] border border-border bg-surface p-5 shadow-soft">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{t('home.stats.hours')}</p>
+                <p className="mt-3 text-xl font-semibold text-text">{location.hours.weekdays}</p>
+                <p className="mt-3 text-sm text-text-muted">{t('footer.hoursSat')} · {t('footer.hoursSun')}</p>
+              </div>
             </div>
           </div>
         </div>

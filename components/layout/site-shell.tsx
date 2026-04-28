@@ -134,7 +134,7 @@ export function SiteShell({
             <Link href={`/${locale}/account`} className="rounded-full border border-border bg-surface px-4 py-2 text-sm font-semibold text-text transition hover:bg-tag">
               {t('nav.login')}
             </Link>
-            <div className="flex items-center rounded-full border border-border bg-surface p-1">
+            <div className="flex items-center rounded-full border border-border bg-surface p-1.5 shadow-sm">
               <span className="pl-2 pr-1 text-text-muted">
                 <Globe className="h-4 w-4" />
               </span>
@@ -143,11 +143,11 @@ export function SiteShell({
                   key={code}
                   href={href}
                   className={cn(
-                    'rounded-full px-2.5 py-2 text-[11px] font-semibold uppercase lg:px-3 lg:text-xs',
-                    code === locale ? 'bg-primary text-white' : 'text-text-muted transition hover:bg-tag hover:text-text'
+                    'rounded-full px-3 py-2 text-[11px] font-semibold uppercase lg:px-3.5 lg:text-xs',
+                    code === locale ? 'bg-primary text-white shadow-sm' : 'text-text-muted transition hover:bg-tag hover:text-text'
                   )}
                 >
-                  {code}
+                  {code === 'et' ? 'EST' : code === 'ru' ? 'RU' : 'EN'}
                 </Link>
               ))}
             </div>
@@ -190,7 +190,7 @@ export function SiteShell({
                     code === locale ? 'bg-primary text-white' : 'text-text-muted'
                   )}
                 >
-                  {code}
+                  {code === 'et' ? 'EST' : code === 'ru' ? 'RU' : 'EN'}
                 </Link>
               ))}
             </div>
