@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import {Menu, ShoppingBag, X} from 'lucide-react';
+import {usePathname} from 'next/navigation';
+import {Globe, Menu, ShoppingBag, X} from 'lucide-react';
 import {useLocale, useTranslations} from 'next-intl';
 import {useEffect, useMemo, useState} from 'react';
 import {locales} from '@/i18n/routing';
@@ -22,16 +23,44 @@ const navMap = {
 function DeliveryButtons({compact = false}: {compact?: boolean}) {
   return (
     <div className="flex items-center gap-2">
-      <a href={BOLT_URL} target="_blank" rel="noopener" className={cn('inline-flex items-center rounded-full px-4 py-2 text-sm font-medium text-white', compact ? 'bg-[#1C1C1C]' : 'bg-[#1C1C1C]')}>
+      <a
+        href={BOLT_URL}
+        target="_blank"
+        rel="noopener"
+        className={cn(
+          'inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90',
+          compact ? 'bg-[#1C1C1C]' : 'bg-[#1C1C1C]'
+        )}
+      >
         <span className="mr-2">⚡</span>
-        {!compact ? 'Bolt' : 'Bolt'}
+        Bolt
       </a>
-      <a href={WOLT_URL} target="_blank" rel="noopener" className="inline-flex items-center rounded-full bg-[#009DE0] px-4 py-2 text-sm font-medium text-white">
+      <a
+        href={WOLT_URL}
+        target="_blank"
+        rel="noopener"
+        className="inline-flex items-center rounded-full bg-[#009DE0] px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
+      >
         <span className="mr-2">🔵</span>
-        {!compact ? 'Wolt' : 'Wolt'}
+        Wolt
       </a>
     </div>
   );
+}
+
+function buildLocaleHref(pathname: string | null, currentLocale: string, nextLocale: string) {
+  if (!pathname || pathname === '/') {
+    return `/${nextLocale}`;
+  }
+
+  const segments = pathname.split('/').filter(Boolean);
+
+  if (segments[0] === currentLocale) {
+    segments[0] = nextLocale;
+    return `/${segments.join('/')}`;
+  }
+
+  return `/${nextLocale}/${segments.join('/')}`;
 }
 
 export function SiteShell({
@@ -43,6 +72,7 @@ export function SiteShell({
 }) {
   const t = useTranslations();
   const locale = useLocale();
+  const pathname = usePathname();
   const count = useCartStore((state) => state.count());
   const items = useCartStore((state) => state.items);
   const total = useCartStore((state) => state.total());
@@ -52,7 +82,7 @@ export function SiteShell({
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => setScrolled(window.scrollY > 32);
     onScroll();
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
@@ -63,15 +93,25 @@ export function SiteShell({
     [locale]
   );
 
+  const localeLinks = useMemo(
+    () => locales.map((code) => ({code, href: buildLocaleHref(pathname, locale, code)})),
+    [locale, pathname]
+  );
+
   return (
     <div className="min-h-screen bg-background text-text">
-      <header className={cn('sticky top-0 z-50 transition-all', scrolled ? 'bg-white/90 shadow-sm backdrop-blur' : 'bg-transparent')}>
+      <header
+        className={cn(
+          'sticky top-0 z-50 border-b transition-all duration-300',
+          scrolled ? 'border-border bg-white/88 shadow-[0_14px_40px_rgba(30,15,0,0.08)] backdrop-blur-xl' : 'border-transparent bg-white/72 backdrop-blur-md'
+        )}
+      >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
           <Link href={`/${locale}`} className="relative h-14 w-[170px] shrink-0">
             <Image src={logoUrl} alt="Blinny King" fill className="object-contain object-left" sizes="170px" unoptimized />
           </Link>
 
-          <nav className="hidden items-center gap-6 lg:gap-8 md:flex">
+          <nav className="hidden items-center gap-6 md:flex lg:gap-8">
             {navItems.map((item) => (
               <Link key={item.key} href={item.href} className="text-sm font-medium text-text transition hover:text-primary">
                 {t(`nav.${item.key}`)}
@@ -79,18 +119,34 @@ export function SiteShell({
             ))}
           </nav>
 
-          <div className="hidden items-center gap-2 lg:gap-3 md:flex">
+          <div className="hidden items-center gap-2 md:flex lg:gap-3">
             <DeliveryButtons compact />
-            <button type="button" onClick={() => setCartOpen(true)} className="relative rounded-full border border-border bg-surface p-3 text-text">
+            <Link
+              href={`/${locale}/order`}
+              className="rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-hover"
+            >
+              {t('cta.orderNow')}
+            </Link>
+            <button type="button" onClick={() => setCartOpen(true)} className="relative rounded-full border border-border bg-surface p-3 text-text transition hover:border-primary/40 hover:bg-tag">
               <ShoppingBag className="h-5 w-5" />
               {count > 0 ? <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[11px] font-bold text-white">{count}</span> : null}
             </button>
-            <Link href={`/${locale}/account`} className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-hover">
+            <Link href={`/${locale}/account`} className="rounded-full border border-border bg-surface px-4 py-2 text-sm font-semibold text-text transition hover:bg-tag">
               {t('nav.login')}
             </Link>
-            <div className="flex rounded-full border border-border bg-surface p-1">
-              {locales.map((code) => (
-                <Link key={code} href={`/${code}`} className={cn('rounded-full px-2.5 py-2 text-[11px] font-semibold uppercase lg:px-3 lg:text-xs', code === locale ? 'bg-primary text-white' : 'text-text-muted')}>
+            <div className="flex items-center rounded-full border border-border bg-surface p-1">
+              <span className="pl-2 pr-1 text-text-muted">
+                <Globe className="h-4 w-4" />
+              </span>
+              {localeLinks.map(({code, href}) => (
+                <Link
+                  key={code}
+                  href={href}
+                  className={cn(
+                    'rounded-full px-2.5 py-2 text-[11px] font-semibold uppercase lg:px-3 lg:text-xs',
+                    code === locale ? 'bg-primary text-white' : 'text-text-muted transition hover:bg-tag hover:text-text'
+                  )}
+                >
                   {code}
                 </Link>
               ))}
@@ -98,11 +154,11 @@ export function SiteShell({
           </div>
 
           <div className="flex items-center gap-2 md:hidden">
-            <button type="button" onClick={() => setCartOpen(true)} className="relative rounded-full border border-border bg-surface p-3 text-text">
+            <button type="button" onClick={() => setCartOpen(true)} className="relative rounded-full border border-border bg-surface p-3 text-text transition hover:bg-tag">
               <ShoppingBag className="h-5 w-5" />
               {count > 0 ? <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[11px] font-bold text-white">{count}</span> : null}
             </button>
-            <button type="button" onClick={() => setMobileOpen(true)} className="rounded-full border border-border bg-surface p-3 text-text">
+            <button type="button" onClick={() => setMobileOpen(true)} className="rounded-full border border-border bg-surface p-3 text-text transition hover:bg-tag">
               <Menu className="h-5 w-5" />
             </button>
           </div>
@@ -111,7 +167,7 @@ export function SiteShell({
 
       {mobileOpen ? (
         <div className="fixed inset-0 z-[60] bg-black/40 md:hidden" onClick={() => setMobileOpen(false)}>
-          <div className="ml-auto h-full w-[82%] max-w-sm bg-background p-6" onClick={(e) => e.stopPropagation()}>
+          <div className="ml-auto flex h-full w-[86%] max-w-sm flex-col bg-background p-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
             <div className="mb-6 flex items-center justify-between">
               <p className="text-lg font-semibold text-text">Blinny King</p>
               <button type="button" onClick={() => setMobileOpen(false)} className="rounded-full p-2 hover:bg-tag"><X className="h-5 w-5" /></button>
@@ -123,9 +179,27 @@ export function SiteShell({
                 </Link>
               ))}
             </div>
+            <div className="mt-6 flex flex-wrap gap-2 rounded-3xl border border-border bg-surface p-2">
+              {localeLinks.map(({code, href}) => (
+                <Link
+                  key={code}
+                  href={href}
+                  onClick={() => setMobileOpen(false)}
+                  className={cn(
+                    'rounded-full px-3 py-2 text-xs font-semibold uppercase',
+                    code === locale ? 'bg-primary text-white' : 'text-text-muted'
+                  )}
+                >
+                  {code}
+                </Link>
+              ))}
+            </div>
             <div className="mt-6 flex flex-col gap-3">
+              <Link href={`/${locale}/order`} onClick={() => setMobileOpen(false)} className="rounded-full bg-primary px-4 py-3 text-center text-sm font-semibold text-white">
+                {t('cta.orderNow')}
+              </Link>
               <DeliveryButtons />
-              <Link href={`/${locale}/account`} className="rounded-full bg-primary px-4 py-3 text-center text-sm font-semibold text-white">
+              <Link href={`/${locale}/account`} onClick={() => setMobileOpen(false)} className="rounded-full border border-border bg-surface px-4 py-3 text-center text-sm font-semibold text-text">
                 {t('nav.login')}
               </Link>
             </div>
@@ -191,7 +265,10 @@ export function SiteShell({
                 <p>{t('footer.hoursSun')}</p>
               </div>
             </div>
-            <div className="flex items-start gap-3">
+            <div className="flex flex-col items-start gap-3">
+              <Link href={`/${locale}/order`} className="rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition hover:bg-primary-hover">
+                {t('cta.orderNow')}
+              </Link>
               <DeliveryButtons />
             </div>
           </div>

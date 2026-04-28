@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
-    <html lang="et" className={`${inter.variable} ${playfair.variable}`}>
+    <html suppressHydrationWarning lang="et" className={`${inter.variable} ${playfair.variable}`}>
       <body>{children}</body>
     </html>
   );

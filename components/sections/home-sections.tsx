@@ -1,4 +1,4 @@
-import {Clock3, MapPin, ShoppingBag, UtensilsCrossed} from 'lucide-react';
+import {ArrowRight, Clock3, MapPin, ShoppingBag, UtensilsCrossed} from 'lucide-react';
 import {getTranslations} from 'next-intl/server';
 import {featuredItems} from '@/data/menu';
 import {BOLT_URL, WOLT_URL, locations} from '@/data/locations';
@@ -20,27 +20,56 @@ export async function HomeSections({locale}: {locale: Locale}) {
 
   return (
     <>
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <MediaImage src="https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=1600&q=80" alt="Blinny King hero" className="h-full rounded-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,219,169,0.28),transparent_34%),linear-gradient(180deg,rgba(18,10,4,0.18),rgba(18,10,4,0.72))]" />
         </div>
-        <div className="relative mx-auto flex min-h-screen max-w-7xl items-end px-4 pb-16 pt-32 sm:px-6 lg:px-8">
+        <div className="relative mx-auto grid min-h-[calc(100vh-88px)] max-w-7xl items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
           <div className="max-w-3xl text-white">
-            <Pill className="bg-white/15 text-white">Blinny King · Jüri</Pill>
-            <h1 className="mt-6 text-5xl font-semibold tracking-tight sm:text-6xl">{t('hero.title')}</h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/85">{t('hero.subtitle')} · {location.hours.weekdays}</p>
+            <Pill className="bg-white/15 text-white">{t('hero.eyebrow')}</Pill>
+            <h1 className="mt-6 text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">{t('hero.title')}</h1>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/85">
+              {t('hero.subtitle')} · {location.hours.weekdays}
+            </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <ActionLink href={`/${locale}/menu`} className="bg-primary text-white hover:bg-primary-hover">{t('hero.cta.menu')}</ActionLink>
-              <a href={BOLT_URL} target="_blank" rel="noopener" className="inline-flex items-center justify-center rounded-full bg-[#1C1C1C] px-5 py-3 text-sm font-semibold text-white">{t('hero.cta.bolt')}</a>
-              <a href={WOLT_URL} target="_blank" rel="noopener" className="inline-flex items-center justify-center rounded-full bg-[#009DE0] px-5 py-3 text-sm font-semibold text-white">{t('hero.cta.wolt')}</a>
+              <ActionLink href={`/${locale}/order`} className="bg-primary text-white hover:bg-primary-hover">
+                {t('cta.orderNow')}
+              </ActionLink>
+              <ActionLink href={`/${locale}/menu`} className="bg-white text-text hover:bg-[#FFF1DC]">
+                {t('hero.cta.menu')}
+              </ActionLink>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3 text-sm font-medium text-white/90">
+              <a href={BOLT_URL} target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm transition hover:bg-white/16">
+                ⚡ {t('hero.cta.bolt')}
+              </a>
+              <a href={WOLT_URL} target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm transition hover:bg-white/16">
+                🔵 {t('hero.cta.wolt')}
+              </a>
+            </div>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+            <div className="rounded-[32px] border border-white/15 bg-white/10 p-6 text-white shadow-[0_24px_60px_rgba(0,0,0,0.18)] backdrop-blur-md">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/70">{t('home.stats.address')}</p>
+              <p className="mt-3 text-2xl font-semibold">{location.address}</p>
+              <p className="mt-2 text-sm text-white/75">{t('footer.hoursWeek')}: {location.hours.weekdays}</p>
+            </div>
+            <div className="rounded-[32px] border border-[#FFD8A8] bg-[#FFF3E0] p-6 text-text shadow-soft">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{t('cta.orderNow')}</p>
+              <p className="mt-3 text-2xl font-semibold">Bolt · Wolt · Pickup</p>
+              <p className="mt-2 text-sm text-text-muted">Fast order flow, clean menu, clear CTA and real 3-language navigation.</p>
+              <ActionLink href={`/${locale}/order`} className="mt-5 bg-primary text-white hover:bg-primary-hover">
+                {t('cta.orderNow')} <ArrowRight className="ml-2 h-4 w-4" />
+              </ActionLink>
             </div>
           </div>
         </div>
       </section>
 
       {lunchNow ? (
-        <Section className="pt-8 pb-0">
+        <Section className="pb-0 pt-8">
           <div className="rounded-[32px] border border-border bg-primary px-6 py-5 text-white shadow-soft">
             <p className="text-lg font-semibold">{t('home.lunchBanner')}</p>
           </div>
@@ -56,8 +85,13 @@ export async function HomeSections({locale}: {locale: Locale}) {
             </div>
           ))}
         </div>
-        <div className="mt-6">
-          <ActionLink href={`/${locale}/menu`} muted>{t('home.viewAll')}</ActionLink>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <ActionLink href={`/${locale}/menu`} muted>
+            {t('home.viewAll')}
+          </ActionLink>
+          <ActionLink href={`/${locale}/order`}>
+            {t('cta.orderNow')}
+          </ActionLink>
         </div>
       </Section>
 
