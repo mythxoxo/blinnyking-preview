@@ -23,7 +23,7 @@ export default async function AboutPage({params}: {params: {locale: string}}) {
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:px-6 md:grid-cols-3 lg:px-8">
-        <div className="rounded-2xl bg-surface p-6"><div className="text-4xl font-semibold text-primary">Ø30 / Ø40</div><p className="mt-3 text-text-muted">{t('fact1')}</p></div>
+        <div className="rounded-2xl bg-surface p-6"><div className="text-4xl font-semibold text-primary">{t('fact1Title')}</div><p className="mt-3 text-text-muted">{t('fact1')}</p></div>
         <div className="rounded-2xl bg-surface p-6"><div className="text-4xl font-semibold text-primary">{t('fact2Title')}</div><p className="mt-3 text-text-muted">{t('fact2')}</p></div>
         <div className="rounded-2xl bg-surface p-6"><div className="text-4xl font-semibold text-primary">{t('fact3Title')}</div><p className="mt-3 text-text-muted">{t('fact3')}</p></div>
       </section>
