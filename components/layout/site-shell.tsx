@@ -71,7 +71,7 @@ export function SiteShell({
             <Image src={logoUrl} alt="Blinny King" fill className="object-contain object-left" sizes="170px" unoptimized />
           </Link>
 
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden items-center gap-6 lg:gap-8 md:flex">
             {navItems.map((item) => (
               <Link key={item.key} href={item.href} className="text-sm font-medium text-text transition hover:text-primary">
                 {t(`nav.${item.key}`)}
@@ -79,7 +79,7 @@ export function SiteShell({
             ))}
           </nav>
 
-          <div className="hidden items-center gap-3 md:flex">
+          <div className="hidden items-center gap-2 lg:gap-3 md:flex">
             <DeliveryButtons compact />
             <button type="button" onClick={() => setCartOpen(true)} className="relative rounded-full border border-border bg-surface p-3 text-text">
               <ShoppingBag className="h-5 w-5" />
@@ -90,7 +90,7 @@ export function SiteShell({
             </Link>
             <div className="flex rounded-full border border-border bg-surface p-1">
               {locales.map((code) => (
-                <Link key={code} href={`/${code}`} className={cn('rounded-full px-3 py-2 text-xs font-semibold uppercase', code === locale ? 'bg-primary text-white' : 'text-text-muted')}>
+                <Link key={code} href={`/${code}`} className={cn('rounded-full px-2.5 py-2 text-[11px] font-semibold uppercase lg:px-3 lg:text-xs', code === locale ? 'bg-primary text-white' : 'text-text-muted')}>
                   {code}
                 </Link>
               ))}

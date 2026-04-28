@@ -78,7 +78,7 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.caramelApple.name',
     descKey: 'menu.caramelApple.description',
     prices: {S: 8.1, L: 10.6},
-    imageUrl: '/images/menu/nutella-banana.jpg',
+    imageUrl: '/images/menu/berry-cream.jpg',
     available: true
   },
   {
@@ -126,7 +126,7 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.sweetCombo.name',
     descKey: 'menu.sweetCombo.description',
     prices: {S: 18.5},
-    imageUrl: '/images/menu/berry-cream.jpg',
+    imageUrl: '/images/menu/sweet-combo.jpg',
     available: true
   },
   {

@@ -43,7 +43,7 @@ providers.push(
     async authorize(credentials) {
       const email = String(credentials?.email || '').trim();
       const password = String(credentials?.password || '').trim();
-      const name = String(credentials?.name || 'Guest User').trim();
+      const name = String(credentials?.name || 'Guest').trim();
 
       if (!email || !password) {
         return null;
