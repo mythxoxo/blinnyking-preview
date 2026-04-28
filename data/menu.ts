@@ -21,7 +21,7 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.hamCheese.name',
     descKey: 'menu.hamCheese.description',
     prices: {S: 8.9, L: 11.5},
-    imageUrl: '/images/menu/ham-cheese.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1565299543923-37dd37887442?w=400&q=75',
     tags: ['bestseller'],
     available: true
   },
@@ -31,7 +31,7 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.salmonCream.name',
     descKey: 'menu.salmonCream.description',
     prices: {S: 10.9, L: 13.9},
-    imageUrl: '/images/menu/salmon-cream.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1519676867240-f03562e64548?w=400&q=75',
     tags: ['popular'],
     available: true
   },
@@ -41,7 +41,7 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.chickenMushroom.name',
     descKey: 'menu.chickenMushroom.description',
     prices: {S: 9.8, L: 12.8},
-    imageUrl: '/images/menu/chicken-mushroom.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=75',
     available: true
   },
   {
@@ -50,7 +50,7 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.spinachFeta.name',
     descKey: 'menu.spinachFeta.description',
     prices: {S: 9.2, L: 11.9},
-    imageUrl: '/images/menu/spinach-feta.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=75',
     available: true
   },
   {
@@ -59,7 +59,7 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.nutellaBanana.name',
     descKey: 'menu.nutellaBanana.description',
     prices: {S: 7.9, L: 10.4},
-    imageUrl: '/images/menu/nutella-banana.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=75',
     tags: ['bestseller'],
     available: true
   },
@@ -69,7 +69,7 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.berryCream.name',
     descKey: 'menu.berryCream.description',
     prices: {S: 8.2, L: 10.8},
-    imageUrl: '/images/menu/berry-cream.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&q=75',
     available: true
   },
   {
@@ -78,7 +78,7 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.caramelApple.name',
     descKey: 'menu.caramelApple.description',
     prices: {S: 8.1, L: 10.6},
-    imageUrl: '/images/menu/caramel-apple.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=400&q=75',
     available: true
   },
   {
@@ -87,7 +87,7 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.curdBerries.name',
     descKey: 'menu.curdBerries.description',
     prices: {S: 8.4, L: 11.1},
-    imageUrl: '/images/menu/curd-berries.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=400&q=75',
     available: true
   },
   {
@@ -96,7 +96,7 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.lunchHamCheese.name',
     descKey: 'menu.lunchHamCheese.description',
     prices: {S: 7.1, L: 9.2},
-    imageUrl: '/images/menu/lunch-ham-cheese.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1565299543923-37dd37887442?w=400&q=75',
     tags: ['weekday'],
     available: true
   },
@@ -106,7 +106,7 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.lunchChicken.name',
     descKey: 'menu.lunchChicken.description',
     prices: {S: 7.6, L: 9.8},
-    imageUrl: '/images/menu/chicken-mushroom.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=75',
     tags: ['weekday'],
     available: true
   },
@@ -116,7 +116,7 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.familyCombo.name',
     descKey: 'menu.familyCombo.description',
     prices: {S: 22.9},
-    imageUrl: '/images/menu/family-combo.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=75',
     tags: ['value'],
     available: true
   },
@@ -126,7 +126,7 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.sweetCombo.name',
     descKey: 'menu.sweetCombo.description',
     prices: {S: 18.5},
-    imageUrl: '/images/menu/sweet-combo.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&q=75',
     available: true
   },
   {
@@ -135,7 +135,7 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.icedLatte.name',
     descKey: 'menu.icedLatte.description',
     prices: {S: 4.8},
-    imageUrl: '/images/menu/iced-latte.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&q=75',
     available: true
   },
   {
@@ -144,12 +144,12 @@ export const menuItems: MenuItem[] = [
     nameKey: 'menu.berryMors.name',
     descKey: 'menu.berryMors.description',
     prices: {S: 3.9},
-    imageUrl: '/images/menu/berry-mors.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&q=75',
     available: true
   }
 ];
 
-export const featuredItems = menuItems.filter((item) => item.tags?.includes('bestseller') || item.tags?.includes('popular')).slice(0, 6);
+export const featuredItems = menuItems.filter((item) => ['ham-cheese', 'salmon-cream', 'nutella-banana'].includes(item.id));
 
 export function getItemBySlug(slug: string) {
   return menuItems.find((item) => item.id === slug);

@@ -6,15 +6,17 @@
 
 @layer base {
   :root {
-    --color-bg: #FDF6ED;
-    --color-surface: #FFFFFF;
-    --color-primary: #C97B2A;
-    --color-primary-hover: #A8631F;
-    --color-text: #1E0F00;
-    --color-text-muted: #6B4E35;
-    --color-border: #EDE0D0;
-    --color-tag: #FFF3E0;
-    --radius: 1.5rem;
+    --color-bg: #FEFBF4;
+    --color-surface: #F5EDD6;
+    --color-primary: #C8522A;
+    --color-primary-hover: #A8401C;
+    --color-dark: #1A1208;
+    --color-accent: #E8A838;
+    --color-text: #2D1F0E;
+    --color-text-muted: #8B6E52;
+    --color-border: #E8D5B5;
+    --color-tag: #FDF3E7;
+    --radius: 16px;
   }
 
   * {
@@ -26,17 +28,20 @@
   }
 
   body {
-    @apply bg-background text-text antialiased;
-    font-family: var(--font-inter), sans-serif;
-    background-color: var(--color-bg);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body), sans-serif;
+    @apply antialiased;
   }
 
   h1,
   h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-heading), serif;
+  h3 {
+    font-family: var(--font-display), serif;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
   }
 }
