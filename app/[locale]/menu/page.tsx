@@ -35,7 +35,15 @@ export default async function MenuPage({params}: {params: {locale: Locale}}) {
               <h2 className="text-3xl font-semibold text-text">{t(`categories.${category}`)}</h2>
               {category === 'lunch' ? <div className="mt-4 rounded-2xl bg-[var(--color-accent)] px-5 py-4 text-sm font-medium text-[var(--color-dark)]">{t('menu.lunchNote')}</div> : null}
               <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                {items.map((item) => <MenuCard key={item.id} item={item} locale={params.locale} />)}
+                {items.map((item) => (
+                  <MenuCard
+                    key={item.id}
+                    item={item}
+                    translatedName={t(item.nameKey)}
+                    translatedDescription={t(item.descKey)}
+                    translatedTag={item.tags?.[0] ? t(`tags.${item.tags[0]}`) : undefined}
+                  />
+                ))}
               </div>
               {idx < categoryOrder.length - 1 ? <div className="mt-10 h-px bg-border" /> : null}
             </div>

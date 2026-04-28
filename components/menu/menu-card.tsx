@@ -8,15 +8,29 @@ import {MenuItem} from '@/data/menu';
 import {useCart} from '@/lib/store/cartStore';
 import {cn} from '@/lib/utils';
 
-export function MenuCard({item}: {item: MenuItem; locale: string}) {
+export function MenuCard({
+  item,
+  translatedName,
+  translatedDescription,
+  translatedTag
+}: {
+  item: MenuItem;
+  translatedName?: string;
+  translatedDescription?: string;
+  translatedTag?: string;
+}) {
   const t = useTranslations();
   const addItem = useCart((state) => state.addItem);
   const [added, setAdded] = useState(false);
 
+  const name = translatedName ?? t(item.nameKey);
+  const description = translatedDescription ?? t(item.descKey);
+  const tag = translatedTag ?? (item.tags?.[0] ? t(`tags.${item.tags[0]}`) : undefined);
+
   const handleAdd = () => {
     addItem({
       id: item.id,
-      name: t(item.nameKey),
+      name,
       nameKey: item.nameKey,
       price: Math.min(...Object.values(item.prices)),
       image: item.imageUrl
@@ -28,16 +42,16 @@ export function MenuCard({item}: {item: MenuItem; locale: string}) {
   return (
     <article className="group overflow-hidden rounded-2xl border border-border bg-white shadow-soft transition duration-250 ease-out hover:-translate-y-1 hover:shadow-[0_24px_60px_-24px_rgba(80,35,10,0.35)]">
       <div className="relative aspect-[4/3] overflow-hidden">
-        <Image src={item.imageUrl} alt={t(item.nameKey)} fill className="object-cover transition duration-300 group-hover:scale-[1.03]" sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" unoptimized />
-        {item.tags?.[0] ? (
+        <Image src={item.imageUrl} alt={name} fill className="object-cover transition duration-300 group-hover:scale-[1.03]" sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" unoptimized />
+        {tag ? (
           <span className="absolute right-3 top-3 rounded-full bg-primary px-3 py-1 text-[11px] font-semibold text-white">
-            {t(`tags.${item.tags[0]}`)}
+            {tag}
           </span>
         ) : null}
       </div>
       <div className="p-5">
-        <h3 className="text-xl font-semibold text-text">{t(item.nameKey)}</h3>
-        <p className="mt-2 text-sm leading-6 text-text-muted">{t(item.descKey)}</p>
+        <h3 className="text-xl font-semibold text-text">{name}</h3>
+        <p className="mt-2 text-sm leading-6 text-text-muted">{description}</p>
         <div className="mt-5 flex items-center justify-between gap-3">
           <span className="text-lg font-semibold text-text">€{Math.min(...Object.values(item.prices)).toFixed(2)}</span>
           <button

@@ -58,7 +58,15 @@ export async function HomeSections({locale}: {locale: Locale}) {
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold text-text">{t('site.featuredTitle')}</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {featuredItems.map((item) => <MenuCard key={item.id} item={item} locale={locale} />)}
+          {featuredItems.map((item) => (
+            <MenuCard
+              key={item.id}
+              item={item}
+              translatedName={t(item.nameKey)}
+              translatedDescription={t(item.descKey)}
+              translatedTag={item.tags?.[0] ? t(`tags.${item.tags[0]}`) : undefined}
+            />
+          ))}
         </div>
         <div className="mt-8 flex flex-wrap gap-3">
           <a href={`/${locale}/order`}><Button>{t('cta.orderNow')}</Button></a>
