@@ -324,7 +324,10 @@
     "phone": "Phone",
     "email": "Email",
     "idea": "Comment / request",
-    "send": "Send"
+    "send": "Send",
+    "pageTitle": "Partners",
+    "newPartnership": "New partnership",
+    "name": "Name"
   },
   "locationsPage": {
     "eyebrow": "Locations",

@@ -324,7 +324,10 @@
     "phone": "Telefon",
     "email": "E-post",
     "idea": "Kommentaar / soov",
-    "send": "Saada"
+    "send": "Saada",
+    "pageTitle": "Koostööpartnerid",
+    "newPartnership": "Uus partnerlus",
+    "name": "Nimi"
   },
   "locationsPage": {
     "eyebrow": "Asukohad",

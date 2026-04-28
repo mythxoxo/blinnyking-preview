@@ -324,7 +324,10 @@
     "phone": "Телефон",
     "email": "Email",
     "idea": "Комментарий / запрос",
-    "send": "Отправить"
+    "send": "Отправить",
+    "pageTitle": "Партнёры",
+    "newPartnership": "Новое партнёрство",
+    "name": "Имя"
   },
   "locationsPage": {
     "eyebrow": "Локации",

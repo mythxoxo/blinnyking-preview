@@ -15,9 +15,9 @@ export async function Footer({locale}: {locale: string}) {
           <div className="relative h-10 w-[150px]">
             <Image src={logoUrl} alt="Blinny King" fill className="object-contain object-left" sizes="150px" unoptimized />
           </div>
-          <p className="mt-4 max-w-sm text-sm leading-7 text-text-muted">Hubane pannkoogikohvik Jüris — suured pannkoogid, lõunapakkumised ja kiire tellimine Boltis või Woltis.</p>
+          <p className="mt-4 max-w-sm text-sm leading-7 text-text-muted">{t('about.description')}</p>
           <a href="https://www.facebook.com/people/Blinny-King-Pannkoogirestoran-J%C3%BCri/100070004895711/" target="_blank" rel="noopener" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-text-muted hover:text-primary">
-            <Facebook className="h-4 w-4" /> Facebook
+            <Facebook className="h-4 w-4" /> {t('common.facebook')}
           </a>
         </div>
         <div>

@@ -1,12 +1,15 @@
 import Image from 'next/image';
+import {getTranslations} from 'next-intl/server';
 
-export default function PartnersPage() {
+export default async function PartnersPage({params}: {params: {locale: string}}) {
+  const t = await getTranslations({locale: params.locale, namespace: 'partnersPage'});
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="rounded-2xl bg-surface p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Partnerid</p>
-          <h1 className="mt-4 text-4xl font-semibold text-text">Koostööpartnerid</h1>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">{t('eyebrow')}</p>
+          <h1 className="mt-4 text-4xl font-semibold text-text">{t('pageTitle')}</h1>
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="relative h-28 rounded-2xl bg-white p-4">
               <Image src="https://static.tildacdn.com/tild3030-3064-4239-b236-623133383632/partner.png" alt="Sintai" fill className="object-contain p-4" sizes="200px" unoptimized />
@@ -17,14 +20,14 @@ export default function PartnersPage() {
           </div>
         </div>
         <form action="mailto:info@blinnyking.ee" className="rounded-2xl bg-surface p-8">
-          <h2 className="text-3xl font-semibold text-text">Uus partnerlus</h2>
+          <h2 className="text-3xl font-semibold text-text">{t('newPartnership')}</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <input placeholder="Nimi" className="h-12 rounded-2xl border border-border bg-white px-4" />
-            <input placeholder="Email" className="h-12 rounded-2xl border border-border bg-white px-4" />
-            <input placeholder="Telefon" className="h-12 rounded-2xl border border-border bg-white px-4 sm:col-span-2" />
-            <textarea placeholder="Kommentaar" className="min-h-[140px] rounded-2xl border border-border bg-white px-4 py-3 sm:col-span-2" />
+            <input placeholder={t('name')} className="h-12 rounded-2xl border border-border bg-white px-4" />
+            <input placeholder={t('email')} className="h-12 rounded-2xl border border-border bg-white px-4" />
+            <input placeholder={t('phone')} className="h-12 rounded-2xl border border-border bg-white px-4 sm:col-span-2" />
+            <textarea placeholder={t('idea')} className="min-h-[140px] rounded-2xl border border-border bg-white px-4 py-3 sm:col-span-2" />
           </div>
-          <button className="mt-6 rounded-full bg-primary px-7 py-[14px] text-sm font-semibold text-white">Saada</button>
+          <button className="mt-6 rounded-full bg-primary px-7 py-[14px] text-sm font-semibold text-white">{t('send')}</button>
         </form>
       </div>
     </div>
