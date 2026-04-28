@@ -1,10 +1,19 @@
-import {ArrowRight, CheckCircle2, Clock3, MapPin, Phone, ShoppingBag, UtensilsCrossed} from 'lucide-react';
+import Image from 'next/image';
 import {getTranslations} from 'next-intl/server';
+import {Button} from '@/components/ui/button';
+import {MenuCard} from '@/components/menu/menu-card';
 import {featuredItems} from '@/data/menu';
 import {BOLT_URL, WOLT_URL, locations} from '@/data/locations';
-import {ActionLink, MediaImage, Pill, Section, SectionHeader, StatCard} from '@/components/shared/ui';
-import {MenuCard} from '@/components/menu/menu-card';
 import {Locale} from '@/i18n/routing';
+
+const galleryImages = [
+  'https://images.unsplash.com/photo-1565299543923-37dd37887442?w=600&q=80',
+  'https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=600&q=80',
+  'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80',
+  'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80',
+  'https://images.unsplash.com/photo-1519676867240-f03562e64548?w=600&q=80',
+  'https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=600&q=80'
+];
 
 function isLunchTime() {
   const now = new Date(new Date().toLocaleString('en-US', {timeZone: 'Europe/Tallinn'}));
@@ -19,143 +28,94 @@ export async function HomeSections({locale}: {locale: Locale}) {
   const location = locations[0];
 
   return (
-    <>
-      <section className="relative overflow-hidden border-b border-border/60 bg-[#E9D7BF]">
+    <div>
+      <section className="relative flex min-h-screen items-center overflow-hidden">
         <div className="absolute inset-0">
-          <MediaImage src="https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=1800&q=80" alt="Blinny King hero" className="h-full rounded-none" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(24,13,5,0.78)_0%,rgba(24,13,5,0.60)_38%,rgba(24,13,5,0.22)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,219,169,0.20),transparent_30%)]" />
+          <Image src="https://images.unsplash.com/photo-1519676867240-f03562e64548?auto=format&fit=crop&w=1800&q=80" alt="Pancakes" fill className="object-cover" sizes="100vw" unoptimized />
+          <div className="absolute inset-0 bg-[rgba(26,18,8,0.45)]" />
         </div>
-
-        <div className="relative mx-auto grid min-h-[calc(100vh-88px)] max-w-7xl items-center gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:py-20">
-          <div className="max-w-3xl text-white">
-            <Pill className="bg-white/14 text-white">{t('hero.eyebrow')}</Pill>
-            <h1 className="mt-6 text-5xl font-semibold tracking-tight sm:text-6xl lg:text-7xl">{t('hero.title')}</h1>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/88">{t('hero.subtitle')}</p>
-
-            <div className="mt-7 flex flex-wrap items-center gap-3 text-sm text-white/88">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-sm">
-                <Clock3 className="h-4 w-4" />
-                {location.hours.weekdays}
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 backdrop-blur-sm">
-                <MapPin className="h-4 w-4" />
-                {location.address}
-              </span>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <ActionLink href={`/${locale}/order`} className="bg-primary text-white hover:bg-primary-hover">
-                {t('cta.orderNow')}
-              </ActionLink>
-              <ActionLink href={`/${locale}/menu`} className="bg-white text-text hover:bg-[#FFF1DC]">
-                {t('hero.cta.menu')}
-              </ActionLink>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3 text-sm font-medium text-white/92">
-              <a href={BOLT_URL} target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/30 px-4 py-2.5 backdrop-blur-sm transition hover:bg-black/40">
-                ⚡ {t('hero.cta.bolt')}
-              </a>
-              <a href={WOLT_URL} target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-[#0D92D7] px-4 py-2.5 text-white transition hover:bg-[#087fbc]">
-                🔵 {t('hero.cta.wolt')}
-              </a>
-            </div>
+        <div className="relative mx-auto max-w-4xl px-4 py-20 text-center text-white sm:px-6 lg:px-8">
+          <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur-sm">Pannkoogikohvik · Jüri, Estonia</div>
+          <h1 className="mt-6 text-[42px] font-semibold leading-tight md:text-[72px]">{t('hero.title')}</h1>
+          <p className="mt-5 text-base text-white/90 md:text-lg">{location.address}, {location.city} · {location.hours.weekdays}</p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a href={`/${locale}/order`}><Button size="lg">{t('cta.orderNow')}</Button></a>
+            <a href={`/${locale}/menu`}><Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-text">{t('cta.viewMenu')}</Button></a>
           </div>
-
-          <div className="grid gap-4">
-            <div className="rounded-[32px] border border-white/15 bg-white/12 p-6 text-white shadow-[0_24px_60px_rgba(0,0,0,0.22)] backdrop-blur-md">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/70">{t('cta.orderNow')}</p>
-              <h2 className="mt-3 text-3xl font-semibold">Bolt · Wolt · Pickup</h2>
-              <p className="mt-3 max-w-md text-sm leading-7 text-white/80">{t('home.heroCardText')}</p>
-              <div className="mt-5 flex flex-wrap gap-2 text-sm text-white/85">
-                {(['et', 'ru', 'en'] as const).map((lang) => (
-                  <span key={lang} className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2">
-                    <CheckCircle2 className="h-4 w-4" /> {t(`languages.${lang}`)}
-                  </span>
-                ))}
-              </div>
-              <ActionLink href={`/${locale}/order`} className="mt-6 bg-primary text-white hover:bg-primary-hover">
-                {t('cta.orderNow')} <ArrowRight className="ml-2 h-4 w-4" />
-              </ActionLink>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[28px] border border-border bg-surface p-5 shadow-soft">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{t('home.stats.phone')}</p>
-                <p className="mt-3 text-xl font-semibold text-text">{location.phone}</p>
-                <a href={`tel:${location.phone.replace(/\s+/g, '')}`} className="mt-3 inline-flex items-center gap-2 text-sm text-text-muted hover:text-primary">
-                  <Phone className="h-4 w-4" /> {t('home.callNow')}
-                </a>
-              </div>
-              <div className="rounded-[28px] border border-border bg-surface p-5 shadow-soft">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{t('home.stats.hours')}</p>
-                <p className="mt-3 text-xl font-semibold text-text">{location.hours.weekdays}</p>
-                <p className="mt-3 text-sm text-text-muted">{t('footer.hoursSat')} · {t('footer.hoursSun')}</p>
-              </div>
-            </div>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm">
+            <a href={BOLT_URL} target="_blank" rel="noopener" className="rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">⚡ {t('hero.cta.bolt')}</a>
+            <a href={WOLT_URL} target="_blank" rel="noopener" className="rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">🔵 {t('hero.cta.wolt')}</a>
           </div>
         </div>
       </section>
 
       {lunchNow ? (
-        <Section className="pb-0 pt-8">
-          <div className="rounded-[32px] border border-border bg-primary px-6 py-5 text-white shadow-soft">
-            <p className="text-lg font-semibold">{t('home.lunchBanner')}</p>
-          </div>
-        </Section>
+        <section className="bg-[var(--color-accent)] px-4 py-3 text-center text-sm font-medium text-[var(--color-dark)]">
+          🕐 Lõunapakkumine täna 11:00–15:00 · −20% kõigile roogadele
+        </section>
       ) : null}
 
-      <Section>
-        <SectionHeader eyebrow={t('home.hitsEyebrow')} title={t('home.hitsTitle')} description={t('home.hitsDescription')} />
-        <div className="flex gap-5 overflow-x-auto pb-2">
-          {featuredItems.map((item) => (
-            <div key={item.id} className="min-w-[300px] flex-1">
-              <MenuCard item={item} locale={locale} />
-            </div>
-          ))}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-semibold text-text">Kõige isuäratavamad valikud</h2>
+        <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {featuredItems.map((item) => <MenuCard key={item.id} item={item} locale={locale} />)}
         </div>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <ActionLink href={`/${locale}/menu`} muted>
-            {t('home.viewAll')}
-          </ActionLink>
-          <ActionLink href={`/${locale}/order`}>
-            {t('cta.orderNow')}
-          </ActionLink>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a href={`/${locale}/order`}><Button>{t('cta.orderNow')}</Button></a>
+          <a href={`/${locale}/menu`}><Button variant="outline">Kogu menüü →</Button></a>
         </div>
-      </Section>
+      </section>
 
-      <Section>
-        <SectionHeader eyebrow={t('home.howEyebrow')} title={t('home.howTitle')} description={t('home.howDescription')} />
-        <div className="grid gap-5 md:grid-cols-3">
+      <section className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+        <div className="grid gap-6 md:grid-cols-3">
           {[
-            {icon: UtensilsCrossed, title: t('home.steps.choose.title'), text: t('home.steps.choose.text')},
-            {icon: ShoppingBag, title: t('home.steps.order.title'), text: t('home.steps.order.text')},
-            {icon: Clock3, title: t('home.steps.pickup.title'), text: t('home.steps.pickup.text')}
-          ].map((step, index) => (
-            <div key={step.title} className="rounded-[28px] border border-border bg-surface p-6 shadow-soft">
-              <div className="flex items-center justify-between">
-                <step.icon className="h-6 w-6 text-primary" />
-                <span className="text-sm font-semibold text-text-muted">0{index + 1}</span>
-              </div>
-              <h3 className="mt-6 text-xl font-semibold text-text">{step.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-text-muted">{step.text}</p>
+            ['01', 'Vali', 'Ava menüü ja leia oma lemmik pannkook.'],
+            ['02', 'Vormista', 'Lisa tooted korvi ja sisesta oma andmed.'],
+            ['03', 'Võta kaasa', 'Tule järele või kasuta Bolt/Wolti.']
+          ].map(([num, title, text]) => (
+            <div key={num} className="rounded-2xl border border-border bg-surface p-6">
+              <div className="text-4xl font-semibold text-[var(--color-accent)]">{num}</div>
+              <h3 className="mt-4 text-2xl font-semibold text-text">{title}</h3>
+              <p className="mt-3 text-sm leading-7 text-text-muted">{text}</p>
             </div>
           ))}
         </div>
-      </Section>
+      </section>
 
-      <Section className="pt-0">
-        <div className="grid gap-4 sm:grid-cols-3">
-          <StatCard label={t('home.stats.address')} value={location.address} />
-          <StatCard label={t('home.stats.phone')} value={location.phone} />
-          <StatCard label={t('home.stats.hours')} value={location.hours.weekdays} />
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-semibold text-text">Meie köök</h2>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {galleryImages.map((src) => (
+            <div key={src} className="group relative aspect-square overflow-hidden rounded-2xl">
+              <Image src={src} alt="Blinny King gallery" fill className="object-cover transition duration-300 group-hover:scale-105" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" unoptimized />
+            </div>
+          ))}
         </div>
-        <div className="mt-8 flex items-center gap-3 text-text-muted">
-          <MapPin className="h-5 w-5 text-primary" />
-          <span>{location.address}</span>
+      </section>
+
+      <section className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <div className="rounded-2xl bg-surface p-8">
+          <h2 className="text-3xl font-semibold text-text">Liitu ja saa püsisoodustust 👑</h2>
+          <ul className="mt-5 space-y-3 text-sm leading-7 text-text-muted">
+            <li>✔ −5% igal külastusel</li>
+            <li>🎂 −15% sünnipäeval</li>
+          </ul>
         </div>
-      </Section>
-    </>
+        <div className="flex items-center justify-start rounded-2xl bg-surface p-8 lg:justify-center">
+          <a href={`/${locale}/promotions`}><Button size="lg">Registreeru</Button></a>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="grid gap-4 md:grid-cols-3">
+          <div className="rounded-2xl bg-surface p-6"><h3 className="text-xl font-semibold">Aadress</h3><p className="mt-3 text-text-muted">{location.address}, {location.city}</p></div>
+          <div className="rounded-2xl bg-surface p-6"><h3 className="text-xl font-semibold">Telefon</h3><p className="mt-3 text-text-muted">{location.phone}</p></div>
+          <div className="rounded-2xl bg-surface p-6"><h3 className="text-xl font-semibold">Lahtiolekuajad</h3><p className="mt-3 text-text-muted">{location.hours.weekdays}<br />{location.hours.saturday}<br />{location.hours.sunday}</p></div>
+        </div>
+        <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-surface">
+          <iframe src={location.mapEmbedUrl} className="h-[300px] w-full border-0" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+        </div>
+      </section>
+    </div>
   );
 }
