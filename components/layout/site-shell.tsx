@@ -20,17 +20,14 @@ const navMap = {
   contacts: '/contacts'
 } as const;
 
-function DeliveryButtons({compact = false}: {compact?: boolean}) {
+function DeliveryButtons() {
   return (
     <div className="flex items-center gap-2">
       <a
         href={BOLT_URL}
         target="_blank"
         rel="noopener"
-        className={cn(
-          'inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90',
-          compact ? 'bg-[#1C1C1C]' : 'bg-[#1C1C1C]'
-        )}
+        className="inline-flex items-center rounded-full bg-[#1C1C1C] px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90"
       >
         <span className="mr-2">⚡</span>
         Bolt
@@ -49,12 +46,9 @@ function DeliveryButtons({compact = false}: {compact?: boolean}) {
 }
 
 function buildLocaleHref(pathname: string | null, currentLocale: string, nextLocale: string) {
-  if (!pathname || pathname === '/') {
-    return `/${nextLocale}`;
-  }
+  if (!pathname || pathname === '/') return `/${nextLocale}`;
 
   const segments = pathname.split('/').filter(Boolean);
-
   if (segments[0] === currentLocale) {
     segments[0] = nextLocale;
     return `/${segments.join('/')}`;
@@ -120,11 +114,8 @@ export function SiteShell({
           </nav>
 
           <div className="hidden items-center gap-2 md:flex lg:gap-3">
-            <DeliveryButtons compact />
-            <Link
-              href={`/${locale}/order`}
-              className="rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-hover"
-            >
+            <DeliveryButtons />
+            <Link href={`/${locale}/order`} className="rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-hover">
               {t('cta.orderNow')}
             </Link>
             <button type="button" onClick={() => setCartOpen(true)} className="relative rounded-full border border-border bg-surface p-3 text-text transition hover:border-primary/40 hover:bg-tag">
