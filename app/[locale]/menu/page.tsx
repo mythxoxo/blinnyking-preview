@@ -5,7 +5,7 @@ import {Section, SectionHeader} from '@/components/shared/ui';
 import {Locale} from '@/i18n/routing';
 
 const categoryOrder = ['savory', 'sweet', 'lunch', 'combos', 'drinks'] as const;
-const FLIPHTML5_URL = process.env.NEXT_PUBLIC_FLIPHTML5_URL || 'https://online.fliphtml5.com/placeholder/blinny-king-menu';
+const FLIPHTML5_URL = process.env.NEXT_PUBLIC_FLIPHTML5_URL || 'https://online.fliphtml5.com/zevog/tyky/#p=1';
 
 export default async function MenuPage({params}: {params: {locale: Locale}}) {
   const t = await getTranslations({locale: params.locale});
@@ -35,19 +35,17 @@ export default async function MenuPage({params}: {params: {locale: Locale}}) {
         );
       })}
 
-      {process.env.NEXT_PUBLIC_FLIPHTML5_URL ? (
-        <Section>
-          <SectionHeader title={t('menu.fullMenu')} description={t('menu.fullMenuDescription')} />
-          <div className="relative overflow-hidden rounded-[32px] border border-border bg-surface p-2 shadow-soft">
-            <iframe
-              src={`${FLIPHTML5_URL}?navpane=0&toolbar=0&logo=0`}
-              className="h-[600px] w-full rounded-[24px] border-0"
-              allowFullScreen
-            />
-            <div className="absolute bottom-2 right-2 h-12 w-32 bg-background" />
-          </div>
-        </Section>
-      ) : null}
+      <Section>
+        <SectionHeader title={t('menu.fullMenu')} description={t('menu.fullMenuDescription')} />
+        <div className="relative overflow-hidden rounded-[32px] border border-border bg-surface p-2 shadow-soft">
+          <iframe
+            src={`${FLIPHTML5_URL}${FLIPHTML5_URL.includes('?') ? '&' : '?'}navpane=0&toolbar=0&logo=0`}
+            className="h-[600px] w-full rounded-[24px] border-0"
+            allowFullScreen
+          />
+          <div className="absolute bottom-2 right-2 h-12 w-32 bg-background" />
+        </div>
+      </Section>
     </div>
   );
 }

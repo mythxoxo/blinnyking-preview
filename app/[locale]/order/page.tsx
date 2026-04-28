@@ -96,8 +96,8 @@ export default function OrderPage() {
           <div className="rounded-[32px] border border-border bg-surface p-6 shadow-soft">
             <p className="text-sm font-semibold text-text">{t('order.deliveryVia')}</p>
             <div className="mt-4 flex flex-wrap gap-3">
-              <a href={BOLT_URL} target="_blank" rel="noopener" className="inline-flex rounded-full bg-[#1C1C1C] px-5 py-3 text-sm font-semibold text-white">Bolt Food</a>
-              <a href={WOLT_URL} target="_blank" rel="noopener" className="inline-flex rounded-full bg-[#009DE0] px-5 py-3 text-sm font-semibold text-white">Wolt</a>
+              <a href={BOLT_URL} target="_blank" rel="noopener" className="inline-flex rounded-full bg-[#1C1C1C] px-5 py-3 text-sm font-semibold text-white">{t('order.deliveryBolt')}</a>
+              <a href={WOLT_URL} target="_blank" rel="noopener" className="inline-flex rounded-full bg-[#009DE0] px-5 py-3 text-sm font-semibold text-white">{t('order.deliveryWolt')}</a>
             </div>
           </div>
         </div>

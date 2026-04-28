@@ -42,6 +42,7 @@ type Copy = {
   loyaltyStatus?: string;
   loyaltyActive?: string;
   birthdayDiscount?: string;
+  favoriteExample?: string;
 };
 
 type SessionUser = {
@@ -76,7 +77,7 @@ export function DemoAccount({
   const [guestPhone, setGuestPhone] = useState('');
   const [guestEmail, setGuestEmail] = useState('');
 
-  const profileName = useMemo(() => user?.name || 'Guest', [user]);
+  const profileName = useMemo(() => user?.name || copy.guestName || copy.name, [copy.guestName, copy.name, user]);
 
   function storeUser(name: string, email: string) {
     if (typeof window !== 'undefined') {
@@ -122,7 +123,7 @@ export function DemoAccount({
             </div>
 
             {tab === 'login' ? (
-              <form className="mt-5 space-y-4" action="/api/auth/callback/credentials" method="post" onSubmit={() => storeUser('Guest', loginEmail)}>
+              <form className="mt-5 space-y-4" action="/api/auth/callback/credentials" method="post" onSubmit={() => storeUser(copy.guestName || copy.name, loginEmail)}>
                 <input type="hidden" name="callbackUrl" value={`/${locale}/account`} />
                 <div>
                   <label className="mb-2 block text-sm font-medium text-text">{copy.email}</label>
@@ -143,7 +144,7 @@ export function DemoAccount({
             ) : null}
 
             {tab === 'register' ? (
-              <form className="mt-5 space-y-4" action="/api/auth/callback/credentials" method="post" onSubmit={() => storeUser(registerName || 'Guest', registerEmail)}>
+              <form className="mt-5 space-y-4" action="/api/auth/callback/credentials" method="post" onSubmit={() => storeUser(registerName || copy.guestName || copy.name, registerEmail)}>
                 <input type="hidden" name="callbackUrl" value={`/${locale}/account`} />
                 <div>
                   <label className="mb-2 block text-sm font-medium text-text">{copy.name}</label>
@@ -195,9 +196,9 @@ export function DemoAccount({
 
         <div className="mt-8 rounded-[24px] bg-tag p-5 text-sm text-text-muted">
           <p className="font-semibold text-text">{copy.profileTitle}</p>
-          <p className="mt-2">Name: {profileName}</p>
+          <p className="mt-2">{copy.name}: {profileName}</p>
           <p>{copy.profileMode}: {copy.pickup}</p>
-          <p>{copy.profileFavorite}: Ham & Cheese Classic</p>
+          <p>{copy.profileFavorite}: {copy.favoriteExample}</p>
           {copy.loyaltyStatus ? <p className="mt-2">{copy.loyaltyStatus}: {copy.loyaltyActive}</p> : null}
           {copy.birthdayDiscount ? <p>{copy.birthdayDiscount}</p> : null}
         </div>

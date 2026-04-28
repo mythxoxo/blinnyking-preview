@@ -181,7 +181,9 @@
     "saveData": "Save details and create account",
     "phoneHint": "Use Estonian phone format +372...",
     "successTitle": "Order paid!",
-    "successDescription": "We will call you in 5–10 minutes."
+    "successDescription": "We will call you in 5–10 minutes.",
+    "deliveryBolt": "Bolt Food",
+    "deliveryWolt": "Wolt"
   },
   "size": {
     "S": "Ø30 (small)",
@@ -192,7 +194,11 @@
     "birthday": "Birthday discount"
   },
   "common": {
-    "remove": "Remove"
+    "remove": "Remove",
+    "facebook": "Facebook",
+    "googleForm": "Google Form",
+    "guest": "Guest",
+    "nameLabel": "Name"
   },
   "location": {
     "juri": "Jüri"
@@ -213,12 +219,21 @@
     "point1": "−5% on every order for regular guests",
     "point2": "−15% on birthdays",
     "point3": "Quick registration via form or account",
-    "openForm": "Open form"
+    "openForm": "Open form",
+    "formLabel": "Google Form"
   },
   "jobsPage": {
     "phone": "Phone",
     "vacancyTitle": "Open roles at Blinny King",
-    "vacancyText": "We are looking for warm, fast and tidy people for both kitchen and front counter roles."
+    "vacancyText": "We are looking for warm, fast and tidy people for both kitchen and front counter roles.",
+    "eyebrow": "Jobs",
+    "title": "Work at Blinny King",
+    "description": "We are looking for people to join our team.",
+    "apply": "Apply",
+    "fullName": "Full name",
+    "email": "Email",
+    "experience": "Experience / comment",
+    "submit": "Send"
   },
   "account": {
     "discountPitch": "Sign in and get −5% on every order + purchase history",
@@ -251,6 +266,42 @@
     "guestName": "Name",
     "guestPhone": "Phone",
     "guestEmailOptional": "Email (optional)",
-    "guestContinue": "Continue to order"
+    "guestContinue": "Continue to order",
+    "favoriteExample": "Ham & Cheese Classic"
+  },
+  "contactsPage": {
+    "venueTitle": "Blinny King Pancake Restaurant Jüri",
+    "addressLine": "Veetorni 9, Jüri",
+    "social": "Facebook",
+    "eyebrow": "Contacts",
+    "title": "How to find us",
+    "description": "Address, map, phone and opening hours."
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "About Blinny King",
+    "description": "A warm pancake spot in Jüri focused on taste, speed and comfort.",
+    "text1": "Blinny King is a modern pancake restaurant for people who want tasty, filling and carefully made food fast — without the soulless fast-food feeling.",
+    "text2": "We focus on a clear menu, warm service, generous portions and convenient pickup or delivery ordering."
+  },
+  "partnersPage": {
+    "eyebrow": "Partners",
+    "title": "Cooperation",
+    "description": "B2B requests, catering and corporate orders.",
+    "leadTitle": "We work with businesses",
+    "lead1": "Corporate orders and catering",
+    "lead2": "Partnerships with local companies",
+    "lead3": "Flexible format for your needs",
+    "company": "Company",
+    "contact": "Contact person",
+    "phone": "Phone",
+    "email": "Email",
+    "idea": "Comment / request",
+    "send": "Send"
+  },
+  "locationsPage": {
+    "eyebrow": "Locations",
+    "title": "Our locations",
+    "description": "We currently operate in Jüri and the structure is ready for future expansion."
   }
 }

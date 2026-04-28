@@ -181,7 +181,9 @@
     "saveData": "Salvesta andmed ja loo konto",
     "phoneHint": "Kasuta Eesti telefonivormi +372...",
     "successTitle": "Tellimus on makstud!",
-    "successDescription": "Helistame teile 5–10 minuti jooksul."
+    "successDescription": "Helistame teile 5–10 minuti jooksul.",
+    "deliveryBolt": "Bolt Food",
+    "deliveryWolt": "Wolt"
   },
   "size": {
     "S": "Ø30 (väike)",
@@ -192,7 +194,11 @@
     "birthday": "Sünnipäeva soodustus"
   },
   "common": {
-    "remove": "Eemalda"
+    "remove": "Eemalda",
+    "facebook": "Facebook",
+    "googleForm": "Google Form",
+    "guest": "Külaline",
+    "nameLabel": "Nimi"
   },
   "location": {
     "juri": "Jüri"
@@ -213,12 +219,21 @@
     "point1": "−5% igalt tellimuselt püsikülalistele",
     "point2": "−15% sünnipäeval",
     "point3": "Kiire registreerimine vormi või konto kaudu",
-    "openForm": "Ava vorm"
+    "openForm": "Ava vorm",
+    "formLabel": "Google Form"
   },
   "jobsPage": {
     "phone": "Telefon",
     "vacancyTitle": "Tööpakkumised Blinny Kingis",
-    "vacancyText": "Otsime sooje, kiireid ja korrektseid inimesi nii kööki kui leti poolele."
+    "vacancyText": "Otsime sooje, kiireid ja korrektseid inimesi nii kööki kui leti poolele.",
+    "eyebrow": "Töö",
+    "title": "Töö Blinny Kingis",
+    "description": "Otsime inimesi oma tiimi.",
+    "apply": "Kandideeri",
+    "fullName": "Ees- ja perekonnanimi",
+    "email": "E-post",
+    "experience": "Kogemus / kommentaar",
+    "submit": "Saada"
   },
   "account": {
     "discountPitch": "Logi sisse ja saa −5% igalt tellimuselt + ostuajalugu",
@@ -251,6 +266,42 @@
     "guestName": "Nimi",
     "guestPhone": "Telefon",
     "guestEmailOptional": "E-post (valikuline)",
-    "guestContinue": "Jätka tellimusega"
+    "guestContinue": "Jätka tellimusega",
+    "favoriteExample": "Sink ja juust klassika"
+  },
+  "contactsPage": {
+    "venueTitle": "Blinny King Pannkoogirestoran Jüri",
+    "addressLine": "Veetorni 9, Jüri",
+    "social": "Facebook",
+    "eyebrow": "Kontaktid",
+    "title": "Kuidas meid leida",
+    "description": "Aadress, kaart, telefon ja lahtiolekuajad."
+  },
+  "about": {
+    "eyebrow": "Meist",
+    "title": "Blinny Kingist",
+    "description": "Soe pannkoogikoht Jüris, kus fookus on maitsel, kiirusel ja hubasusel.",
+    "text1": "Blinny King on kaasaegne pannkoogikoht neile, kes tahavad kiiresti head, toekat ja korralikult valmistatud toitu ilma tuima kiirtoidutundeta.",
+    "text2": "Panustame arusaadavale menüüle, soojale teenindusele, suurtele portsudele ning mugavale kaasaostule või kullerteenusele."
+  },
+  "partnersPage": {
+    "eyebrow": "Partneritele",
+    "title": "Koostöö",
+    "description": "B2B päringud, catering ja ettevõtete tellimused.",
+    "leadTitle": "Teeme koostööd ettevõtetega",
+    "lead1": "Firmatellimused ja catering",
+    "lead2": "Koostöö kohalike ettevõtetega",
+    "lead3": "Paindlik lahendus vastavalt vajadusele",
+    "company": "Ettevõte",
+    "contact": "Kontaktisik",
+    "phone": "Telefon",
+    "email": "E-post",
+    "idea": "Kommentaar / soov",
+    "send": "Saada"
+  },
+  "locationsPage": {
+    "eyebrow": "Asukohad",
+    "title": "Meie asukohad",
+    "description": "Praegu tegutseme Jüris, kuid arhitektuur on valmis laienemiseks."
   }
 }

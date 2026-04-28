@@ -59,7 +59,8 @@ export default async function AccountPage({
           google: t('google'),
           loyaltyStatus: t('loyaltyStatus'),
           loyaltyActive: t('loyaltyActive'),
-          birthdayDiscount: t('birthdayDiscount')
+          birthdayDiscount: t('birthdayDiscount'),
+          favoriteExample: t('favoriteExample')
         }}
         orders={localizedOrders}
       />

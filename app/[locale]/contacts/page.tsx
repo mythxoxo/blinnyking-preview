@@ -10,7 +10,7 @@ export default async function ContactsPage({params}: {params: {locale: string}})
       <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="overflow-hidden rounded-[32px] border border-border bg-surface shadow-soft">
           <iframe
-            title="Blinny King map"
+            title={t('contactsPage.title')}
             src="https://www.google.com/maps?q=59.3567,24.8908&z=15&output=embed"
             className="h-[420px] w-full"
             loading="lazy"
@@ -18,16 +18,16 @@ export default async function ContactsPage({params}: {params: {locale: string}})
           />
         </div>
         <div className="rounded-[32px] border border-border bg-surface p-6 shadow-soft">
-          <h2 className="text-2xl font-semibold text-text">Blinny King Pannkoogirestoran Jüri</h2>
+          <h2 className="text-2xl font-semibold text-text">{t('contactsPage.venueTitle')}</h2>
           <div className="mt-5 space-y-3 text-sm leading-7 text-text-muted">
             <p>
               <a href="https://maps.app.goo.gl/zEtqPRYX41wadDNaA" target="_blank" rel="noreferrer" className="hover:text-primary">
-                Veetorni 9, Jüri
+                {t('contactsPage.addressLine')}
               </a>
             </p>
             <p><a href="tel:+37256859075" className="hover:text-primary">+372 568 59075</a></p>
             <p><a href="mailto:info@blinnyking.ee" className="hover:text-primary">info@blinnyking.ee</a></p>
-            <p>Facebook</p>
+            <p>{t('contactsPage.social')}</p>
             <p>{t('footer.hoursWeek')} · {t('footer.hoursSat')} · {t('footer.hoursSun')}</p>
           </div>
         </div>
