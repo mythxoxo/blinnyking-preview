@@ -36,7 +36,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3.5 sm:px-6 lg:px-8">
         <Link href={`/${locale}`} className="relative h-9 w-[150px] shrink-0">
           <Image src={logoUrl} alt="Blinny King" fill className="object-contain object-left" sizes="150px" unoptimized />
         </Link>
@@ -58,7 +58,7 @@ export function Navbar() {
             {itemCount > 0 ? <span className="ml-2 inline-flex min-w-5 items-center justify-center rounded-full bg-primary px-1.5 py-0.5 text-[11px] font-bold text-white">{itemCount}</span> : null}
           </Link>
           <Link href={`/${locale}/account`}><Button size="sm">{t('nav.login')}</Button></Link>
-          <div className="flex items-center gap-1 rounded-full border border-border bg-surface p-1">
+          <div className="flex items-center gap-1 rounded-full border border-border bg-surface p-1 shadow-sm">
             <Globe className="ml-2 h-4 w-4 text-text-muted" />
             {localeLinks.map(({code, href}) => (
               <Link key={code} href={href} className={cn('rounded-full px-2.5 py-1.5 text-xs font-semibold uppercase', code === locale ? 'bg-primary text-white' : 'text-text-muted hover:bg-tag')}>
@@ -68,21 +68,21 @@ export function Navbar() {
           </div>
         </div>
 
-        <button type="button" onClick={() => setOpen(true)} className="rounded-full border border-border bg-surface p-3 lg:hidden">
+        <button type="button" onClick={() => setOpen(true)} className="rounded-full border border-border bg-surface p-3 shadow-sm lg:hidden">
           <Menu className="h-5 w-5" />
         </button>
       </div>
 
       {open ? (
         <div className="fixed inset-0 z-[70] bg-black/40 lg:hidden" onClick={() => setOpen(false)}>
-          <div className="absolute bottom-0 left-0 right-0 rounded-t-[28px] bg-background p-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
+          <div className="absolute bottom-0 left-0 right-0 rounded-t-[28px] border-t border-border bg-background p-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
             <div className="mb-5 flex items-center justify-between">
               <p className="text-lg font-semibold text-text">Blinny King</p>
               <button type="button" onClick={() => setOpen(false)} className="rounded-full p-2 hover:bg-tag"><X className="h-5 w-5" /></button>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {navKeys.map((key) => (
-                <Link key={key} href={`/${locale}/${key === 'menu' ? 'menu' : key}`} onClick={() => setOpen(false)} className="block text-base font-medium text-text">
+                <Link key={key} href={`/${locale}/${key === 'menu' ? 'menu' : key}`} onClick={() => setOpen(false)} className="block rounded-2xl bg-surface px-4 py-3 text-base font-medium text-text">
                   {t(`nav.${key}`)}
                 </Link>
               ))}

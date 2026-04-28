@@ -10,8 +10,8 @@ export async function Footer({locale}: {locale: string}) {
 
   return (
     <footer className="border-t border-border bg-surface/80">
-      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-3 lg:px-8">
-        <div>
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-3 lg:px-8">
+        <div className="rounded-2xl bg-white/50 p-5 lg:bg-transparent lg:p-0">
           <div className="relative h-10 w-[150px]">
             <Image src={logoUrl} alt="Blinny King" fill className="object-contain object-left" sizes="150px" unoptimized />
           </div>
@@ -20,7 +20,7 @@ export async function Footer({locale}: {locale: string}) {
             <Facebook className="h-4 w-4" /> {t('common.facebook')}
           </a>
         </div>
-        <div>
+        <div className="rounded-2xl bg-white/50 p-5 lg:bg-transparent lg:p-0">
           <h3 className="text-lg font-semibold text-text">{t('site.footerNav')}</h3>
           <div className="mt-4 grid gap-1.5 text-sm text-text-muted">
             <Link href={`/${locale}/menu`}>{t('nav.menu')}</Link>
@@ -31,7 +31,7 @@ export async function Footer({locale}: {locale: string}) {
             <Link href={`/${locale}/jobs`}>{t('nav.jobs')}</Link>
           </div>
         </div>
-        <div>
+        <div className="rounded-2xl bg-white/50 p-5 lg:bg-transparent lg:p-0">
           <h3 className="text-lg font-semibold text-text">{t('nav.contacts')}</h3>
           <div className="mt-4 space-y-2 text-sm text-text-muted">
             <p>Veetorni tn 9, Jüri</p>
