@@ -93,9 +93,11 @@ export async function HomeSections({locale}: {locale: Locale}) {
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold text-text">{t('site.galleryTitle')}</h2>
         <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {galleryImages.map((src) => (
-            <div key={src} className="group relative aspect-square min-h-[140px] overflow-hidden rounded-2xl">
-              <Image src={src} alt="Blinny King gallery" fill className="object-cover transition duration-300 group-hover:scale-105" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 33vw" unoptimized />
+          {galleryImages.map((src, index) => (
+            <div key={src} className="overflow-hidden rounded-2xl bg-surface shadow-soft">
+              <div className="relative h-[150px] sm:h-[210px] lg:h-[260px]">
+                <Image src={src} alt={`${t('site.galleryTitle')} ${index + 1}`} fill className="object-cover transition duration-300 hover:scale-105" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 33vw" unoptimized />
+              </div>
             </div>
           ))}
         </div>
@@ -120,7 +122,7 @@ export async function HomeSections({locale}: {locale: Locale}) {
           <div className="rounded-2xl bg-surface p-6"><h3 className="text-xl font-semibold">{t('site.phone')}</h3><p className="mt-3 text-text-muted">{location.phone}</p></div>
           <div className="rounded-2xl bg-surface p-6"><h3 className="text-xl font-semibold">{t('site.hours')}</h3><p className="mt-3 text-text-muted">{location.hours.weekdays}<br />{location.hours.saturday}<br />{location.hours.sunday}</p></div>
         </div>
-        <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-surface">
+        <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-surface shadow-soft">
           <iframe src={location.mapEmbedUrl} className="h-[220px] w-full border-0 md:h-[300px]" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
         </div>
       </section>
