@@ -263,7 +263,12 @@
     "fullName": "Ees- ja perekonnanimi",
     "email": "E-post",
     "experience": "Kogemus / kommentaar",
-    "submit": "Saada"
+    "submit": "Saada",
+    "benefit1": "8€/tund",
+    "benefit2": "Sõidukompensatsioon 50€/kuu",
+    "benefit3": "Tasuta lõunasöök",
+    "benefit4": "Paindlik graafik",
+    "cta": "Saada CV aadressile info@blinnyking.ee"
   },
   "account": {
     "discountPitch": "Logi sisse ja saa −5% igalt tellimuselt + ostuajalugu",
@@ -312,7 +317,15 @@
     "title": "Blinny Kingist",
     "description": "Soe pannkoogikoht Jüris, kus fookus on maitsel, kiirusel ja hubasusel.",
     "text1": "Blinny King on kaasaegne pannkoogikoht neile, kes tahavad kiiresti head, toekat ja korralikult valmistatud toitu ilma tuima kiirtoidutundeta.",
-    "text2": "Panustame arusaadavale menüüle, soojale teenindusele, suurtele portsudele ning mugavale kaasaostule või kullerteenusele."
+    "text2": "Panustame arusaadavale menüüle, soojale teenindusele, suurtele portsudele ning mugavale kaasaostule või kullerteenusele.",
+    "fact1": "cm pannkoogid",
+    "fact2Title": "Iga päev",
+    "fact2": "värskelt valmistatud",
+    "fact3Title": "Alates 2020",
+    "fact3": "teenindame Jüri kogukonda",
+    "jobsTitle": "Tööpakkumised",
+    "jobsText": "Otsime rõõmsaid ja töökaid inimesi kööki ja teenindusse.",
+    "jobsCta": "Vaata vakantsse"
   },
   "partnersPage": {
     "eyebrow": "Partneritele",

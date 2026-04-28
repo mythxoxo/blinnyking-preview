@@ -263,7 +263,12 @@
     "fullName": "Full name",
     "email": "Email",
     "experience": "Experience / comment",
-    "submit": "Send"
+    "submit": "Send",
+    "benefit1": "8€/hour",
+    "benefit2": "Travel compensation 50€/month",
+    "benefit3": "Free lunch",
+    "benefit4": "Flexible schedule",
+    "cta": "Send your CV to info@blinnyking.ee"
   },
   "account": {
     "discountPitch": "Sign in and get −5% on every order + purchase history",
@@ -312,7 +317,15 @@
     "title": "About Blinny King",
     "description": "A warm pancake spot in Jüri focused on taste, speed and comfort.",
     "text1": "Blinny King is a modern pancake restaurant for people who want tasty, filling and carefully made food fast — without the soulless fast-food feeling.",
-    "text2": "We focus on a clear menu, warm service, generous portions and convenient pickup or delivery ordering."
+    "text2": "We focus on a clear menu, warm service, generous portions and convenient pickup or delivery ordering.",
+    "fact1": "cm pancakes",
+    "fact2Title": "Every day",
+    "fact2": "freshly made",
+    "fact3Title": "Since 2020",
+    "fact3": "serving the Jüri community",
+    "jobsTitle": "Jobs",
+    "jobsText": "We are looking for friendly and fast people for kitchen and service roles.",
+    "jobsCta": "View openings"
   },
   "partnersPage": {
     "eyebrow": "Partners",

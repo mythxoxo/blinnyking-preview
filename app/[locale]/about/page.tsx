@@ -23,16 +23,16 @@ export default async function AboutPage({params}: {params: {locale: string}}) {
       </section>
 
       <section className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:px-6 md:grid-cols-3 lg:px-8">
-        <div className="rounded-2xl bg-surface p-6"><div className="text-4xl font-semibold text-primary">Ø30 / Ø40</div><p className="mt-3 text-text-muted">cm pannkoogid</p></div>
-        <div className="rounded-2xl bg-surface p-6"><div className="text-4xl font-semibold text-primary">Iga päev</div><p className="mt-3 text-text-muted">värskelt valmistatud</p></div>
-        <div className="rounded-2xl bg-surface p-6"><div className="text-4xl font-semibold text-primary">Alates 2020</div><p className="mt-3 text-text-muted">teenindame Jüri kogukonda</p></div>
+        <div className="rounded-2xl bg-surface p-6"><div className="text-4xl font-semibold text-primary">Ø30 / Ø40</div><p className="mt-3 text-text-muted">{t('fact1')}</p></div>
+        <div className="rounded-2xl bg-surface p-6"><div className="text-4xl font-semibold text-primary">{t('fact2Title')}</div><p className="mt-3 text-text-muted">{t('fact2')}</p></div>
+        <div className="rounded-2xl bg-surface p-6"><div className="text-4xl font-semibold text-primary">{t('fact3Title')}</div><p className="mt-3 text-text-muted">{t('fact3')}</p></div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="rounded-2xl bg-surface p-8">
-          <h2 className="text-3xl font-semibold text-text">{t('eyebrow')}</h2>
-          <p className="mt-4 text-text-muted">{t('description')}</p>
-          <div className="mt-6"><Link href={`/${params.locale}/jobs`}><Button>{t('eyebrow')}</Button></Link></div>
+          <h2 className="text-3xl font-semibold text-text">{t('jobsTitle')}</h2>
+          <p className="mt-4 text-text-muted">{t('jobsText')}</p>
+          <div className="mt-6"><Link href={`/${params.locale}/jobs`}><Button>{t('jobsCta')}</Button></Link></div>
         </div>
       </section>
     </div>

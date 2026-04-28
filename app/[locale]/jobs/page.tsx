@@ -10,12 +10,12 @@ export default async function JobsPage({params}: {params: {locale: string}}) {
         <h1 className="mt-4 text-4xl font-semibold text-text">{t('title')}</h1>
         <p className="mt-5 text-base leading-8 text-text-muted">{t('vacancyText')}</p>
         <ul className="mt-6 space-y-3 text-text-muted">
-          <li>• 8€/tund</li>
-          <li>• Sõidukompensatsioon 50€/kuu</li>
-          <li>• Tasuta lõunasöök</li>
-          <li>• Paindlik graafik</li>
+          <li>• {t('benefit1')}</li>
+          <li>• {t('benefit2')}</li>
+          <li>• {t('benefit3')}</li>
+          <li>• {t('benefit4')}</li>
         </ul>
-        <div className="mt-8"><a href="mailto:info@blinnyking.ee" className="inline-flex rounded-full bg-primary px-7 py-[14px] text-sm font-semibold text-white">Saada CV aadressile info@blinnyking.ee</a></div>
+        <div className="mt-8"><a href="mailto:info@blinnyking.ee" className="inline-flex rounded-full bg-primary px-7 py-[14px] text-sm font-semibold text-white">{t('cta')}</a></div>
       </div>
     </div>
   );
