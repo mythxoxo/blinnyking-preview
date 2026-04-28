@@ -21,7 +21,7 @@ export async function Footer({locale}: {locale: string}) {
           </a>
         </div>
         <div>
-          <h3 className="text-lg font-semibold text-text">Navigation</h3>
+          <h3 className="text-lg font-semibold text-text">{t('site.footerNav')}</h3>
           <div className="mt-4 grid gap-2 text-sm text-text-muted">
             <Link href={`/${locale}/menu`}>{t('nav.menu')}</Link>
             <Link href={`/${locale}/promotions`}>{t('nav.promotions')}</Link>

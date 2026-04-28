@@ -210,6 +210,26 @@
     "ru": "Russian",
     "en": "English"
   },
+  "site": {
+    "tagline": "Pancake café · Jüri, Estonia",
+    "featuredTitle": "Most craveable picks",
+    "fullMenuCta": "Full menu →",
+    "step1Title": "Choose",
+    "step1Text": "Open the menu and find your favorite pancake.",
+    "step2Title": "Checkout",
+    "step2Text": "Add items to cart and enter your details.",
+    "step3Title": "Pick up",
+    "step3Text": "Pick it up yourself or use Bolt/Wolt.",
+    "galleryTitle": "Our kitchen",
+    "loyaltyTitle": "Join and get permanent perks 👑",
+    "loyaltyPoint1": "−5% on every visit",
+    "loyaltyPoint2": "−15% on your birthday",
+    "register": "Register",
+    "address": "Address",
+    "phone": "Phone",
+    "hours": "Opening hours",
+    "footerNav": "Navigation"
+  },
   "promotions": {
     "eyebrow": "Promotions",
     "title": "Current offers",

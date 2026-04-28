@@ -35,7 +35,7 @@ export async function HomeSections({locale}: {locale: Locale}) {
           <div className="absolute inset-0 bg-[rgba(26,18,8,0.45)]" />
         </div>
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center text-white sm:px-6 lg:px-8">
-          <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur-sm">Pannkoogikohvik · Jüri, Estonia</div>
+          <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur-sm">{t('site.tagline')}</div>
           <h1 className="mt-6 text-[42px] font-semibold leading-tight md:text-[72px]">{t('hero.title')}</h1>
           <p className="mt-5 text-base text-white/90 md:text-lg">{location.address}, {location.city} · {location.hours.weekdays}</p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -56,22 +56,22 @@ export async function HomeSections({locale}: {locale: Locale}) {
       ) : null}
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-semibold text-text">Kõige isuäratavamad valikud</h2>
+        <h2 className="text-3xl font-semibold text-text">{t('site.featuredTitle')}</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {featuredItems.map((item) => <MenuCard key={item.id} item={item} locale={locale} />)}
         </div>
         <div className="mt-8 flex flex-wrap gap-3">
           <a href={`/${locale}/order`}><Button>{t('cta.orderNow')}</Button></a>
-          <a href={`/${locale}/menu`}><Button variant="outline">Kogu menüü →</Button></a>
+          <a href={`/${locale}/menu`}><Button variant="outline">{t('site.fullMenuCta')}</Button></a>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
         <div className="grid gap-6 md:grid-cols-3">
           {[
-            ['01', 'Vali', 'Ava menüü ja leia oma lemmik pannkook.'],
-            ['02', 'Vormista', 'Lisa tooted korvi ja sisesta oma andmed.'],
-            ['03', 'Võta kaasa', 'Tule järele või kasuta Bolt/Wolti.']
+            ['01', t('site.step1Title'), t('site.step1Text')],
+            ['02', t('site.step2Title'), t('site.step2Text')],
+            ['03', t('site.step3Title'), t('site.step3Text')]
           ].map(([num, title, text]) => (
             <div key={num} className="rounded-2xl border border-border bg-surface p-6">
               <div className="text-4xl font-semibold text-[var(--color-accent)]">{num}</div>
@@ -83,7 +83,7 @@ export async function HomeSections({locale}: {locale: Locale}) {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-semibold text-text">Meie köök</h2>
+        <h2 className="text-3xl font-semibold text-text">{t('site.galleryTitle')}</h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {galleryImages.map((src) => (
             <div key={src} className="group relative aspect-square overflow-hidden rounded-2xl">
@@ -95,22 +95,22 @@ export async function HomeSections({locale}: {locale: Locale}) {
 
       <section className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div className="rounded-2xl bg-surface p-8">
-          <h2 className="text-3xl font-semibold text-text">Liitu ja saa püsisoodustust 👑</h2>
+          <h2 className="text-3xl font-semibold text-text">{t('site.loyaltyTitle')}</h2>
           <ul className="mt-5 space-y-3 text-sm leading-7 text-text-muted">
-            <li>✔ −5% igal külastusel</li>
-            <li>🎂 −15% sünnipäeval</li>
+            <li>✔ {t('site.loyaltyPoint1')}</li>
+            <li>🎂 {t('site.loyaltyPoint2')}</li>
           </ul>
         </div>
         <div className="flex items-center justify-start rounded-2xl bg-surface p-8 lg:justify-center">
-          <a href={`/${locale}/promotions`}><Button size="lg">Registreeru</Button></a>
+          <a href={`/${locale}/promotions`}><Button size="lg">{t('site.register')}</Button></a>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl bg-surface p-6"><h3 className="text-xl font-semibold">Aadress</h3><p className="mt-3 text-text-muted">{location.address}, {location.city}</p></div>
-          <div className="rounded-2xl bg-surface p-6"><h3 className="text-xl font-semibold">Telefon</h3><p className="mt-3 text-text-muted">{location.phone}</p></div>
-          <div className="rounded-2xl bg-surface p-6"><h3 className="text-xl font-semibold">Lahtiolekuajad</h3><p className="mt-3 text-text-muted">{location.hours.weekdays}<br />{location.hours.saturday}<br />{location.hours.sunday}</p></div>
+          <div className="rounded-2xl bg-surface p-6"><h3 className="text-xl font-semibold">{t('site.address')}</h3><p className="mt-3 text-text-muted">{location.address}, {location.city}</p></div>
+          <div className="rounded-2xl bg-surface p-6"><h3 className="text-xl font-semibold">{t('site.phone')}</h3><p className="mt-3 text-text-muted">{location.phone}</p></div>
+          <div className="rounded-2xl bg-surface p-6"><h3 className="text-xl font-semibold">{t('site.hours')}</h3><p className="mt-3 text-text-muted">{location.hours.weekdays}<br />{location.hours.saturday}<br />{location.hours.sunday}</p></div>
         </div>
         <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-surface">
           <iframe src={location.mapEmbedUrl} className="h-[300px] w-full border-0" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />

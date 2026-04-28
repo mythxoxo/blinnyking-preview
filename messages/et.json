@@ -210,6 +210,26 @@
     "ru": "Vene",
     "en": "Inglise"
   },
+  "site": {
+    "tagline": "Pannkoogikohvik · Jüri, Estonia",
+    "featuredTitle": "Kõige isuäratavamad valikud",
+    "fullMenuCta": "Kogu menüü →",
+    "step1Title": "Vali",
+    "step1Text": "Ava menüü ja leia oma lemmik pannkook.",
+    "step2Title": "Vormista",
+    "step2Text": "Lisa tooted korvi ja sisesta oma andmed.",
+    "step3Title": "Võta kaasa",
+    "step3Text": "Tule järele või kasuta Bolt/Wolti.",
+    "galleryTitle": "Meie köök",
+    "loyaltyTitle": "Liitu ja saa püsisoodustust 👑",
+    "loyaltyPoint1": "−5% igal külastusel",
+    "loyaltyPoint2": "−15% sünnipäeval",
+    "register": "Registreeru",
+    "address": "Aadress",
+    "phone": "Telefon",
+    "hours": "Lahtiolekuajad",
+    "footerNav": "Navigatsioon"
+  },
   "promotions": {
     "eyebrow": "Pakkumised",
     "title": "Aktiivsed pakkumised",
