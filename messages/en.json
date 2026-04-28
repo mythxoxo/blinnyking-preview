@@ -237,7 +237,10 @@
     "lunchTitle": "Lunch −20%",
     "lunchText": "On weekdays from 11:00 to 15:00 selected menu items are discounted by −20%.",
     "loyaltyTitle": "Loyalty card discount",
-    "loyaltyText": "Regular guests get −5%, and birthday guests get up to −15%."
+    "loyaltyText": "Regular guests get −5%, and birthday guests get up to −15%.",
+    "comboTitle": "Combo offers",
+    "comboText": "Family combo, sweet combo and lunch deals are available in the menu.",
+    "viewMenu": "View menu"
   },
   "loyaltyPage": {
     "eyebrow": "Loyalty",

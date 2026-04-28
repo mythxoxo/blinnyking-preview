@@ -237,7 +237,10 @@
     "lunchTitle": "Lõuna −20%",
     "lunchText": "Argipäeviti 11:00–15:00 on osa menüüst −20% soodustusega.",
     "loyaltyTitle": "Püsikliendikaardi soodustus",
-    "loyaltyText": "Püsikülalised saavad −5% ning sünnipäeval kuni −15%."
+    "loyaltyText": "Püsikülalised saavad −5% ning sünnipäeval kuni −15%.",
+    "comboTitle": "Kombopakkumised",
+    "comboText": "Perekombo, magus kombo ja lõunapakkumised on saadaval menüüs.",
+    "viewMenu": "Vaata menüüd"
   },
   "loyaltyPage": {
     "eyebrow": "Lojaalsus",
