@@ -10,19 +10,19 @@ export async function Footer({locale}: {locale: string}) {
 
   return (
     <footer className="border-t border-border bg-surface/80">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:px-6 lg:grid-cols-3 lg:px-8">
         <div>
           <div className="relative h-10 w-[150px]">
             <Image src={logoUrl} alt="Blinny King" fill className="object-contain object-left" sizes="150px" unoptimized />
           </div>
-          <p className="mt-4 max-w-sm text-sm leading-7 text-text-muted">{t('about.description')}</p>
+          <p className="mt-4 max-w-sm text-sm leading-6 text-text-muted">{t('about.description')}</p>
           <a href="https://www.facebook.com/people/Blinny-King-Pannkoogirestoran-J%C3%BCri/100070004895711/" target="_blank" rel="noopener" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-text-muted hover:text-primary">
             <Facebook className="h-4 w-4" /> {t('common.facebook')}
           </a>
         </div>
         <div>
           <h3 className="text-lg font-semibold text-text">{t('site.footerNav')}</h3>
-          <div className="mt-4 grid gap-2 text-sm text-text-muted">
+          <div className="mt-4 grid gap-1.5 text-sm text-text-muted">
             <Link href={`/${locale}/menu`}>{t('nav.menu')}</Link>
             <Link href={`/${locale}/promotions`}>{t('nav.promotions')}</Link>
             <Link href={`/${locale}/about`}>{t('nav.about')}</Link>

@@ -90,18 +90,18 @@ export async function HomeSections({locale}: {locale: Locale}) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold text-text">{t('site.galleryTitle')}</h2>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {galleryImages.map((src) => (
-            <div key={src} className="group relative aspect-square overflow-hidden rounded-2xl">
-              <Image src={src} alt="Blinny King gallery" fill className="object-cover transition duration-300 group-hover:scale-105" sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw" unoptimized />
+            <div key={src} className="group relative aspect-square min-h-[140px] overflow-hidden rounded-2xl">
+              <Image src={src} alt="Blinny King gallery" fill className="object-cover transition duration-300 group-hover:scale-105" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 33vw" unoptimized />
             </div>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-6 px-4 py-8 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <section className="mx-auto grid max-w-7xl gap-4 px-4 py-8 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div className="rounded-2xl bg-surface p-8">
           <h2 className="text-3xl font-semibold text-text">{t('site.loyaltyTitle')}</h2>
           <ul className="mt-5 space-y-3 text-sm leading-7 text-text-muted">
@@ -114,14 +114,14 @@ export async function HomeSections({locale}: {locale: Locale}) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-4 md:grid-cols-3">
           <div className="rounded-2xl bg-surface p-6"><h3 className="text-xl font-semibold">{t('site.address')}</h3><p className="mt-3 text-text-muted">{location.address}, {location.city}</p></div>
           <div className="rounded-2xl bg-surface p-6"><h3 className="text-xl font-semibold">{t('site.phone')}</h3><p className="mt-3 text-text-muted">{location.phone}</p></div>
           <div className="rounded-2xl bg-surface p-6"><h3 className="text-xl font-semibold">{t('site.hours')}</h3><p className="mt-3 text-text-muted">{location.hours.weekdays}<br />{location.hours.saturday}<br />{location.hours.sunday}</p></div>
         </div>
         <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-surface">
-          <iframe src={location.mapEmbedUrl} className="h-[300px] w-full border-0" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+          <iframe src={location.mapEmbedUrl} className="h-[220px] w-full border-0 md:h-[300px]" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
         </div>
       </section>
     </div>
