@@ -50,6 +50,8 @@
     "registry": "Registry code: 12476156"
   },
   "home": {
+    "heroCardText": "Fast ordering, clear menu structure and real 3-language support for Estonian, Russian and English visitors.",
+    "callNow": "Call now",
     "lunchBanner": "Lunch −20% today from 11:00 to 15:00",
     "hitsEyebrow": "Menu hits",
     "hitsTitle": "Most craveable picks",
@@ -202,6 +204,11 @@
   },
   "location": {
     "juri": "Jüri"
+  },
+  "languages": {
+    "et": "Estonian",
+    "ru": "Russian",
+    "en": "English"
   },
   "promotions": {
     "eyebrow": "Promotions",

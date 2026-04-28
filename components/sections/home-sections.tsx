@@ -67,13 +67,13 @@ export async function HomeSections({locale}: {locale: Locale}) {
             <div className="rounded-[32px] border border-white/15 bg-white/12 p-6 text-white shadow-[0_24px_60px_rgba(0,0,0,0.22)] backdrop-blur-md">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/70">{t('cta.orderNow')}</p>
               <h2 className="mt-3 text-3xl font-semibold">Bolt · Wolt · Pickup</h2>
-              <p className="mt-3 max-w-md text-sm leading-7 text-white/80">
-                Fast order flow, clean menu structure and 3 working languages for Estonian, Russian and English visitors.
-              </p>
+              <p className="mt-3 max-w-md text-sm leading-7 text-white/80">{t('home.heroCardText')}</p>
               <div className="mt-5 flex flex-wrap gap-2 text-sm text-white/85">
-                <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2"><CheckCircle2 className="h-4 w-4" /> ET</span>
-                <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2"><CheckCircle2 className="h-4 w-4" /> RU</span>
-                <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2"><CheckCircle2 className="h-4 w-4" /> EN</span>
+                {(['et', 'ru', 'en'] as const).map((lang) => (
+                  <span key={lang} className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2">
+                    <CheckCircle2 className="h-4 w-4" /> {t(`languages.${lang}`)}
+                  </span>
+                ))}
               </div>
               <ActionLink href={`/${locale}/order`} className="mt-6 bg-primary text-white hover:bg-primary-hover">
                 {t('cta.orderNow')} <ArrowRight className="ml-2 h-4 w-4" />
@@ -85,7 +85,7 @@ export async function HomeSections({locale}: {locale: Locale}) {
                 <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">{t('home.stats.phone')}</p>
                 <p className="mt-3 text-xl font-semibold text-text">{location.phone}</p>
                 <a href={`tel:${location.phone.replace(/\s+/g, '')}`} className="mt-3 inline-flex items-center gap-2 text-sm text-text-muted hover:text-primary">
-                  <Phone className="h-4 w-4" /> Call now
+                  <Phone className="h-4 w-4" /> {t('home.callNow')}
                 </a>
               </div>
               <div className="rounded-[28px] border border-border bg-surface p-5 shadow-soft">

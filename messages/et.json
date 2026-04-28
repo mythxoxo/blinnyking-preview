@@ -50,6 +50,8 @@
     "registry": "Registrikood: 12476156"
   },
   "home": {
+    "heroCardText": "Kiire tellimisvoog, selge menüü ja päriselt toimiv 3-keelsus eesti, vene ja inglise külastajatele.",
+    "callNow": "Helista kohe",
     "lunchBanner": "Lõuna −20% täna kell 11:00–15:00",
     "hitsEyebrow": "Menüü hitid",
     "hitsTitle": "Kõige isuäratavamad valikud",
@@ -202,6 +204,11 @@
   },
   "location": {
     "juri": "Jüri"
+  },
+  "languages": {
+    "et": "Eesti",
+    "ru": "Vene",
+    "en": "Inglise"
   },
   "promotions": {
     "eyebrow": "Pakkumised",
