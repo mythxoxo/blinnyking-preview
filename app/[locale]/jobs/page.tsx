@@ -1,28 +1,18 @@
-import {getTranslations} from 'next-intl/server';
-import {Input, Section, SectionHeader, Textarea} from '@/components/shared/ui';
-
-export default async function JobsPage({params}: {params: {locale: string}}) {
-  const t = await getTranslations({locale: params.locale});
-
+export default function JobsPage() {
   return (
-    <Section>
-      <SectionHeader eyebrow={t('jobsPage.eyebrow')} title={t('jobsPage.title')} description={t('jobsPage.description')} />
-      <div className="grid gap-6 lg:grid-cols-[1fr_0.95fr]">
-        <div className="rounded-[32px] border border-border bg-surface p-6 shadow-soft">
-          <h2 className="text-2xl font-semibold text-text">{t('jobsPage.vacancyTitle')}</h2>
-          <p className="mt-4 text-sm leading-7 text-text-muted">{t('jobsPage.vacancyText')}</p>
-        </div>
-        <form className="rounded-[32px] border border-border bg-surface p-6 shadow-soft">
-          <h2 className="text-2xl font-semibold text-text">{t('jobsPage.apply')}</h2>
-          <div className="mt-5 space-y-4">
-            <Input placeholder={t('jobsPage.fullName')} />
-            <Input placeholder={t('jobsPage.phone')} />
-            <Input placeholder={t('jobsPage.email')} />
-            <Textarea placeholder={t('jobsPage.experience')} />
-          </div>
-          <button className="mt-5 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white">{t('jobsPage.submit')}</button>
-        </form>
+    <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="rounded-2xl bg-surface p-8">
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary">Tööpakkumised</p>
+        <h1 className="mt-4 text-4xl font-semibold text-text">Tule tööle Blinny Kingi</h1>
+        <p className="mt-5 text-base leading-8 text-text-muted">Oleme peresõbralik pannkoogikohvik Jüris ja otsime oma tiimi sõbralikke, kiireid ja vastutustundlikke inimesi.</p>
+        <ul className="mt-6 space-y-3 text-text-muted">
+          <li>• 8€/tund</li>
+          <li>• Sõidukompensatsioon 50€/kuu</li>
+          <li>• Tasuta lõunasöök</li>
+          <li>• Paindlik graafik</li>
+        </ul>
+        <div className="mt-8"><a href="mailto:info@blinnyking.ee" className="inline-flex rounded-full bg-primary px-7 py-[14px] text-sm font-semibold text-white">Saada CV aadressile info@blinnyking.ee</a></div>
       </div>
-    </Section>
+    </div>
   );
 }
