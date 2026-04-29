@@ -95,9 +95,14 @@ export async function HomeSections({locale}: {locale: Locale}) {
         <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {galleryImages.map((src, index) => (
             <div key={src} className="overflow-hidden rounded-2xl bg-surface shadow-soft">
-              <div className="relative h-[150px] sm:h-[210px] lg:h-[260px]">
-                <Image src={src} alt={`${t('site.galleryTitle')} ${index + 1}`} fill className="object-cover transition duration-300 hover:scale-105" sizes="(max-width: 768px) 50vw, (max-width: 1024px) 50vw, 33vw" unoptimized />
-              </div>
+              <Image
+                src={src}
+                alt={`${t('site.galleryTitle')} ${index + 1}`}
+                width={600}
+                height={600}
+                className="h-auto w-full object-cover transition duration-300 hover:scale-105"
+                unoptimized
+              />
             </div>
           ))}
         </div>
