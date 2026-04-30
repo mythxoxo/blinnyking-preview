@@ -37,7 +37,7 @@ export async function HomeSections({locale}: {locale: Locale}) {
         <div className="relative mx-auto max-w-4xl px-4 py-20 text-center text-white sm:px-6 lg:px-8">
           <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur-sm">{t('site.tagline')}</div>
           <h1 className="mt-6 text-[42px] font-semibold leading-tight md:text-[72px]">{t('hero.title')}</h1>
-          <p className="mt-5 text-base text-white/90 md:text-lg">{location.address}, {location.city} · {location.hours.weekdays}</p>
+          <p className="mt-5 text-base text-white/90 md:text-lg">{location.address} · {location.hours.weekdays}</p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a href={`/${locale}/order`}><Button size="lg">{t('cta.orderNow')}</Button></a>
             <a href={`/${locale}/menu`}><Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-text">{t('cta.viewMenu')}</Button></a>
